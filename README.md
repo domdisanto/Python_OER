@@ -12,7 +12,7 @@ I've created three branches of possible organization. None of these are mutually
   
   `module_org` - One of module-specific folders. Each document will contains links and resources relevant to the topics listed. Files can be further expanded into folders if we want to contain specific use-cases, code, data sets, etc. in a folder for each section. I tried to organize these loosely along a compromise between the Spring '20 the Summer '20 session modules. These are obviously dynamic based on both initial feedback and ongoing user feedback.  
   `medium_org` - Folders are organized specific to the medium of content, i.e. LinkedIn learning course, Textbook/Blog Post, Use Case, etc. Again the actual structuring of the documents within this branch is subeject to (very welcomed) feedback. Documents could also be expanded to folders if more files would need to be included. 
- 
+ `consolidated` - This is essentially a marriage of the two structures. Instead of having each module as a separate file, we could simply have single, large documents within a repository that contain all information. Documents could pertain to module-based structure and medium-based structure and a sub-folder could contain information related to the use-cases. This may be the most concise way to store the information (hence the name `consolidated`). I would simply want to structure the written documents with useful content structure/outlines for users to click to specific sections. 
  
 ### Remaining Tasks:
  1) Figure out repository organization (w/ feedback from Britney/Ravi) 
