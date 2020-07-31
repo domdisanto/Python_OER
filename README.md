@@ -10,10 +10,10 @@
 Work in Progress
 
 ### Remaining Tasks:
- 1) Figure out repository organization
+ 1) Figure out repository organization (w/ feedback from Britney/Ravi) 
  2) Identifying and filling gaps in curated resources
  3) Better connect curated resources/materials to use cases (including data sources and/or simulated data) 
  4) Supplement existing resources with additional information/resources  
     a) From Google Drive (Ravi Word Document, Dom Excel Sheet)  
     b) NaRae Han has resources for her course that are less curated, but would likely map well to our resources/modules
-    
+ 5) Make this README a true orienting document/useful README for users/students 
