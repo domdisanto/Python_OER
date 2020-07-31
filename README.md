@@ -4,7 +4,7 @@
 ### Initial Compilation: Summer 2020
 ### Version 0.01
 ### Last Update: 7/31/2020
-#### Updated by: Dominic DiSanto
-#### Update Notes: Updated README, initialized respository and updated preliminary resources 
+ > #### Updated by: Dominic DiSanto
+ > #### Update Notes: Updated README, initialized respository and updated preliminary resources 
 
 Work in Progress
