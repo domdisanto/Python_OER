@@ -21,4 +21,6 @@ I've created three branches of possible organization. None of these are mutually
  4) Supplement existing resources with additional information/resources  
     a) From Google Drive (Ravi Word Document, Dom Excel Sheet)  
     b) NaRae Han has resources for her course that are less curated, but would likely map well to our resources/modules
- 5) Make this README a true orienting document/useful README for users/students 
+ 5) Make this README a true orienting document/useful README for users, which I'll for now broadly classify as:  
+    a) Students - Users I suspect will be looking for resources to supplement coursework  
+    b) Naive Users - A catch-all for individuals seeking Python diddactics outside of a Pitt institutional course. This may include several subsets of people: those who have no Python experience, those looking to rekindle or supplement previous Python experience, and a specific group of individuals looking to learn Python prior to hte start of an applied Python/ML course
