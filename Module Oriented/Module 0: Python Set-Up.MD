@@ -1,4 +1,4 @@
-# Module 1: Python Set-Up 
+# Module 0: Python Set-Up 
 ## Updated: 8/25/2020 - Dominic DiSanto
 ## Update Notes:
 > Initialization
