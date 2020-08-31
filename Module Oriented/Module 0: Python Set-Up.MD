@@ -1,8 +1,9 @@
 # Module 0: Python Set-Up 
-## Updated: 8/25/2020 - Dominic DiSanto
-## Update Notes:
+### Updated: 8/25/2020 - Dominic DiSanto
+### Update Notes:
 > Initialization
 
+The following resources aim to provide you with the ability to freshly install Python via Anaconda on a local machine, orient you to Jupyter notebooks for use in the course as well as share some creative and "best-practices" of organizing notebooks, introduce you to modules (essentially "add-ons" to your base Python installation containing useful functions and programs, analogous to "packages" in R) and walkthrough their installation both before and during your Python program, and lasly provide you with examples of data import to get you started exploring data in Python! 
 
 ### Python Installation
 
