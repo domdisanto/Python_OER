@@ -1,7 +1,6 @@
+### Topic-Resource Table
 
-### Universal Resource List
-
-Below is a topic-resource table. This table serves as "quick-reference" guide to identify a topic and learning resource of interest. The other folders in this repository will contain additional resources on each topic with brief descriptions of the content and will additionally aim to better link topics and resource to the course structure and relevant use-cases.  
+Below is a topic-resource table. This table serves as "quick-reference" guide to identify a topic and learning resource of interest. The other folders in this repository will hopefully contain additional resources on each topic with brief descriptions of the content and will additionally aim to better link topics and resource to the course structure and relevant use-cases. This table and the document/list contained on the "front page" of the repository have not yet been synced, such that resources may appear in both or only one of each of these formats/compilations.
 
 As of 9/1/2010, the "completion" of this table is on the back-log of tasks to allo tmore time for use-case data simulation and/or assessment drafting. 
 
