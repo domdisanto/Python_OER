@@ -3,23 +3,20 @@
 ### Authors: Ravi Patel, Britney Stottlemeyer, Dominic DiSanto
 ### Initial Compilation: Summer 2020
 ### Version 0.02
-### Last Update: 9/01/2020
+### Last Update: 09/05/2020
  > #### Updated by: Dominic DiSanto
  > #### Update Notes: Updated README to move Resource-Table to separate document. Added Ravi's curated resource list to repository front-page 
- > #### Note: In moving the list from Ravi's *Python OER - Curated Resource List/Planning* document, I omitted the following sections which did not contain links but rather what seemed like notes to self or bullet points as placeholders for use cases. I can add these sections though if we'd like to see them here still, even as placeholders or with information about the use cases!
+ > #### Note: In moving the list from Ravi's *Python OER - Curated Resource List/Planning* document, I omitted the sections of *Potential Presenters*, *Expert Feedback*, and a portion of *Assessments/Homework*, which did not contain links but rather what seemed like notes to self or bullet points as placeholders for use cases. I can add these sections though if we'd like to see them here still, even as placeholders or with information about the use cases!
 
-### Remaining Tasks: (see Trello for more complete outline) 
- 1) Clean up the Python resource list and ensure links work
- 1) Figure out repository organization (and welcome continued feedback) 
- 2) Identifying and filling gaps in curated resources table  
- 3) Better connect curated resources/materials to use cases (including data sources and/or simulated data) *(likely a longer-term goal than the others listed)*  
-    a) Includes sync'ing resources between the list below and the resource-table in the additional markdown document
- 4) Make this README a true orienting document/useful README for users, which I'll for now broadly classify as:  
+### Remaining Tasks: (additional tasks & project management contained on [Trello](https://trello.com/b/dlsFSVEO/python-oer-board)) 
+1) Continued respository re-organization (and welcoming continued feedback!) 
+2) Identifying and filling gaps in curated resources table and list below
+3) Syncing resources between the list included below and the table
+     a) These aggregations of OER's have some overlap and some materials present in only one of the two sources. In a perfect world both documents would be completely overlapping
+4) Better connect curated resources/materials to use cases (including data sources and/or simulated data) *(likely a longer-term goal than the others listed)*  
+5) Make this README a true orienting document/useful README for users, which I'll for now broadly classify as:  
     a) Students - Users I suspect will be looking for resources to supplement coursework  
     b) Naive Users - A catch-all for individuals seeking Python diddactics outside of a Pitt institutional course. This may include several subsets of people: those who have no Python experience, those looking to rekindle or supplement previous Python experience, and a specific group of individuals looking to learn Python prior to hte start of an applied Python/ML course
-5) Additional tasks for use-case generation and storage (not directly relevant to this document but relevant to ongoing OER curation)   
-6) Ensure tasks are linearly separated between Trello project management and GitHub project management
-7) Ensure all relevant notes for management/maintenance of the GitHub are located here (and in a useful and **concise** format) 
 
 
 ## Open Education Resource Curation
