@@ -1,5 +1,4 @@
 ## Python Open Education Resource
-## Python Open Education Resource
 ### PTSD Use Case
 ### Student Assessment
 ### Drafted: 9/8/2020
