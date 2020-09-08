@@ -7,10 +7,15 @@
 
 
 #### Data Cleaning, Prep
-1) Merge/Append data frames
-2) Standardize coding of variables between VA and CMS data sources
-3) Identify individuals dually enrolled in VA and CMS healthcare systems 
-4) Create outcome variables of interest of "opioid administration" and "over-prescription" 
+1) Create opioid administration outcome variable of interest within each data frame
+2) Standardize coding of relevant variables between VA and CMS data sources
+    a) Height
+    b) Weight
+    c) Dose Value (by daily intake)
+3) Merge data frames together
+    a) Identify individuals dually enrolled in VA and CMS healthcare systems 
+4) Identify total, daily intake of mg morphine equivalents 
+     a) Consider the sum of intake for patients that are "dually enrolled" 
 
 
 #### Exploratory Analysis & Visualization
