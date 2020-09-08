@@ -1,0 +1,16 @@
+Patient ID ,"Dates of service (if we assume military)
+Date of injury/onset (general/civilian)",Covariates pending,"Baseline PTSD Checklist Item
+ (20 variables, ""_1"" through ""_20"")",Baseline PHQ1-PHQ9 (for SRB),"6-Month PTSD Checklist Item
+ (20 variables,  ""_1"" through ""_20"")",6-Month PHQ1-PHQ9 (for SRB)
+"Both numeric and character (e.g. ""ABC123; DEG295"")",DateTime,,"Likert scale (or similar, in the checklist link abve)",Similar to Likert,"Likert scale (or similar, in the checklist link abve)",Similar to Likert
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+Test Set,Contains same data structure and nearly the same data elements (so students can recyle cleaning code from earlier) ,,,,,
+,"No 6-month data, only the covarites and baseline data (if we include baseline data)",,,,,
