@@ -1,7 +1,0 @@
-Patient ID,Age,Weight,Height,Visit Date,Medication,Dose,Duration Value,Duration Unit
-VA,VA,VA,VA,VA,VA,VA,VA,VA
-CMS,CMS,,,CMS,CMS,CMS,CMS,CMS
-Scrambled SSN,"Beta distributions used to simulate, reverse bell curve",Will use in CMS data to set dose but won't keep in final data aset,,Randomly generated dates between 1/1/2015 and 1/1/2020,,,20-60,Days
-Hyphenated string in VA,Integer in both data sets,"Tenth decimal, in kg ","Inches, integer",,,,1-3,Months/Weeks
-Integer in CMS,,,,,,,4-9,Weeks
-,,,,,"Need to pull information, after consulting Ravi/Britney",,,
