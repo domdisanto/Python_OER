@@ -1,0 +1,385 @@
+Patient ID,Medication,Medication Dose Unit,Medication Dose,Medication Duration,Duration Unit,Visit Date
+646-97-9801,dihydrocodeine,mg,60.0,46,Day,2019-01-02
+553-27-6047,tramadol HCL,mcg,200000.0,31,Day,2018-01-25
+334-30-3080,tramadol,mg,100.0,32,Day,2018-06-04
+949-44-5667,gabapentin,mg,600.0,57,Day,2018-10-14
+995-42-5426,gabapentin,mg,300.0,2,Week,2018-09-19
+308-32-7332,ibuprofen,mg,400.0,32,Day,2018-03-27
+368-15-4152,dihydrocodeine-acetaminophin-caff,mg,60.0,54,Day,2019-03-04
+659-13-6189,acetaminophen,mg,1000.0,3,Week,2018-09-17
+816-42-4301,tramadol,mg,400.0,5,Week,2018-06-28
+205-48-4621,gabapentin,mg,300.0,57,Day,2019-03-19
+824-15-2201,tramadol HCL,mg,200.0,4,Week,2018-11-24
+615-88-3851,gabapentin,mg,300.0,34,Day,2019-12-15
+485-48-7112,ibuprofen,mg,200.0,50,Day,2018-08-25
+660-17-3633,tramadol HCL,mg,200.0,50,Day,2018-02-27
+727-26-2586,tramadol,mg,100.0,30,Day,2018-08-26
+207-49-4892,acetaminophen,mg,400.0,56,Day,2019-01-23
+172-74-6929,buprenorphine,mcg,150.0,4,Week,2019-05-08
+986-86-6584,ibuprofen,mg,400.0,42,Day,2019-04-23
+945-93-1854,ibuprofen,mg,200.0,3,Week,2018-09-02
+243-89-0245,gabapentin,mg,300.0,29,Day,2019-03-20
+828-70-5435,tramadol HCL,mcg,400000.0,39,Day,2019-06-20
+939-17-0746,acetaminophen,mg,400.0,1,Month,2019-04-11
+181-80-6793,acetaminophen,mg,2500.0,5,Week,2019-01-10
+971-57-3896,tramadol HCL,mg,200.0,43,Day,2018-05-16
+406-77-1140,ibuprofen,mg,200.0,1,Month,2019-12-12
+510-68-8192,tramadol,mg,100.0,3,Week,2019-08-12
+112-83-9826,gabapentin,mg,600.0,4,Week,2018-04-15
+287-87-4276,buprenorphine,mg,0.6,41,Day,2019-01-02
+389-54-5088,gabapentin,mg,300.0,33,Day,2019-08-12
+713-19-3371,gabapentin,mg,300.0,59,Day,2018-10-05
+450-17-9156,ibuprofen,mg,100.0,32,Day,2018-04-27
+600-73-9634,butorphanol,mg,6.0,52,Day,2018-06-30
+627-93-0039,tramadol,mg,400.0,48,Day,2018-08-03
+129-00-5605,tramadol,mcg,200000.0,5,Week,2019-09-30
+893-60-3134,acetaminophen,mg,750.0,5,Week,2018-12-03
+258-59-5975,ibuprofen,mg,400.0,4,Week,2019-01-03
+275-54-1575,ibuprofen,mg,200.0,4,Week,2019-08-28
+756-69-0161,buprenorphine,mcg,150.0,41,Day,2019-12-12
+723-70-2220,gabapentin,mg,300.0,5,Week,2018-05-25
+852-53-7996,buprenorphine,mg,0.6,3,Week,2018-06-06
+441-73-4513,buprenorphine,mcg,300.0,2,Week,2019-12-01
+614-22-5512,gabapentin,mg,300.0,56,Day,2019-11-03
+173-70-3297,tramadol,mg,200.0,57,Day,2019-07-08
+771-21-3343,tramadol HCL,mg,100.0,31,Day,2019-06-29
+527-00-3720,gabapentin,mcg,600000.0,55,Day,2019-10-05
+426-84-6553,tramadol HCL,mg,200.0,31,Day,2019-08-17
+684-56-7016,tramadol,mg,200.0,4,Week,2019-11-08
+701-20-0512,butorphanol,mg,6.0,54,Day,2018-01-18
+808-38-8661,tramadol HCL,mg,100.0,55,Day,2018-08-13
+499-55-8964,ibuprofen,mcg,100000.0,45,Day,2019-06-30
+807-23-4805,ibuprofen,mg,100.0,2,Week,2019-01-26
+379-18-5008,ibuprofen,mcg,200000.0,2,Week,2018-10-15
+361-68-7850,buprenorphine,mg,0.3,2,Week,2019-04-08
+406-58-9251,gabapentin,mg,600.0,54,Day,2019-12-15
+142-08-4382,tramadol HCL,mg,200.0,1,Month,2019-11-02
+366-48-8070,gabapentin,mg,600.0,3,Week,2018-06-13
+993-84-5176,tramadol HCL,mg,400.0,1,Month,2019-12-09
+664-35-1502,buprenorphine,mg,0.15,4,Week,2019-01-14
+454-39-4346,gabapentin,mg,300.0,2,Week,2018-02-13
+323-50-4982,gabapentin,mg,300.0,46,Day,2018-05-15
+624-53-1141,butorphanol,mg,4.0,2,Week,2019-04-20
+441-55-1515,tramadol HCL,mg,100.0,4,Week,2019-03-25
+148-72-2083,ibuprofen,mg,200.0,40,Day,2019-01-30
+142-21-1794,butorphanol,mg,2.5,45,Day,2019-04-30
+774-84-5634,buprenorphine,mcg,300.0,2,Week,2018-03-11
+773-27-9899,butorphanol,mg,6.0,45,Day,2019-09-03
+568-86-3184,butorphanol,mcg,4000.0,58,Day,2018-12-12
+481-61-5586,buprenorphine,mcg,600.0,58,Day,2018-10-19
+804-23-4579,tramadol HCL,mg,100.0,2,Week,2018-02-06
+884-65-6948,gabapentin,mg,600.0,30,Day,2019-07-23
+625-09-2531,dihydrocodeine-acetaminophin-caff,mcg,16000.0,2,Week,2019-05-04
+162-97-5540,tramadol,mg,200.0,5,Week,2019-03-17
+239-54-3576,tramadol,mcg,100000.0,3,Week,2019-04-15
+270-99-6802,gabapentin,mg,600.0,54,Day,2018-11-28
+541-98-5933,dihydrocodeine-acetaminophin-caff,mg,16.0,41,Day,2018-03-22
+986-24-4625,gabapentin,mg,600.0,30,Day,2018-04-28
+882-77-7230,gabapentin,mg,600.0,55,Day,2019-12-22
+299-07-6821,gabapentin,mg,300.0,4,Week,2019-02-06
+538-21-0362,gabapentin,mcg,300000.0,5,Week,2018-03-24
+505-76-1799,ibuprofen,mg,100.0,3,Week,2019-02-14
+881-63-3286,tramadol HCL,mg,100.0,41,Day,2019-08-31
+742-22-4434,acetaminophen,mcg,750000.0,2,Week,2018-12-21
+432-21-7103,dihydrocodeine,mg,16.0,29,Day,2019-02-18
+621-92-1815,gabapentin,mcg,600000.0,3,Week,2018-04-19
+462-54-1330,tramadol HCL,mg,200.0,3,Week,2019-11-20
+470-97-1947,buprenorphine,mcg,150.0,52,Day,2019-08-17
+952-76-9507,gabapentin,mg,300.0,52,Day,2019-06-26
+193-49-0420,buprenorphine,mg,0.6,33,Day,2019-07-15
+542-17-1399,butorphanol,mg,4.0,50,Day,2018-08-28
+230-71-3814,gabapentin,mg,300.0,4,Week,2018-11-27
+517-33-9348,ibuprofen,mg,200.0,42,Day,2018-09-15
+440-61-0968,ibuprofen,mg,400.0,49,Day,2019-08-30
+388-69-2875,dihydrocodeine,mg,30.0,44,Day,2018-02-25
+904-84-9632,gabapentin,mcg,300000.0,35,Day,2019-05-12
+356-45-5827,butorphanol,mg,4.0,5,Week,2018-01-23
+922-87-0392,ibuprofen,mcg,400000.0,5,Week,2019-02-04
+297-20-9817,acetaminophen,mg,750.0,5,Week,2018-11-04
+245-90-4972,gabapentin,mg,300.0,32,Day,2018-09-29
+269-45-8743,butorphanol,mg,2.5,50,Day,2018-08-20
+431-00-6225,dihydrocodeine,mg,30.0,54,Day,2018-10-23
+216-20-9993,dihydrocodeine,mcg,30000.0,59,Day,2019-02-08
+603-65-9571,buprenorphine,mg,0.15,57,Day,2019-09-23
+940-76-5307,acetaminophen,mg,750.0,3,Week,2019-03-12
+744-11-3473,tramadol,mcg,100000.0,46,Day,2019-02-12
+971-08-1354,gabapentin,mg,300.0,48,Day,2019-12-03
+437-74-9101,gabapentin,mg,600.0,49,Day,2019-12-15
+763-77-1793,ibuprofen,mg,200.0,52,Day,2018-12-23
+512-75-6600,gabapentin,mg,300.0,30,Day,2017-12-26
+841-25-9354,ibuprofen,mg,100.0,58,Day,2018-03-31
+945-04-7709,acetaminophen,mg,750.0,47,Day,2019-02-16
+649-98-8683,butorphanol,mg,4.0,2,Week,2019-10-10
+180-60-7049,dihydrocodeine,mcg,16000.0,56,Day,2019-07-11
+414-38-1776,tramadol HCL,mg,400.0,41,Day,2019-03-31
+133-80-7437,ibuprofen,mg,400.0,38,Day,2018-03-16
+960-00-4950,butorphanol,mg,6.0,36,Day,2019-04-14
+295-40-3711,gabapentin,mcg,600000.0,2,Week,2019-01-17
+796-91-9287,gabapentin,mg,300.0,34,Day,2018-11-01
+767-74-3439,gabapentin,mg,300.0,4,Week,2019-07-17
+492-94-3218,gabapentin,mg,300.0,53,Day,2019-10-10
+315-59-3626,tramadol HCL,mg,400.0,44,Day,2018-12-05
+224-35-0888,acetaminophen,mg,1000.0,4,Week,2018-02-12
+440-77-8544,gabapentin,mg,300.0,44,Day,2018-08-11
+746-58-3904,butorphanol,mg,6.0,1,Month,2019-03-01
+424-93-9384,ibuprofen,mg,200.0,39,Day,2018-08-25
+682-65-2600,gabapentin,mg,300.0,29,Day,2018-07-07
+151-18-0889,ibuprofen,mg,200.0,5,Week,2019-12-01
+588-80-6682,ibuprofen,mcg,100000.0,53,Day,2018-07-24
+278-99-9630,acetaminophen,mg,400.0,28,Day,2019-07-27
+550-92-8654,acetaminophen,mg,750.0,29,Day,2019-05-26
+116-52-7839,ibuprofen,mcg,400000.0,3,Week,2019-07-22
+439-97-0293,dihydrocodeine-acetaminophin-caff,mg,16.0,50,Day,2018-09-11
+673-43-2296,ibuprofen,mg,400.0,54,Day,2019-04-15
+455-39-2598,butorphanol,mcg,6000.0,46,Day,2018-11-15
+421-89-9900,dihydrocodeine,mg,30.0,3,Week,2018-02-21
+413-69-3192,gabapentin,mcg,600000.0,4,Week,2018-03-21
+733-96-3776,tramadol HCL,mcg,100000.0,5,Week,2019-07-11
+793-63-5600,buprenorphine,mcg,600.0,52,Day,2018-05-21
+679-22-0028,tramadol,mg,200.0,58,Day,2018-11-17
+245-66-6723,ibuprofen,mg,200.0,51,Day,2019-06-14
+906-51-2385,ibuprofen,mcg,200000.0,43,Day,2019-05-22
+843-80-1840,ibuprofen,mg,400.0,1,Month,2019-07-03
+988-63-9293,ibuprofen,mg,400.0,53,Day,2018-11-14
+421-88-0906,tramadol,mg,200.0,49,Day,2019-04-23
+799-79-7218,gabapentin,mcg,300000.0,4,Week,2018-01-27
+715-54-9194,buprenorphine,mg,0.6,4,Week,2018-07-21
+865-38-3131,dihydrocodeine,mg,30.0,33,Day,2018-08-19
+942-42-8797,butorphanol,mcg,2500.0,31,Day,2018-12-09
+373-05-6828,ibuprofen,mg,100.0,39,Day,2018-01-31
+669-01-0219,buprenorphine,mg,0.15,2,Week,2019-02-23
+953-69-3920,gabapentin,mcg,300000.0,44,Day,2019-01-27
+912-03-7260,gabapentin,mg,600.0,4,Week,2018-10-26
+731-94-8957,tramadol,mcg,100000.0,42,Day,2019-12-10
+371-30-1053,dihydrocodeine,mcg,16000.0,4,Week,2019-03-18
+540-89-3070,tramadol HCL,mg,100.0,39,Day,2019-08-31
+120-52-3084,buprenorphine,mg,0.3,29,Day,2019-09-10
+184-88-3569,tramadol HCL,mg,200.0,37,Day,2019-10-13
+479-50-8854,gabapentin,mg,600.0,4,Week,2018-12-26
+642-49-3781,buprenorphine,mg,0.3,1,Month,2018-03-21
+385-59-7059,tramadol HCL,mg,200.0,1,Month,2018-05-14
+641-95-4154,tramadol HCL,mg,100.0,30,Day,2019-05-19
+855-78-6519,acetaminophen,mg,1000.0,3,Week,2019-08-30
+838-97-7597,gabapentin,mg,300.0,40,Day,2018-05-13
+600-90-4002,gabapentin,mg,300.0,54,Day,2018-08-25
+451-46-8207,tramadol,mg,200.0,2,Week,2018-02-20
+566-00-4599,dihydrocodeine,mcg,16000.0,35,Day,2018-06-29
+944-88-8381,ibuprofen,mg,200.0,2,Week,2019-05-01
+614-36-3311,tramadol,mg,400.0,34,Day,2018-10-27
+482-09-7289,acetaminophen,mg,400.0,3,Week,2018-01-20
+467-11-5331,butorphanol,mg,6.0,58,Day,2019-12-15
+655-58-4630,gabapentin,mg,300.0,2,Week,2019-03-03
+889-29-6082,gabapentin,mg,300.0,2,Week,2019-08-21
+987-01-8672,ibuprofen,mcg,400000.0,3,Week,2019-09-21
+505-48-7874,acetaminophen,mg,750.0,1,Month,2018-11-16
+706-39-6496,gabapentin,mg,300.0,57,Day,2018-12-09
+883-95-7939,dihydrocodeine-acetaminophin-caff,mcg,60000.0,33,Day,2018-04-13
+166-22-5404,gabapentin,mg,300.0,38,Day,2018-07-23
+404-71-1585,tramadol,mg,200.0,44,Day,2019-10-29
+998-98-5622,gabapentin,mg,300.0,3,Week,2019-08-27
+465-56-4532,buprenorphine,mg,0.6,3,Week,2019-05-25
+230-74-8711,tramadol HCL,mg,400.0,1,Month,2019-12-02
+868-92-3955,tramadol,mg,100.0,3,Week,2019-01-31
+542-29-7396,butorphanol,mg,6.0,58,Day,2018-10-27
+171-32-6070,gabapentin,mg,600.0,1,Month,2019-10-18
+833-06-0862,dihydrocodeine,mg,16.0,5,Week,2019-01-03
+468-88-1616,tramadol,mg,400.0,4,Week,2018-11-25
+547-40-0640,tramadol HCL,mg,100.0,5,Week,2019-09-04
+344-27-7208,ibuprofen,mg,400.0,28,Day,2019-08-21
+490-82-9202,buprenorphine,mg,0.3,49,Day,2018-01-23
+617-13-1868,buprenorphine,mg,0.3,49,Day,2018-02-23
+226-76-9494,gabapentin,mg,600.0,46,Day,2019-09-08
+448-02-9890,gabapentin,mg,300.0,46,Day,2019-08-15
+189-47-2099,buprenorphine,mg,0.6,38,Day,2019-12-17
+936-80-3968,gabapentin,mg,300.0,5,Week,2018-07-28
+125-51-1126,acetaminophen,mg,2500.0,5,Week,2019-11-08
+194-06-4322,gabapentin,mcg,300000.0,39,Day,2018-08-22
+459-34-6955,dihydrocodeine,mcg,30000.0,2,Week,2019-03-20
+908-79-7576,gabapentin,mg,300.0,5,Week,2018-02-15
+428-73-8916,dihydrocodeine-acetaminophin-caff,mg,16.0,45,Day,2019-08-20
+975-18-0104,tramadol HCL,mg,200.0,1,Month,2018-06-27
+952-77-0365,ibuprofen,mg,100.0,44,Day,2018-08-22
+203-33-7765,dihydrocodeine,mg,60.0,58,Day,2019-01-27
+813-32-4662,acetaminophen,mg,400.0,3,Week,2018-04-18
+445-32-1019,acetaminophen,mg,1000.0,50,Day,2018-01-12
+267-12-9148,acetaminophen,mg,2500.0,1,Month,2018-03-28
+552-01-4609,ibuprofen,mg,200.0,58,Day,2019-07-10
+695-09-6607,ibuprofen,mg,100.0,48,Day,2019-07-07
+177-19-3672,acetaminophen,mg,400.0,34,Day,2018-08-19
+572-41-7800,ibuprofen,mg,100.0,34,Day,2019-05-27
+756-90-3470,butorphanol,mg,6.0,31,Day,2018-01-29
+351-80-1539,buprenorphine,mg,0.3,41,Day,2018-02-24
+578-74-9241,buprenorphine,mg,0.6,50,Day,2019-01-31
+828-62-8639,buprenorphine,mg,0.6,31,Day,2019-08-16
+803-38-4317,tramadol HCL,mg,200.0,51,Day,2018-07-07
+179-87-8983,gabapentin,mg,300.0,56,Day,2019-07-05
+855-94-8548,butorphanol,mg,4.0,34,Day,2019-10-06
+268-44-2969,ibuprofen,mg,100.0,4,Week,2018-10-06
+809-86-1037,buprenorphine,mg,0.6,4,Week,2018-12-20
+241-69-9208,butorphanol,mg,6.0,58,Day,2019-08-18
+343-37-5645,buprenorphine,mg,0.15,29,Day,2019-09-03
+315-89-9480,dihydrocodeine-acetaminophin-caff,mg,30.0,5,Week,2018-03-25
+204-07-2365,acetaminophen,mg,750.0,5,Week,2019-10-09
+469-81-1345,ibuprofen,mcg,200000.0,1,Month,2018-10-13
+318-96-8469,tramadol,mg,200.0,59,Day,2018-01-22
+966-14-5473,butorphanol,mg,6.0,3,Week,2019-01-03
+438-25-4147,tramadol,mg,200.0,42,Day,2019-10-04
+766-72-1965,butorphanol,mg,4.0,36,Day,2019-08-08
+581-83-4248,dihydrocodeine,mcg,60000.0,37,Day,2018-05-05
+853-76-1917,tramadol,mcg,100000.0,5,Week,2018-05-22
+343-43-2798,butorphanol,mg,4.0,52,Day,2018-06-15
+284-93-7284,acetaminophen,mcg,1000000.0,31,Day,2018-09-02
+835-78-4249,tramadol,mcg,100000.0,30,Day,2018-05-12
+555-42-7394,gabapentin,mcg,300000.0,49,Day,2019-08-29
+210-17-8780,tramadol,mg,200.0,44,Day,2018-09-23
+535-54-7205,tramadol HCL,mg,100.0,3,Week,2019-03-01
+191-28-1284,ibuprofen,mg,200.0,1,Month,2019-06-04
+547-91-5161,tramadol,mg,100.0,58,Day,2018-11-06
+689-66-0301,buprenorphine,mg,0.15,2,Week,2019-09-28
+642-96-6458,tramadol,mg,400.0,30,Day,2019-01-17
+784-38-5125,acetaminophen,mcg,400000.0,32,Day,2018-11-28
+423-70-3747,tramadol HCL,mg,400.0,38,Day,2019-07-08
+561-47-3196,ibuprofen,mg,100.0,46,Day,2019-02-27
+941-37-4461,tramadol,mg,200.0,1,Month,2018-12-26
+568-57-9418,dihydrocodeine,mcg,60000.0,3,Week,2019-05-08
+570-07-8472,gabapentin,mcg,300000.0,43,Day,2018-12-12
+725-62-1779,tramadol HCL,mg,100.0,34,Day,2018-12-08
+585-58-0336,ibuprofen,mg,400.0,4,Week,2019-09-16
+181-79-1892,acetaminophen,mg,750.0,54,Day,2018-06-04
+690-60-1819,buprenorphine,mg,0.6,31,Day,2018-09-15
+828-31-9732,ibuprofen,mg,100.0,49,Day,2018-03-25
+664-05-3723,ibuprofen,mg,200.0,31,Day,2019-01-13
+641-82-5529,ibuprofen,mg,100.0,41,Day,2019-03-19
+292-53-6032,gabapentin,mg,300.0,54,Day,2018-09-01
+617-96-0520,ibuprofen,mcg,200000.0,58,Day,2019-08-17
+838-32-1731,gabapentin,mg,300.0,49,Day,2019-08-29
+843-63-6123,gabapentin,mg,300.0,44,Day,2018-10-27
+230-40-6631,tramadol,mcg,400000.0,2,Week,2018-12-02
+937-23-7305,ibuprofen,mg,400.0,38,Day,2019-07-10
+534-52-8872,tramadol HCL,mg,100.0,46,Day,2018-04-25
+710-47-5153,dihydrocodeine-acetaminophin-caff,mg,60.0,50,Day,2018-04-22
+258-26-2231,tramadol HCL,mg,200.0,42,Day,2018-08-02
+450-38-1086,tramadol,mg,200.0,32,Day,2019-07-14
+550-24-2195,gabapentin,mg,300.0,47,Day,2019-10-08
+382-87-5688,ibuprofen,mg,100.0,50,Day,2019-03-13
+842-84-1498,butorphanol,mg,4.0,37,Day,2019-04-05
+140-44-7124,gabapentin,mg,300.0,34,Day,2019-06-10
+116-26-4388,dihydrocodeine,mg,30.0,33,Day,2019-09-09
+705-66-2505,gabapentin,mg,300.0,41,Day,2019-07-09
+572-65-1838,tramadol,mcg,400000.0,29,Day,2018-08-14
+366-32-7956,tramadol,mg,200.0,4,Week,2018-02-18
+562-51-7165,acetaminophen,mg,750.0,4,Week,2019-02-28
+891-32-1859,gabapentin,mg,300.0,4,Week,2018-10-07
+744-05-8520,ibuprofen,mg,100.0,57,Day,2018-09-29
+427-69-7789,buprenorphine,mcg,150.0,2,Week,2018-12-09
+631-77-2044,ibuprofen,mg,200.0,4,Week,2019-07-16
+616-61-3639,acetaminophen,mg,750.0,44,Day,2018-10-23
+256-67-1356,ibuprofen,mg,100.0,56,Day,2018-05-15
+396-36-6234,dihydrocodeine-acetaminophin-caff,mcg,60000.0,49,Day,2019-04-25
+206-60-3593,tramadol,mcg,200000.0,1,Month,2018-10-07
+934-96-2934,tramadol HCL,mg,200.0,1,Month,2019-01-12
+272-97-5714,gabapentin,mg,300.0,55,Day,2019-08-15
+943-90-1489,butorphanol,mg,6.0,1,Month,2018-03-25
+307-00-5168,gabapentin,mcg,300000.0,28,Day,2019-05-26
+716-61-6066,buprenorphine,mg,0.3,4,Week,2019-01-28
+447-70-2205,acetaminophen,mcg,750000.0,48,Day,2018-08-21
+374-02-3919,tramadol HCL,mg,100.0,28,Day,2019-06-23
+266-26-3197,gabapentin,mg,600.0,28,Day,2019-03-09
+670-01-3975,buprenorphine,mg,0.15,38,Day,2018-07-14
+658-48-4845,gabapentin,mg,600.0,45,Day,2018-08-12
+974-92-7234,butorphanol,mg,4.0,5,Week,2019-02-07
+193-26-2794,dihydrocodeine-acetaminophin-caff,mg,30.0,1,Month,2019-08-22
+313-72-7976,gabapentin,mcg,300000.0,48,Day,2018-05-14
+136-33-5456,butorphanol,mg,2.5,1,Month,2019-05-22
+919-28-4511,ibuprofen,mg,200.0,48,Day,2018-08-22
+825-86-7977,acetaminophen,mg,750.0,39,Day,2018-12-01
+792-30-8331,gabapentin,mg,600.0,32,Day,2018-01-08
+473-49-8527,tramadol HCL,mcg,200000.0,32,Day,2018-11-23
+634-53-3872,gabapentin,mcg,300000.0,4,Week,2019-04-27
+971-21-8779,gabapentin,mg,300.0,55,Day,2019-08-08
+439-21-3038,acetaminophen,mg,400.0,32,Day,2019-10-31
+877-44-6334,butorphanol,mg,2.5,54,Day,2018-02-05
+398-68-7494,gabapentin,mg,300.0,29,Day,2019-12-14
+412-13-7527,acetaminophen,mg,400.0,54,Day,2019-03-20
+191-50-8170,butorphanol,mg,6.0,35,Day,2019-02-20
+344-34-9431,tramadol HCL,mcg,200000.0,39,Day,2019-08-13
+327-16-4729,buprenorphine,mg,0.3,42,Day,2019-09-30
+113-15-2127,buprenorphine,mg,0.3,57,Day,2018-04-12
+624-42-5285,ibuprofen,mg,100.0,5,Week,2019-02-24
+724-35-9975,acetaminophen,mg,1000.0,4,Week,2018-03-07
+609-54-8877,ibuprofen,mg,400.0,29,Day,2019-06-11
+779-36-0501,tramadol,mg,400.0,39,Day,2019-07-02
+691-92-3372,tramadol HCL,mg,400.0,49,Day,2018-08-16
+920-46-0808,acetaminophen,mg,750.0,36,Day,2019-02-08
+250-69-8144,buprenorphine,mg,0.3,34,Day,2018-05-03
+522-84-0314,butorphanol,mg,4.0,44,Day,2018-03-13
+275-39-8866,buprenorphine,mg,0.3,1,Month,2018-02-22
+653-67-9189,butorphanol,mg,4.0,44,Day,2019-11-11
+480-16-6558,ibuprofen,mcg,200000.0,42,Day,2019-08-22
+597-28-4488,acetaminophen,mg,2500.0,33,Day,2019-03-08
+536-06-9925,tramadol HCL,mg,200.0,56,Day,2019-10-06
+667-65-4026,ibuprofen,mg,400.0,57,Day,2018-05-18
+551-37-9343,gabapentin,mg,300.0,42,Day,2018-02-22
+328-87-2138,ibuprofen,mcg,200000.0,2,Week,2018-01-06
+563-68-7211,tramadol HCL,mcg,400000.0,1,Month,2019-01-27
+470-69-7572,buprenorphine,mg,0.3,41,Day,2018-07-23
+935-83-3006,ibuprofen,mg,200.0,32,Day,2018-06-27
+164-69-5070,ibuprofen,mg,400.0,56,Day,2018-09-25
+320-37-2213,butorphanol,mg,2.5,4,Week,2019-05-31
+629-39-0878,tramadol HCL,mg,100.0,29,Day,2018-08-20
+122-77-6124,tramadol HCL,mcg,400000.0,29,Day,2019-01-29
+411-36-8707,gabapentin,mg,300.0,46,Day,2018-09-01
+641-73-7624,butorphanol,mg,4.0,57,Day,2018-06-09
+388-83-8303,tramadol,mcg,200000.0,1,Month,2019-03-30
+472-82-0217,dihydrocodeine-acetaminophin-caff,mg,60.0,54,Day,2019-10-05
+208-57-4870,ibuprofen,mg,100.0,58,Day,2019-11-11
+703-87-4685,acetaminophen,mg,1000.0,4,Week,2019-09-13
+590-76-7083,acetaminophen,mg,750.0,5,Week,2018-07-30
+279-52-1612,tramadol,mcg,400000.0,38,Day,2018-01-06
+634-70-3675,gabapentin,mg,300.0,41,Day,2018-02-24
+381-54-8290,butorphanol,mg,6.0,3,Week,2018-04-13
+740-76-4622,gabapentin,mg,300.0,38,Day,2019-03-26
+292-75-7799,tramadol HCL,mg,100.0,3,Week,2018-04-24
+619-68-0569,gabapentin,mg,300.0,38,Day,2019-03-22
+204-86-8800,buprenorphine,mcg,600.0,3,Week,2019-04-15
+149-74-1775,ibuprofen,mg,100.0,40,Day,2019-07-13
+359-19-4604,gabapentin,mg,300.0,5,Week,2018-12-13
+678-15-4878,tramadol,mg,200.0,44,Day,2018-01-13
+143-79-0887,acetaminophen,mg,750.0,30,Day,2019-06-17
+969-70-3406,gabapentin,mg,300.0,2,Week,2018-09-04
+482-62-4266,tramadol HCL,mg,100.0,31,Day,2018-03-03
+653-05-4327,dihydrocodeine-acetaminophin-caff,mg,60.0,5,Week,2018-04-10
+497-30-0184,buprenorphine,mg,0.3,43,Day,2018-05-20
+918-79-5877,acetaminophen,mg,750.0,35,Day,2018-03-27
+777-85-9269,gabapentin,mg,300.0,36,Day,2018-07-27
+910-37-3142,dihydrocodeine,mg,16.0,2,Week,2019-09-13
+760-27-9057,ibuprofen,mg,400.0,4,Week,2018-03-29
+971-86-6113,tramadol,mg,100.0,28,Day,2019-06-18
+458-59-6709,buprenorphine,mg,0.15,29,Day,2018-09-28
+797-13-0736,butorphanol,mg,4.0,57,Day,2018-11-12
+491-97-8885,tramadol,mg,200.0,1,Month,2018-12-20
+700-01-1880,buprenorphine,mcg,300.0,1,Month,2018-02-06
+676-06-5722,butorphanol,mg,4.0,55,Day,2019-10-29
+954-30-0753,gabapentin,mg,300.0,39,Day,2018-05-27
+581-43-9739,buprenorphine,mg,0.3,50,Day,2018-09-25
+797-49-8132,tramadol HCL,mg,100.0,3,Week,2019-09-18
+816-91-5598,gabapentin,mg,300.0,44,Day,2019-02-19
+968-79-3071,tramadol HCL,mg,200.0,4,Week,2019-05-30
+794-25-4874,tramadol HCL,mg,200.0,3,Week,2018-05-13
+657-73-5005,acetaminophen,mg,400.0,1,Month,2019-05-22
+188-48-3541,buprenorphine,mg,0.3,38,Day,2019-07-31
+153-60-8410,tramadol,mcg,100000.0,44,Day,2018-05-02
+492-14-5735,gabapentin,mg,300.0,49,Day,2018-04-26
+488-23-3121,tramadol HCL,mcg,400000.0,2,Week,2018-12-10
+320-15-3536,gabapentin,mcg,600000.0,37,Day,2018-11-11
+387-34-3075,ibuprofen,mcg,400000.0,33,Day,2019-11-28
+546-24-7065,butorphanol,mcg,2500.0,41,Day,2018-01-24
+735-70-2339,tramadol,mg,200.0,1,Month,2019-03-18
+969-82-6843,gabapentin,mcg,300000.0,2,Week,2018-05-22
+485-01-3106,acetaminophen,mg,2500.0,2,Week,2018-04-21
+176-15-3189,dihydrocodeine,mcg,60000.0,4,Week,2019-09-25
+309-23-6478,tramadol,mg,100.0,38,Day,2019-02-05
+543-29-3026,ibuprofen,mg,200.0,55,Day,2019-12-11
+868-81-8652,butorphanol,mg,6.0,2,Week,2019-10-30
+450-33-6659,ibuprofen,mg,100.0,2,Week,2018-07-31
+263-06-4463,buprenorphine,mg,0.6,33,Day,2019-03-11
