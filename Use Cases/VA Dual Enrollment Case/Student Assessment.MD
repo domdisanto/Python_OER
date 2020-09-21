@@ -2,12 +2,16 @@
 ## VA Dual Enrollment 
 ### Student Assessment
 ### Drafted: 9/7/2020
-### Updated: 9/7/2020
- > Dominic DiSanto: Initial drafting of document (and upload to GitHub)
+### Updated: 9/20/2020
+ > Dominic DiSanto: Updated to flesh out and provide more detail in the student assessment. Provided references (and uploaded source documents) to this folder. I hope to include screenshots directly in this file, but have been unable to properly load the image even when stored locally in this repository folder. Upon completion of the accompanying "walkthrough" notebook, the exploratory analysis/visualization section will include a figure/visualization to emulate as well, providing additionanl student direction for matplotlib visualization skills (e.g. axis labelling, data preparation, coloring/fill in stacked bar graph, etc.) 
 
-#### Background
+### Background
+This assignment 
 
 
+This use case aims to give you experience relevant in the following areas:
+**Modules:** 1 (Importing/Reading Data); 4 (Pandas Intro); 5 (Relational Data/Data Merging); 6 (Data Cleaning); 7 (Data Visualization)
+**Competencies:** Pandas (general); Data merging; Matplotlib/Visualization (basic, general); Cleaning string data; Cleaning inconsistently coded data 
 
 ### Steps/Assignment
 
@@ -20,15 +24,14 @@
     c) Dose Value (by daily intake)
     d) Social Security Number (SSN)
 3) Merge data frames together on common identifier (SSN)
-4) Identify individuals dually enrolled in VA and CMS healthcare systems 
-
-5) Identify total, daily intake of mg morphine equivalents 
-6) Consider the sum of intake for patients that are "dually enrolled" 
+4) Identify individuals dually enrolled in VA and CMS healthcare systems. 
+5) Identify total, daily intake of mg morphine equivalents (summing **both** VA and CMS values for dual enrolled patients)
      a) A PDF of the [Center for Medicare and Medicaid Service's "Conversion Factors" Document](https://www.cms.gov/Medicare/Prescription-Drug-coverage/PrescriptionDrugCovContra/Downloads/Opioid-Morphine-EQ-Conversion-Factors-Aug-2017.pdf) for your reference. This PDF was accessed on 9/21/2020 and uploaded to this same folder for your reference as well.   
-    
+
+
 #### Exploratory Analysis & Visualization
-1) Compare rates of outcomes by those dual-enrolled and those enrolled in only the VA healthcare system
-2) Create visual to demonstrate differences in outcomes between two classes of patients
+1) How many patients are dual enrolled and how many were solely accessing VA healthcare resources?
+2) What proportion of dual enrolled patients were prescribed an opioid? Similarly, what proportion of "VA-only" patients? 
+3) Create a visual that illustrates this difference  
 
 
-<i>Outside of this basic visualization and data management, do we want to have students build a model? Could easily identify how important the dual enrollment feature is to mortality? Maybe it would be interesting to show the protective effect of dual enrollment BUT when overprescribed (which is more likely when dual enrolled), patients are extremely more at risk for overdose mortality and all-cause mortality. Importance of communication between healthcare systems</i>
