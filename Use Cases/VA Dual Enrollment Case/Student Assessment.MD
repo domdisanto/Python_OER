@@ -25,7 +25,7 @@
 5) Identify total, daily intake of mg morphine equivalents 
 6) Consider the sum of intake for patients that are "dually enrolled" 
      a) The below screenshot is taken from the [Center for Medicare and Medicaid Service's "Conversion Factors" Document](https://www.cms.gov/Medicare/Prescription-Drug-coverage/PrescriptionDrugCovContra/Downloads/Opioid-Morphine-EQ-Conversion-Factors-Aug-2017.pdf) for your reference. This PDF was accessed on 9/21/2020 and uploaded to this same folder for your reference as well. 
-![Alt text](Instructor Materials/Opioid_MorphineMgEquiv.jpg?raw=true "title")
+![](Instructor Materials/Opioid_MorphineMgEquiv.jpg?raw=true "title")
 
 
 #### Exploratory Analysis & Visualization
