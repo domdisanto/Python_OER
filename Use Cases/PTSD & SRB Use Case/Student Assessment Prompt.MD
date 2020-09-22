@@ -15,7 +15,13 @@
 
 #### Data Cleaning & Exploratory Analysis
 1) Create a PTSD diagnosis variable 
-   a. See the following links as useful resources to [the PTSD checklist and respective variable coding](https://www.ptsd.va.gov/professional/assessment/documents/PCL5_Standard_form.PDF) and [a guide to the scoring and diagnosis of PTSD using this checklist](https://www.ptsd.va.gov/professional/assessment/adult-sr/ptsd-checklist.asp#obtain)
+   a. See the following links as useful resources to [the PTSD checklist and respective variable coding](https://www.ptsd.va.gov/professional/assessment/documents/PCL5_Standard_form.PDF) and [a guide to the scoring and diagnosis of PTSD using this checklist](https://www.ptsd.va.gov/professional/assessment/adult-sr/ptsd-checklist.asp#obtain), included as Figures 1A and 1B below  
+
+  
+|Figure 1A|Figure 1B|
+|---------|---------|
+| ![Checklist](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/PTSD%20%26%20SRB%20Use%20Case/PTSD_Checklist_vars.JPG)| ![Diagnostic Criteria](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/PTSD%20%26%20SRB%20Use%20Case/PTSD_Diagnosis_Criteria.png) |
+
    b. What is the prevalence of PTSD in this sample? How does this compare to other estimates of PTSD in military populations? 
 2) Stratify the sample on medication information and compare prevalence of PTSD in these two segments of the sample    
    a. Does there appear to be a group with a higher prevalence?
