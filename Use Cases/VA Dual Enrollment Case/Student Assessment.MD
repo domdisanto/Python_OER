@@ -25,9 +25,9 @@ This use case aims to give you experience relevant in the following areas:
     d) Social Security Number (SSN)
 3) Merge data frames together on common identifier (SSN)
 4) Identify individuals dually enrolled in VA and CMS healthcare systems. 
-5) Identify total, daily intake of mg morphine equivalents (summing **both** VA and CMS values for dual enrolled patients)
-     a) A PDF of the [Center for Medicare and Medicaid Service's "Conversion Factors" Document](https://www.cms.gov/Medicare/Prescription-Drug-coverage/PrescriptionDrugCovContra/Downloads/Opioid-Morphine-EQ-Conversion-Factors-Aug-2017.pdf) for your reference. This PDF was accessed on 9/21/2020 and uploaded to this same folder for your reference as well.   
-
+5) Identify total, daily intake of mg morphine equivalents (summing **both** VA and CMS values for dual enrolled patients)  
+     a) A PDF of the [Center for Medicare and Medicaid Service's "Conversion Factors" Document](https://www.cms.gov/Medicare/Prescription-Drug-coverage/PrescriptionDrugCovContra/Downloads/Opioid-Morphine-EQ-Conversion-Factors-Aug-2017.pdf) and a screenshot (accessed 9/22/2020) included below for your reference.
+![MG Morphine Equiv Chart](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Opioid_MorphineMgEquiv.JPG)
 
 #### Exploratory Analysis & Visualization
 1) How many patients are dual enrolled and how many were solely accessing VA healthcare resources?
