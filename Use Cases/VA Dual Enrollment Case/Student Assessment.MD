@@ -20,10 +20,8 @@ This use case aims to give you experience relevant in the following areas: \
 2) Create opioid administration outcome variable of interest within both the VA and CMS data  
     a) *We want to simply capture whether a given patient was given an opioid, essentially whether that patients medication was an opioid or not. What could a variable that codes this information look like?*
 3) Standardize coding of relevant variables between VA and CMS data sources (*Examine units and/or variables that may be included as a singular variable in one data set and as a pair or set of values in a different data set*).  
-    a) Height  
-    b) Weight  
-    c) Dose Value (by daily intake)  
-    d) Social Security Number (SSN)  
+    a) Dose Value (by daily intake)  
+    b) Social Security Number (SSN)  
 3) Merge data frames together on common identifier (SSN)
 4) Identify individuals dually enrolled in VA and CMS healthcare systems. 
 5) Identify total, daily intake of mg morphine equivalents (summing **both** VA and CMS values for dual enrolled patients)  
