@@ -9,15 +9,16 @@
 This assignment 
 
 
-This use case aims to give you experience relevant in the following areas:
-**Modules:** 1 (Importing/Reading Data); 4 (Pandas Intro); 5 (Relational Data/Data Merging); 6 (Data Cleaning); 7 (Data Visualization)
+This use case aims to give you experience relevant in the following areas: \
+**Modules:** 1 (Importing/Reading Data); 4 (Pandas Intro); 5 (Relational Data/Data Merging); 6 (Data Cleaning); 7 (Data Visualization) \
 **Competencies:** Pandas (general); Data merging; Matplotlib/Visualization (basic, general); Cleaning string data; Cleaning inconsistently coded data 
 
 ### Steps/Assignment
 
 #### Data Cleaning & Preparation
 1) Import CMS and VA data into your Jupyter Notebook
-2) Create opioid administration outcome variable of interest within both the VA and CMS data
+2) Create opioid administration outcome variable of interest within both the VA and CMS data  
+    a) *We want to simply capture whether a given patient was given an opioid, essentially whether that patients medication was an opioid or not. What could a variable that codes this information look like?*
 3) Standardize coding of relevant variables between VA and CMS data sources (*Examine units and/or variables that may be included as a singular variable in one data set and as a pair or set of values in a different data set*).  
     a) Height  
     b) Weight  
