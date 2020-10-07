@@ -24,7 +24,7 @@ This use case aims to give you experience relevant in the following areas: \
     b) Social Security Number (SSN)  
     c) Medication Duration
 3) Merge data frames together on common identifier (SSN)
-4) Identify individuals dually enrolled in VA and CMS healthcare systems. 
+4) Identify individuals dually enrolled in VA and CMS healthcare systems.   
     a) *That is, create an indicator variable for dual enrollment. How many patients were dual enrolled?*   
 5) Identify total, daily intake of mg morphine equivalents (summing **both** VA and CMS values for dual enrolled patients)  
     a) A PDF of the [Center for Medicare and Medicaid Service's "Conversion Factors" Document](https://www.cms.gov/Medicare/Prescription-Drug-coverage/PrescriptionDrugCovContra/Downloads/Opioid-Morphine-EQ-Conversion-Factors-Aug-2017.pdf) and a screenshot (accessed 9/22/2020) included below for your reference.  
