@@ -62,12 +62,20 @@ Below are example visualizations or "solution" to check your work for the assess
 <details>  
 <summary> Proportion of Dual Enrollment (Q1) </summary>
 In total, there are 808 patients, 424 VA-only patients and 384 CMS patients. All of the CMS patients are contained within the VA data, so we also have 384 dual-enrolled patients. 
+
+![Dual Enrollment Bar](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Dual_Enrollment_bar.png)  
 </details>  
 
   
 <details>
-<summary>EDA & Visualization Q2:</summary>  
-
+<summary>EDA & Visualization Q2:</summary>    
+ 
+![CMS MME Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/CMS_MME_Dens.png)
+![CMS MME Histogram](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/CMS_MME_Hist.png)  
+![VA MME Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/VA_MME_Dens.png)
+![VA MME Histogram](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/VA_MME_Hist.png)    
+![Dual MME Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Dual_MME_Dens.png)
+![Dual MME Histogram](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Dual_MME_Hist.png)  
 </details>
 
 
@@ -84,4 +92,15 @@ Of 384 total dually-enrolled patients, 79, (20.57%) were prescribed an opioid by
 Included are some example, summary visualiations for Question 4, but the question is deliberately left open-ended, so your visualizations may not mirror teh format or structure (or possibly even contain different information) than those presented below. Proper visualizations should include a descriptive title, label axes, sufficiently be able to present information with little-to-no additional description/contextualization.     
    
 A last note, there is nothing "incorrect" about plotting frequencies when comparing our patient populations. However as we are most interested in comparing differences in "rates", proportions/percentages convey a more apt comparison than do simple frequency/count data.  
+
+![Opioid Proportion (1)](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/q4_opioid_viz1.png)  
+![Opioid Proportion (2)](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/q4_opioid_viz2.png)  
+</details>
+
+<details>
+<summary> Bonus Visualization</summary> 
+ 
+![VA Bonus Shade Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/VA_bonusviz.png)
+![Dual Bonus Shade Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/dual_bonusviz.png)
+![CMS Bonus Shade Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/CMS_bonusviz.png)
 </details>
