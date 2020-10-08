@@ -6,9 +6,9 @@
  > Dominic DiSanto: Updated to flesh out and provide more detail in the student assessment. Provided references (and uploaded source documents) to this folder. I hope to include screenshots directly in this file, but have been unable to properly load the image even when stored locally in this repository folder. Upon completion of the accompanying "walkthrough" notebook, the exploratory analysis/visualization section will include a figure/visualization to emulate as well, providing additionanl student direction for matplotlib visualization skills (e.g. axis labelling, data preparation, coloring/fill in stacked bar graph, etc.) 
 
 ### Background
-This assignment 
-
-
+[Dr. Gellad's publication](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6219924/)    
+[Dr. Gellad's  VA Presentation](https://www.hsrd.research.va.gov/for_researchers/cyber_seminars/archives/video_archive.cfm?SessionID=3543)  
+  
 This use case aims to give you experience relevant in the following areas: \
 **Modules:** 1 (Importing/Reading Data); 4 (Pandas Intro); 5 (Relational Data/Data Merging); 6 (Data Cleaning); 7 (Data Visualization) \
 **Competencies:** Pandas (general); Data merging; Matplotlib/Visualization (basic, general); Cleaning string data; Cleaning inconsistently coded data   
@@ -47,17 +47,40 @@ This use case aims to give you experience relevant in the following areas: \
 4) Create a visual that illustrates this difference    
 
 
+#### Bonus Questions
+
+The below questions demonstrate additional skills that, while beyond the scope of building foundational Python competencies/skills, may be of interest to explore if you found the earlier assessment simple!
+
+1) Create a density plot of total mg morphine equivalents among dual-enrolled patients, among VA-only patients, and among CMS only patients. Shade in the plot for patients with greater-than-or-equal-to 120 mg morphine equivalents   
+     a) *Hint: [This StackOverflow post](https://stackoverflow.com/questions/39666591/how-to-extract-x-y-data-from-kdensity-plot-from-matplotlib-for-python) may be useful in extracting densities using `scipy`)*
 
 
+#### Example Visualizations  
+  
+Below are example visualizations or "solution" to check your work for the assessment. The results are hidden by default, but simply click each header to expand the corresponding section where you can compare to your visualizations (or to give you a specific visual to recreate if you're unsure where to start)!
+   
+<details>  
+<summary> Proportion of Dual Enrollment (Q1) </summary>
+In total, there are 808 patients, 424 VA-only patients and 384 CMS patients. All of the CMS patients are contained within the VA data, so we also have 384 dual-enrolled patients. 
+</details>  
 
-#### Example Visualizations
+  
+<details>
+<summary>EDA & Visualization Q2:</summary>  
 
-Q4:  
-  
-![VA MME Histogram](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/VA_MME_Hist.png)    
-  
-![CMS MME Histogram](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/CMS_MME_Hist.png)  
-  
-![VA MME Density Curve](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/VA_MME_Dens.png)  
-  
-![CMS MME Density Curve](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/CMS_MME_Dens.png)
+</details>
+
+
+<details>  
+<summary> Proportion of Dual Enrollment (Q1) </summary>
+Of 424 total "VA-only" patients, 157, (37.03%) were prescribed an opioid by their respective VA hospital.    
+Of 384 total "CMS-only" patients, 196, (51.04%) were prescribed an opioid by their CMS hospital visit.  
+Of 384 total dually-enrolled patients, 274, (71.35%) were prescribed an opioid by either the VA *or* CMS healthcare systems.
+Of 384 total dually-enrolled patients, 79, (20.57%) were prescribed an opioid by either the VA *or* CMS healthcare systems.
+</details>  
+
+<details>  
+<summary> Visualization of Opioid Prescriptions (Q4)  </summary>
+Included are some example, summary visualiations for Question 4, but the question is deliberately left open-ended, so your visualizations may not mirror teh format or structure (or possibly even contain different information) than those presented below. Proper visualizations should include a descriptive title, label axes, sufficiently be able to present information with little-to-no additional description/contextualization.   
+ 
+</details>
