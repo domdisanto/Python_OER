@@ -2,7 +2,7 @@
 ## VA Dual Enrollment 
 ### Student Assessment
 ### Drafted: 9/7/2020
-### Updated: 9/20/2020
+### Updated: 10/07/2020
  > Dominic DiSanto: Updated to flesh out and provide more detail in the student assessment. Provided references (and uploaded source documents) to this folder. I hope to include screenshots directly in this file, but have been unable to properly load the image even when stored locally in this repository folder. Upon completion of the accompanying "walkthrough" notebook, the exploratory analysis/visualization section will include a figure/visualization to emulate as well, providing additionanl student direction for matplotlib visualization skills (e.g. axis labelling, data preparation, coloring/fill in stacked bar graph, etc.) 
 
 ### Background
@@ -73,14 +73,15 @@ In total, there are 808 patients, 424 VA-only patients and 384 CMS patients. All
 
 <details>  
 <summary> Proportion of Dual Enrollment (Q1) </summary>
-Of 424 total "VA-only" patients, 157, (37.03%) were prescribed an opioid by their respective VA hospital.    
-Of 384 total "CMS-only" patients, 196, (51.04%) were prescribed an opioid by their CMS hospital visit.  
-Of 384 total dually-enrolled patients, 274, (71.35%) were prescribed an opioid by either the VA *or* CMS healthcare systems.
-Of 384 total dually-enrolled patients, 79, (20.57%) were prescribed an opioid by either the VA *or* CMS healthcare systems.
+Of 424 total "VA-only" patients, 157, (37.03%) were prescribed an opioid by their respective VA hospital.      <br>
+Of 384 total "CMS-only" patients, 196, (51.04%) were prescribed an opioid by their CMS hospital visit.     <br>
+Of 384 total dually-enrolled patients, 274, (71.35%) were prescribed an opioid by either the VA *or* CMS healthcare systems.    <br>
+Of 384 total dually-enrolled patients, 79, (20.57%) were prescribed an opioid by either the VA *or* CMS healthcare systems.   <br>
 </details>  
 
 <details>  
 <summary> Visualization of Opioid Prescriptions (Q4)  </summary>
-Included are some example, summary visualiations for Question 4, but the question is deliberately left open-ended, so your visualizations may not mirror teh format or structure (or possibly even contain different information) than those presented below. Proper visualizations should include a descriptive title, label axes, sufficiently be able to present information with little-to-no additional description/contextualization.   
- 
+Included are some example, summary visualiations for Question 4, but the question is deliberately left open-ended, so your visualizations may not mirror teh format or structure (or possibly even contain different information) than those presented below. Proper visualizations should include a descriptive title, label axes, sufficiently be able to present information with little-to-no additional description/contextualization.     
+   
+A last note, there is nothing "incorrect" about plotting frequencies when comparing our patient populations. However as we are most interested in comparing differences in "rates", proportions/percentages convey a more apt comparison than do simple frequency/count data.  
 </details>
