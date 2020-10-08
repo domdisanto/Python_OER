@@ -53,10 +53,10 @@ This use case aims to give you experience relevant in the following areas: \
 
 Q4:  
   
-![VA MME Histogram](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/VA_MME_Hist.JPG)    
+![VA MME Histogram](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/VA_MME_Hist.PNG)    
   
-![CMS MME Histogram](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/CMS_MME_Hist.JPG)  
+![CMS MME Histogram](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/CMS_MME_Hist.PNG)  
   
-![VA MME Density Curve](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/VA_MME_Dens.JPG)  
+![VA MME Density Curve](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/VA_MME_Dens.PNG)  
   
-![CMS MME Density Curve](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/CMS_MME_Dens.JPG  )
+![CMS MME Density Curve](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/CMS_MME_Dens.PNG)
