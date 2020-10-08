@@ -30,20 +30,21 @@ This use case aims to give you experience relevant in the following areas: \
        
 ![MG Morphine Equiv Chart](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Opioid_MorphineMgEquiv.JPG)
   
-5) Visualize the distribution of mg morphine equivalents in both the VA and CMS data sets via:
-    a) Histograms
-    b) Density Curves
-    c) What 
-6) Merge data frames together on common identifier (SSN)
-7) Identify individuals dually enrolled in VA and CMS healthcare systems.   
-    a) *That is, create an indicator variable for dual enrollment. How many patients were dual enrolled?*     
-8) Create a **sum** variable for total mg-morphine-equivalents within dual-use patients  
-  
-  
+
+6) Merge data frames together on common identifier (SSN)  
+7) Create and indicator variable to identify individuals dually enrolled in VA and CMS healthcare systems.    
+8) Create a **sum** variable for total mg-morphine-equivalents within dual-use patients    
+    
+    
 #### Exploratory Analysis & Visualization
-1) How many patients are dual enrolled and how many were solely accessing VA healthcare resources?
-2) What proportion of dual enrolled patients were prescribed an opioid? Similarly, what proportion of "VA-only" patients? 
-3) Create a visual that illustrates this difference  
+1) How many patients are dual enrolled and how many were solely accessing VA healthcare resources?  
+2) Visualize MME among patients using histograms and/or density curves:  
+    a) Separately for VA patient visits and CMS patient visits (using only VA and CMS prescriptions respectively)  
+    b) For dual-enrollment patients (using our MME total/sum variable created in ***Data Cleaning Step 8***)   
+    c) Analyze the comparative visualizations (i.e. differences you do (or do not) see).
+3) What proportion of dual enrolled patients were prescribed an opioid? Similarly, what proportion of "VA-only" patients?  
+     a) What proportion of dual enrolled patients were prescribed an opioid during both their VA and CMS visits? 
+4) Create a visual that illustrates this difference    
 
 
 
