@@ -5,9 +5,8 @@
 ### Updated: 10/07/2020
  > Dominic DiSanto: Updated to flesh out and provide more detail in the student assessment. Provided references (and uploaded source documents) to this folder. I hope to include screenshots directly in this file, but have been unable to properly load the image even when stored locally in this repository folder. Upon completion of the accompanying "walkthrough" notebook, the exploratory analysis/visualization section will include a figure/visualization to emulate as well, providing additionanl student direction for matplotlib visualization skills (e.g. axis labelling, data preparation, coloring/fill in stacked bar graph, etc.) 
 
-### Background
-[Dr. Gellad's publication](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6219924/)    
-[Dr. Gellad's  VA Presentation](https://www.hsrd.research.va.gov/for_researchers/cyber_seminars/archives/video_archive.cfm?SessionID=3543)  
+### Background  
+This use cases borrows from both a [publication](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6219924/) and [Presentation](https://www.hsrd.research.va.gov/for_researchers/cyber_seminars/archives/video_archive.cfm?SessionID=3543)  by Dr. Walid Gellad within Pittsburgh's Veterans Affairs Hospital system. The simulated data emulates a simplified set of prescription data for Veterans Affairs (VA) and Center for Medicaid/Medicare Services (CMS) patients, with overlap of healthcare utiliation in both systems. 
   
 This use case aims to give you experience relevant in the following areas: \
 **Modules:** 1 (Importing/Reading Data); 4 (Pandas Intro); 5 (Relational Data/Data Merging); 6 (Data Cleaning); 7 (Data Visualization) \
@@ -19,6 +18,7 @@ This use case aims to give you experience relevant in the following areas: \
 
 #### Data Cleaning & Preparation
 1) Import CMS and VA data into your Jupyter Notebook
+    a) Examine the data. Are the variables consistently names between the two data frames? Is the same information collected? What differences exist? 
 2) Create opioid administration outcome variable of interest within both the VA and CMS data  
     a) *We want to simply capture whether a given patient was given an opioid, essentially whether that patients medication was an opioid or not. What could a variable that codes this information look like?*
 3) Standardize coding of relevant variables within data frames *and* between VA and CMS data sources (*Examine units and/or variables that may be included as a singular variable in one data set and as a pair or set of values in a different data set*).  
