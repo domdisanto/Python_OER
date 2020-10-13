@@ -28,7 +28,7 @@ This use case aims to give you experience relevant in the following areas: \
 4) Identify total, daily intake of mg morphine equivalents (summing **both** VA and CMS values for dual enrolled patients)  
     a) A PDF of the [Center for Medicare and Medicaid Service's "Conversion Factors" Document](https://www.cms.gov/Medicare/Prescription-Drug-coverage/PrescriptionDrugCovContra/Downloads/Opioid-Morphine-EQ-Conversion-Factors-Aug-2017.pdf) and a screenshot (accessed 9/22/2020) included below for your reference.  
        
-![MG Morphine Equiv Chart](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Opioid_MorphineMgEquiv.JPG)
+![MG Morphine Equiv Chart](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Fig/Opioid_MorphineMgEquiv.JPG)
   
 
 6) Merge data frames together on common identifier (SSN)  
@@ -63,19 +63,19 @@ Below are example visualizations or "solution" to check your work for the assess
 <summary> Proportion of Dual Enrollment (Q1) </summary>
 In total, there are 808 patients, 424 VA-only patients and 384 CMS patients. All of the CMS patients are contained within the VA data, so we also have 384 dual-enrolled patients. 
 
-![Dual Enrollment Bar](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Dual_Enrollment_bar.png)  
+![Dual Enrollment Bar](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Fig/Dual_Enrollment_bar.png)  
 </details>  
 
   
 <details>
 <summary>EDA & Visualization Q2:</summary>    
  
-![CMS MME Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/CMS_MME_Dens.png)
-![CMS MME Histogram](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/CMS_MME_Hist.png)  
-![VA MME Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/VA_MME_Dens.png)
-![VA MME Histogram](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/VA_MME_Hist.png)    
-![Dual MME Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Dual_MME_Dens.png)
-![Dual MME Histogram](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Dual_MME_Hist.png)  
+![CMS MME Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Fig/CMS_MME_Dens.png)
+![CMS MME Histogram](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Fig/CMS_MME_Hist.png)  
+![VA MME Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Fig/VA_MME_Dens.png)
+![VA MME Histogram](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Fig/VA_MME_Hist.png)    
+![Dual MME Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Fig/Dual_MME_Dens.png)
+![Dual MME Histogram](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Fig/Dual_MME_Hist.png)  
 </details>
 
 
@@ -93,14 +93,14 @@ Included are some example, summary visualiations for Question 4, but the questio
    
 A last note, there is nothing "incorrect" about plotting frequencies when comparing our patient populations. However as we are most interested in comparing differences in "rates", proportions/percentages convey a more apt comparison than do simple frequency/count data.  
 
-![Opioid Proportion (1)](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/q4_opioid_viz1.png)  
-![Opioid Proportion (2)](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/q4_opioid_viz2.png)  
+![Opioid Proportion (1)](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Fig/q4_opioid_viz1.png)  
+![Opioid Proportion (2)](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Fig/q4_opioid_viz2.png)  
 </details>
 
 <details>
 <summary> Bonus Visualization</summary> 
  
-![VA Bonus Shade Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/VA_bonusviz.png)
-![Dual Bonus Shade Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/dual_bonusviz.png)
-![CMS Bonus Shade Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/CMS_bonusviz.png)
+![VA Bonus Shade Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Fig/VA_bonusviz.png)
+![Dual Bonus Shade Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Fig/dual_bonusviz.png)
+![CMS Bonus Shade Density](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Fig/CMS_bonusviz.png)
 </details>
