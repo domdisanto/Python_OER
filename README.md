@@ -19,10 +19,12 @@ The current document contains, below this Introduction section, a running list o
 
 ### Use Cases
 
+The `Use Cases` folder contains a number of sub-folders. Each sub-folder contains a "Use Case", which can be thought of as an example assignment. Assignments include a data set or multiple data sets to use in answering questions contained in a `Student Assessment.MD` file in each folder. These assignments outline specific competencies that they intend to assess. 
 
-
-### Parting Introductory Note
-
+- An assignment promp (`Student Assessment.MD`): This markdown document will contain all relevant questions and information (outside of the CSV data files mentioned below) to "complete" a use case assignment. This document will include a brief introduction to the use case topic, relevant resources/references when appropriate, and tasks/questions to complete/answer for each use case.  
+- CSV data file(s): Data files relevant for completion of the assignment/use case  
+- A walkthrough Jupyter notebook "solution": A Jupyter notebook of **a** walkthrough solution to the student assessment prompts. As noted in each use case, this walkthrough notebook does not necessarily present a singular correct solution (or even necessarily the most concise   
+- An additional `Instructor Materials` subfolder: This folder is not relevant for the completion or understanding of any assessments, as it simply contains relevant figures/files presented in the `Student Assessment.MD` as well as a Jupyter Notebook simulating data for each use case (when applicable).   
 
 
 ## Open Education Resource Curation
