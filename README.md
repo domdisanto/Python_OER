@@ -1,22 +1,28 @@
 ## Python OER
 ### Python Education Resources, Use Cases, and Miscellaneous Didactic Materials
 ### Authors: Ravi Patel, Britney Stottlemeyer, Dominic DiSanto
-### Initial Compilation: Summer 2020
-### Version 0.02
-### Last Update: 09/05/2020
- > #### Updated by: Dominic DiSanto
- > #### Update Notes: Updated README to move Resource-Table to separate document. Added Ravi's curated resource list to repository front-page 
- > #### Note: In moving the list from Ravi's *Python OER - Curated Resource List/Planning* document, I omitted the sections of *Potential Presenters*, *Expert Feedback*, and a portion of *Assessments/Homework*, which did not contain links but rather what seemed like notes to self or bullet points as placeholders for use cases. I can add these sections though if we'd like to see them here still, even as placeholders or with information about the use cases!
+### Version 0.03
 
-### Remaining Tasks: (additional tasks & project management contained on [Trello](https://trello.com/b/dlsFSVEO/python-oer-board)) 
-1) Continued respository re-organization (and welcoming continued feedback!) 
-2) Identifying and filling gaps in curated resources table and list below
-3) Syncing resources between the list included below and the table
-     a) These aggregations of OER's have some overlap and some materials present in only one of the two sources. In a perfect world both documents would be completely overlapping
-4) Better connect curated resources/materials to use cases (including data sources and/or simulated data) *(likely a longer-term goal than the others listed)*  
-5) Make this README a true orienting document/useful README for users, which I'll for now broadly classify as:  
-    a) Students - Users I suspect will be looking for resources to supplement coursework  
-    b) Naive Users - A catch-all for individuals seeking Python diddactics outside of a Pitt institutional course. This may include several subsets of people: those who have no Python experience, those looking to rekindle or supplement previous Python experience, and a specific group of individuals looking to learn Python prior to hte start of an applied Python/ML course
+
+## Introduction  
+  
+This repository aims to serve as a reference of materials to learn and practice Python in the context of data science and/or machine learning. 
+  
+The materials contained within this repository target a diverse audience of Python users, including first-time Python users and those with previous experience. If you are a first-time user, the curated resources will contain information that will help you install Python and Jupyter Notebook via Anaconda and begin familiarizing yourself with Python's synta and data structures. Students more familiar with Python may jump into topic-specific resources as refreshers and references or even jump directly into simulated use cases to practice their skills in an applied scenario!   
+
+
+
+### Resource Curation
+
+The current document contains, below this Introduction section, a running list of Python resources. We hope that this list may serve as a quick reference for LinkedInLearning or YouTube lectures, written references, and/or other open-resource websites. These resources are additionally contained under the file `Resource Spreadsheet.MD`. This file organizes the resources as they pertain to different topics related to the Python for Data Management & Analytics course (although these topics certainly extend to building competencies in Python for data science outside of the course as well)!
+
+
+### Use Cases
+
+
+
+### Parting Introductory Note
+
 
 
 ## Open Education Resource Curation
