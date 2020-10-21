@@ -7,7 +7,7 @@
 
 
 #### Data Cleaning & Exploratory Analysis
-1) Create a PTSD diagnosis variable   
+1) Import patient clinical data, and create a binary PTSD diagnosis variable   
      a) The following links include useful resources [the PTSD checklist and respective variable coding](https://www.ptsd.va.gov/professional/assessment/documents/PCL5_Standard_form.PDF) and [a guide to the scoring and diagnosis of PTSD using this checklist](https://www.ptsd.va.gov/professional/assessment/adult-sr/ptsd-checklist.asp#obtain), with relevant information included below in Figures 1A and 1B     
   
 |Figure 1A|Figure 1B|
@@ -19,11 +19,13 @@
 2) Create a variable that identifies suicidal ideation as present or absent      
      a) See [the following article](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1495268/#app1) containing the PHQ9 questions. The 9th question in PHQ9 is often used to assess suicidality, with any values >1 (i.e. present symptom) indicating suicidal endorsement/ideation and is contained in your data set. 
 
+3) Now import the patient medication data. What is the dimensionality? How any rows are included and how many unique patients?   
+     a) Identify for each patient whether or not a PTSD treatment was prescribed using the indication variable "Treatment/Indication" column
 
-2) Stratify the sample on medication information and compare prevalence of PTSD in these two segments of the sample   
-     a) Does there appear to be a group with a higher prevalence?   
-     b) How would you visually convey this information to “non-technical expert”? Create this visual   
-  
+
+
+4) Before fitting your model
+
 #### Build your model
 1) Build a model on the training set predicting 6-month SRB and predicting 6-month PTSD diagnosis using input features of age, years of military service, combat exposure during deployment, alcohol abuse, AFQT score, income category, and self-reported perceived social support score.
 2) Assess the fit of both your models  
