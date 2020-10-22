@@ -6,7 +6,7 @@
  > Dominic DiSanto: Updated to flesh out and provide more detail in the student assessment. Provided references (and uploaded source documents) to this folder. I hope to include screenshots directly in this file, but have been unable to properly load the image even when stored locally in this repository folder. Upon completion of the accompanying "walkthrough" notebook, the exploratory analysis/visualization section will include a figure/visualization to emulate as well, providing additionanl student direction for matplotlib visualization skills (e.g. axis labelling, data preparation, coloring/fill in stacked bar graph, etc.) 
 
 ### Background  
-This use cases borrows from both a [publication](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6219924/) and [Presentation](https://www.hsrd.research.va.gov/for_researchers/cyber_seminars/archives/video_archive.cfm?SessionID=3543)  by Dr. Walid Gellad within Pittsburgh's Veterans Affairs Hospital system. The simulated data emulates a simplified set of prescription data for Veterans Affairs (VA) and Center for Medicaid/Medicare Services (CMS) patients, with overlap of healthcare utiliation in both systems. 
+This use cases borrows from both a [publication](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6219924/) and [Presentation](https://www.hsrd.research.va.gov/for_researchers/cyber_seminars/archives/video_archive.cfm?SessionID=3543)  by Dr. Walid Gellad within Pittsburgh's Veterans Affairs Hospital system. The simulated data emulates a simplified set of prescription data for Veterans Affairs (VA) and Center for Medicaid/Medicare Services (CMS) patients, with overlap of healthcare utiliation in both systems. You will work with this data to merge the VA and CMS data sources and identify prescription (and overprescription) of opioids by patients who utilize VA and both VA & CMS healthcare systems. 
   
 This use case aims to give you experience relevant in the following areas: \
 **Modules:** 1 (Importing/Reading Data); 4 (Pandas Intro); 5 (Relational Data/Data Merging); 6 (Data Cleaning); 7 (Data Visualization) \
@@ -14,6 +14,25 @@ This use case aims to give you experience relevant in the following areas: \
 **Preface Notes & Assumptions:**  
 - Assume all `buprenorphine` medications are equivalent to buprenorphine tablets in the given reference table for morphine mg equivalents 
 
+<details>
+<summary> Data Dictionary </summary>  
+   
+|Data Element| VA Data Variable| CMS Data Variable| 
+|------------|-----------------|------------------|
+|Patient ID| `Patient ID`|`Patient ID`|
+|Date of Hospital Visit/Encounter| `Visit date`| N/A |
+|Age at Visit/Encounter| `Age`| N/A |
+|Height at Visit/Encounter| `Height`| N/A |
+|Weight at Visit/Encounter| `Weight`| N/A |
+|Medication Name| `Medication`| `Medication`|
+|Dose (Daily)| `Medication Dose`| `Medication Dose`|
+|Unit of Medication Dose| `Medication Dose Unit`| `Medication Dose Unit`|
+|Length of Prescription Duration| `Medication Duration Value`|`Medication Duration`|
+|Unit of Time for Length of Prescription Duration| `Medication Duration Unit`|`Duration Unit`|
+ 
+
+</details>
+  
 ### Steps/Assignment
 
 #### Data Cleaning & Preparation
