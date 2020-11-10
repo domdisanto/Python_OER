@@ -16,7 +16,7 @@ The `Use Cases` folder contains a number of sub-folders. Each sub-folder contain
 - CSV data file(s): Data files relevant for completion of the assignment/use case  
 - A walkthrough Jupyter notebook "solution": A Jupyter notebook of **a** walkthrough solution to the student assessment prompts. As noted in each use case, this walkthrough notebook does not necessarily present a singular correct solution (or even necessarily the most concise   
 - An additional `Instructor Materials` subfolder: This folder is not relevant for the completion or understanding of any assessments, as it simply contains relevant figures/files presented in the `Student Assessment.MD` as well as a Jupyter Notebook simulating data for each use case (when applicable).   
-
+- An `R` folder, containing walkthrough RMD and HTML documents generated in R (using RMarkdown) that walk through steps paralleling the walkthrough Jupyter Notebooks. These files  will not be fully introductory to R (assuming some base familiarity) but are instructive in assuming only a basic understanding of R before then walking through the student assessment "solutions". 
 
 
 ### Resource Curation
