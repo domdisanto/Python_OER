@@ -626,19 +626,51 @@ va_cms_df %>% dplyr::filter(!is.na(Medication_CMS)) %>%
 ## (3) What proportion of dual enrolled patients were prescribed an opioid? Similarly, what proportion of "VA-only" patients?
 
 ```{r}
-va_cms_df 
+(va_only_count <- va_cms_df %>% filter(Dual_Enrollment==0) %>% nrow())
+(dual_count <- va_cms_df %>% filter(Dual_Enrollment==1) %>% nrow())
+
+
+
+
+cat("Of ", va_only_count, " total VA-only patiets ", va_cms_df %>% filter(is.na(Opioid_CMS) & Opioid_VA==1) %>% nrow(),
+    ", (", (va_cms_df %>% filter(is.na(Opioid_CMS) & Opioid_VA==1) %>% nrow() / va_only_count) %>% round(4)*100, "%) were prescribed an opioid by their respective VA hospital.\n",
+        sep="")
+
+cat("Of ", dual_count, " total CMS-enrolled (or dual-enrolled) patients ", va_cms_df %>% filter(!is.na(Opioid_CMS) & Opioid_CMS==1) %>% nrow(), 
+    " (", (100*va_cms_df %>% filter(!is.na(Opioid_CMS) & Opioid_CMS==1) %>% nrow() / dual_count) %>% round(2), "%) were prescribed an opioid during their CMS hospital visit.",
+    sep="")
+
+cat("Of ", dual_count, " dually enrolled patients ", va_cms_df %>% filter(!is.na(Opioid_CMS) & (Opioid_CMS==1 | Opioid_VA==1)) %>% nrow(), " (", 
+    (va_cms_df %>% filter(!is.na(Opioid_CMS) & (Opioid_CMS==1 | Opioid_VA==1)) %>% nrow() / dual_count) %>% round(4)*100, 
+    "%) were prescribed an opioid by either the VA *or* CMS healthcare systems.",
+    sep="")
+
+cat("Of ", dual_count, " dually enrolled patients ", va_cms_df %>% filter(!is.na(Opioid_CMS) & (Opioid_CMS==1 & Opioid_VA==1)) %>% nrow(), " (", 
+    (va_cms_df %>% filter(!is.na(Opioid_CMS) & (Opioid_CMS==1 & Opioid_VA==1)) %>% nrow() / dual_count) %>% round(4)*100, 
+    "%) were prescribed an opioid by either the VA *and* CMS healthcare systems.",
+    sep="")
+
 
 ```
-
-
-```{r}
-
-```
-
 
 
 ## (4) Create an illustrative visualization
 
+```{r}
+va_cms_df %>% dplyr::mutate(Opioid_Any = 
+                              case_when(
+                                Opioid_VA==1 | Opioid_CMS==1 ~ 1,
+                                TRUE ~ 0
+                              )
+                            ) %>% 
+  group_by(Dual_Enrollment) %>% count(Opioid_Any) %>% 
+  filter(Opioid_Any==1) %>% 
+  ggplot(aes(x=as.factor(Dual_Enrollment), y=n)) +
+  geom_bar(stat="identity") +
+  ylab("Frequency") + xlab("") +
+  scale_x_discrete(labels=c("VA Only", "Dual-Enrollment")) +
+  ggtitle(label="Frequency of Any Opioid Prescription by Dual Enrollment Status")
 
-## Bonus Visualization - Shade Filling
+```
+
 
