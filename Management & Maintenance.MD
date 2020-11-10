@@ -2,6 +2,7 @@
  > #### Updated by: Dominic DiSanto
  > #### Update Notes: Updated ReadMe to remove the notes related to future directions/next steps, and created this separate management & maintenance note. 
  
+This document simply contains remaining tasks, action items, or other management notes for the upkeep of this OER repository. 
  
 ### Remaining Tasks: (additional tasks & project management contained on [Trello](https://trello.com/b/dlsFSVEO/python-oer-board)) 
 1) Continued respository re-organization (and welcoming continued feedback!) 
