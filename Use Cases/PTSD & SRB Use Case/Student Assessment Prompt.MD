@@ -35,8 +35,6 @@ a) What is the baseline prevalence of PTSD in this sample? How does this compare
 4) Now import the patient medication data. What is the dimensionality? How any rows are included and how many unique patients?   
      a) Identify for each patient whether or not a PTSD treatment was prescribed using the indication variable "Treatment/Indication" column
 
-5) Merge together 
-
 #### Build your model
 1) Build a model on the training set predicting 6-month SRB and predicting 6-month PTSD diagnosis using input features of age, years of military service, combat exposure during deployment, alcohol abuse, AFQT score, income category, and self-reported perceived social support score.
 2) Assess the fit of both your models  
