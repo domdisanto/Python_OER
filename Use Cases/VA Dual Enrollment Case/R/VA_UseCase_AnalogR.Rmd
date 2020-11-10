@@ -1,0 +1,644 @@
+---
+title: "Python Open Education Resource: Analogous R \"Solution\""
+subtitle: "Use Case: Dual Enrollment in VA and Medicare/Medicaid Health Services"
+date: "Updated: November 9th, 2020" 
+output: 
+  html_document:
+    number_sections: no
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+      toc_depth: 3
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = F, message = F)
+```
+
+
+# Preface  
+  
+For full information related to the University of Pittsburgh's Python Open Education Resource (OER) curation, simulated data, and didactic use cases (such as this one), please visit our [GitHub Repository](https://github.com/domdisanto/Python_OER/). This repository focuses on Python education but contains relevant background information to this use case. 
+  
+This document was generated in [R](https://cran.rstudio.com/), using the [RStudio IDE](https://rstudio.com/products/rstudio/download/) and [`knitr` package/engine](https://yihui.org/knitr/) and assumes the user is comfortable with working within RStudio and able to knit their R code (although knitting HTML and/or PDF documents is not required or assessed in any of these documents). These documents will also assume a user has a base familiarity in R that includes calling of packages using `library`, some basic syntactical elements in R (such as `<-` to create objects, the classes of objects within R, creating functions in R, etc.). For the sake of clarity, functions taken from specific packages will be called explicitly so that students can know the source package for each function (using R's generic `package::function` syntax). This is however unnecessary analytically. In presenting table output in the final markdown document (most commonly from `... %>% head()` function calls), I include the additional function `... %>% knitr::kable()`, which simply produces more visually appealing tables in HTML. This is not necessary when working within RStudio or for the generation of tables and is completely an aesthetic choice for presenting tables in the rendered document. 
+  
+A small but important note is that this code heavily utilizes the pipe operator (`%>%`) from the `magrittr` package. This operator is ubiquitous in modern R code and extremely useful to understand (and useful in this document for presenting much more legible code for your review). A wonderful summary is available in Hadley Wickham's and Garret Grolemund's [R for Data Science book (specifically this linked section on the Pipe operator).](https://r4ds.had.co.nz/pipes.html)
+  
+Lastly, R code will most often utilize the [`tidyverse` family of R packages](https://www.tidyverse.org/). These packages are useful wrapper functions that greatly streamline data cleaning and visualization, which will be conducted specifically using the `ggplot2` package's family of functions. 
+
+  
+These documents ***will*** walk you through a solution pathway to the present use case. These documents ***will*** provide example R code to accomplish tasks with relevant annotations to sufficiently describe the purpose of and the code to accomplish each task. This code ***will not*** explicitly teach you R step-by-step or necessarily present all solutions. This code is also ***not*** necessarily formatted organized as may be most suitable/efficient for analysis but rather for education. You are heavily encouraged to pick/take any code or tips from this document and integrate them into a workflow that works best for the purposes of your work!
+
+
+  
+# Introduction
+
+The below document includes code and descriptive text evaluating the use case assessment title here. Full materials for this use case can be found on the Python OER GitHub Repository. This walkthrough document is tentatively titled a "solution" as, while this document offers a specific way of cleaning and analyzing the available, this document certainly does not offer a unique (or even a uniquely-best) solution to the given assessment.
+
+The writing in this document will do its best to outline specific parameters that should be met to satisfactorically complete the assessment. These parameters, tasks, outputs, etc. exist solely to assess your developing skills as an analyst and Python programmer. That being said, if you take different steps or follow a different analytic method to reach the same results, that is perfectly acceptable! This walk through is intended only to be a demonstrated workflow, but it is possible (and even likely) that you may write more efficient, simpler, or more scalable code than what is included here that achieves the same results!
+
+\newpage 
+
+# Data Cleaning 
+
+## (1) Import CMS and VA data into your ~~Jupyter Notebook~~ R Session
+
+```{r}
+library(magrittr)
+
+va_data <- read.csv("VA_Data.csv")
+knitr::kable(head(va_data))
+# Or using the pipe operator: va_df %>% head() %>% knitr::kable()
+
+cms_data <- read.csv("CMS_Data.csv")
+cms_data %>% head() %>% knitr::kable()
+# Or without the pipe operator: head(cms_df)
+```
+
+
+## (2) Create opioid administration outcome variable of interest within both the VA and CMS data 
+
+From our preview above (the two calls of `head()` to our data frames), we notice some differences in the medication syntax (or the details of the text input for each character/string variable). I will first examine and clean the Medication variables, such that medications are consistently "coded" between the VA and CMS data. I will then use this single, standardized list of medication values to create the binary opioid administration variable.
+
+A note, you do not have to do this cleaning during this step. You could simply examine the data frames, categorize opioid use separately using their respective medication values.
+
+Below, we simply examine the medications present in each data frame:
+
+```{r}
+library(dplyr) # From the tidyverse, very useful in data wrangling
+
+cat("The VA data frame contains the following values in the `medications` variable:\n", 
+    va_data %>% dplyr::pull(Medication) %>% unique(), "\n \n",
+    "The CMS data frame contains the following entries in the `medications` variable:\n",
+    cms_data %>% dplyr::pull(Medication) %>% unique())
+
+```
+
+We can first notice medication variable are stored using different text-case between the two data-frames (i.e. BUPERNORPHINE$\neq$bupernorphine as far as Python knows). We can choose to either standardize the medications between our two data frames or simply to work with the medication data "as-is".
+
+
+### Solution 1 - Working with the Data "As-Is"  
+
+For purposes of this assignment, we do not need any medication specific data, so it may be simpler to simply work with the medication data as-is. We must then simply identify opioids (or in general, the medications/values for our variables that we want to "tag"/identify) and then use this list to create an indicator or dummy variable. I will code this variable as "1" if the given patient is given an opioid or a "0" otherwise.
+
+***Note that I do not save the results below. That is, when I pipe the `cms_data` data frame into the `dplyr::mutate()` function, I do not save the results into a new dataframe (new_data <- ...) or over the existing data (cms_data <- cms_data %>% ...). This is because I use the results from Solution 2 in section 4.***
+
+```{r}
+op_mds <- c('BUPERNORPHINE', 'BUPRENORPHINE', 'BUPRENORPHINE TABLET', 'BUTORPHANOL', 'DIHYDROCODEINE',
+          'TRAMADOL', 'buprenorphine', 'butorphanol', 'dihydrocodeine', 'tramadol', 'tramadol HCL',
+         'dihydrocodeine-acetaminophen-caff')
+
+cms_data %>%  dplyr::mutate(Opioid = 
+                              dplyr::case_when(Medication %in% op_mds ~ 1, 
+                                        TRUE ~ 0) 
+                            ) %>%  dplyr::select(Patient.ID, Medication, Opioid) %>% head(10) %>% knitr::kable()
+
+# the mutate function allows us to create a new variable (or severla new variables)
+# in the dataframe that we include in the mutate() function, whether explicitly
+# # mutate(data_frame, newvar=...)
+# or using the pipe operator as we do above
+# # data_frame %>% mutate(newvar=...)
+# We simply supply the data frame, the name of new variable, adn the value of the new variable
+# We use the `case_when` function above to fit a series of conditional statements, described below:
+#
+#
+# case_when is analgous to a series of if and subsequent elif statements, with a series
+# of formulas denoted by `~` operator and each formula separated by commmas: 
+# `CONDITION ~ Result if TRUE, ELSE IF CONDITION ~ Result if TRUE`
+# By default, observations that do not meet the specified conditions are replaced 
+# with missingness (NA in R). A final condition of simply `TRUE ~ ...` can# be added to catch all remaining observations
+
+
+# # We could also simply say 
+  # cms_data$Opioid <- case_when(cms_data$Medication %in% op_mds ~ 1, TRUE ~ 0)
+# # or more similar to Python syntax
+  # cms_data$Opioid <- case_when(cms_data$Medication %in% op_mds ~ 1, TRUE ~ 0)
+
+va_data %>%  dplyr::mutate(Opioid = 
+                              dplyr::case_when(Medication %in% op_mds ~ 1, 
+                                        TRUE ~ 0)
+                              )  %>% dplyr::select(Patient.ID, Medication, Opioid) %>% head(10) %>% knitr::kable()
+```
+  
+**Aside: Notice in the above `select()` function we call the identifier variable `Patient.ID`. The `read.csv()` function by default removed the space in our variable name. We could coerce the column name to have a space, which would require the use of the \` operators surrounding the variable name. Typically it is best practice not to include spaces in your data frame names within R, and personally I recommend the use of the underscore (_) rather than the period (.) delimiter, but am working with the default behavior of `read.csv()` for simplicity.**   
+
+
+### Solution 2 - Standardizing the Medcation Names 
+
+Although not a necessary step in this solution, it may be useful in other instances to standardize the values between our two data frames prior to creating an indicator value, as shown below.
+
+We see similar medications are contained in both data frames with different letter case used, somewhat different nomenclature for tramadol (also referenced as tramadol HCL) and buprenorphine (BUPRENORPHINE TABLET in the CMS data), a misspelled bupernorphine in the CMS data set, and references to dihydrocodeine as dihydrocodeine-acetaminophin-caff.
+
+There are a few solutions, all of which require "telling" ~~Python~~ R the correct syntax we would like to use, and replacing the values in one or both of our data frames with these corrected or standardized values. ~~Below I present an example using lists and a preferable solution using dictionaries~~ Below is (a) a solution simply using `case_when()` for our medications and (b) a solution creating a "dictionary" data frame and merging in the labels:
+
+***In the `case_when()` syntax below, notice the use of the `or` logical operator `|`.***
+
+```{r}
+cms_data %>% mutate(Corrected = 
+                      case_when(
+                        Medication == "DIHYDROCODEINE" | Medication == "dihydrocodeine"  |
+                          Medication == "dihydrocodeine-acetaminophin-caff" ~ "dihydrocodeine",
+                        Medication == "TRAMADOL" | Medication == "tramadol HCL" |
+                          Medication == "tramadol" ~ "tramadol",
+                        Medication == "GABAPENTIN" | Medication == "gabapentin" ~ "gabapentin",
+                        Medication == "IBUPROFEN" | Medication == "ibuprofen" ~ "ibuprofen",
+                        Medication == "BUPRENORPHINE" | Medication == "BUPRENORPHINE TABLET" |
+                          Medication == "BUPERNORPHINE" | Medication == "buprenorphine" ~ "buprenorphine",
+                        Medication == "BUTORPHANOL" | Medication == "butorphanol"  ~ "butorphanol",
+                        Medication == "acetaminophen" ~ "acetaminophen" 
+                      )
+                    ) %>% select(Medication, Corrected) %>% head(10) %>% knitr::kable()
+
+# The VA example would be the same code above, simply piping in `va_data` in place of `cms_data`
+```
+
+
+
+The above `case_when()` function code are fairly tedious, not only to type out as an analyst but for a new programmer/analyst/editor to read. Suppose you had thousands of unique values, including the comprehensive `case_when()` or `if`,`elif` networks of logical statements would clutter your code and require possibly hours (or days) of coding, if even feasible! 
+
+In a similar way to defining our dictionary in Python, we could much more simply work with a "dictionary". In the chunk below, we create a data-frame that acts a dictionary, and merge the corrected values onto our existing data frame. This is not necessarily the easiest solution in this use case, as it requires the creation of the data dictionary, but in data sets where existing CSV files or data sets of metadata exist (not uncommon!), the label or metadata data frame may be imported and merged in a similar workflow:
+
+
+***Recall that in the Python walkthrough notebook, we use Python's dictionary data structure. R does not implicitly have a dictionary object type, or an object of similar structure. We therefore use a data frame as a sort of pseudo-dictionary workaround! Dictionaries of metadata are common in shared, widely accessible, or even internal but sufficiently large/complex data. ***
+
+
+```{r}
+# Pull unique medications from both data frames
+orig_meds <- c(cms_data %>% pull(Medication) %>% unique(),
+               va_data %>% pull(Medication) %>% unique()) %>% unique()
+
+# Creating a similar length vector of the corrected medication names
+correct_meds <- c("dihydrocodeine", "tramadol", "gabapentin", "ibuprofen",
+                  "buprenorphine", "butorphanol", "buprenorphine", "buprenorphine",
+                  "tramadol", "ibuprofen", "gabapentin", "butorphanol", "tramadol",
+                  "acetaminophen", "dihydrocodeine", "dihydrocodeine", "buprenorphine")
+
+(dict_df <- data.frame(Medication = orig_meds,
+           Corrected = correct_meds)) %>% knitr::kable()
+
+
+cms_data  %>% merge(dict_df, by="Medication", all.x=T) %>% arrange(Patient.ID) %>%  select(Medication, Corrected) %>% head() %>% knitr::kable()
+va_data  %>% merge(dict_df, by="Medication", all.x=T) %>% arrange(Patient.ID) %>% select(Medication, Corrected) %>% head() %>% knitr::kable()
+
+op_mds <- c("buprenorphine", "butorphanol","tramadol", "dihydrocodeine")
+  
+cms_data <- cms_data  %>% merge(dict_df, by="Medication", all.x=T) %>% 
+  select(-Medication, Medication_Correct = Corrected) %>% 
+  mutate(Opioid = 
+           case_when( Medication_Correct %in% op_mds ~ 1,
+                      TRUE ~ 0
+           ))
+
+va_data <- va_data  %>% merge(dict_df, by="Medication", all.x=T) %>% 
+  select(-Medication, Medication_Correct = Corrected) %>% 
+  mutate(Opioid = 
+           case_when( Medication_Correct %in% op_mds ~ 1,
+                      TRUE ~ 0
+           ))
+  # Saving the results using this final solution, but we could save the results for any of our proposed medication chunks
+```
+
+## (3) Standardize coding of relevant variables within data frames and between VA and CMS data sources  
+
+***(Examine units and/or variables that may be included as a singular variable in one data set and as a pair or set of values in a different data set).***  
+
+***a) Dose Value (by daily intake)***  
+***b) Social Security Number (SSN)***  
+***c) Medication Duration***  
+
+### (3a) Standardizing Medication Doses
+
+Upon reviewing the data, we notice columns containing string values for the units of doses. These columns appeared to contain at least two units. Let's check what units are contained in our data frame:
+
+```{r}
+cat('The CMS data set contains units of: ', 
+    cms_data %>% dplyr::pull(Medication.Dose.Unit) %>% unique(), "\n",
+      'The VA data set contains units of: ', 
+    va_data %>% dplyr::pull(Medication.Dose.Unit) %>% unique())
+
+```
+
+
+So we fortunately have only have two units, mg for milligrams and mcg for micrograms, collectively in our data frames. For ease of comparison, we will create a re-calculated dose variable in mg for all of our patient data. We will have to do this for both the CMS adn VA data frames, so I will simply define a function below and loop through observations of both data frames:
+
+```{r}
+cms_data <- cms_data %>% dplyr::mutate(Dose_Mg_Recalc = 
+                             dplyr::case_when(Medication.Dose.Unit == "mcg" ~ Medication.Dose/1000,
+                                       TRUE ~ Medication.Dose)
+                           ) 
+
+va_data <- va_data %>% dplyr::mutate(Dose_Mg_Recalc = 
+                             dplyr::case_when(Medication.Dose.Unit == "mcg" ~ Medication.Dose/1000,
+                                       TRUE ~ Medication.Dose)
+                           ) 
+
+
+cms_data %>% dplyr::select(Medication.Dose.Unit, Medication.Dose, Dose_Mg_Recalc) %>% head(10) %>% knitr::kable()
+va_data %>% dplyr::select(Medication.Dose.Unit, Medication.Dose, Dose_Mg_Recalc) %>% head(10) %>% knitr::kable()
+
+```
+
+And for simplicity, having reviewed the results of our function, I will drop the now obsolete, original variables for medication dose and unit.
+
+```{r}
+cms_data <- cms_data %>% dplyr::select(-Medication.Dose.Unit, Medication.Dose)
+va_data <- va_data %>% dplyr::select(-Medication.Dose.Unit, Medication.Dose)
+```
+
+### (3b) Social Security Number (SSN)  
+
+In the initial look at our data frames, you notice the two patient identifier columns, while containing similar identifiers and referring to similar patients, are structured differently with respect to each data set. The VA data identifier is an integer, while the CMS data identifier is a string, containing non-numeric hyphens ("-").
+
+
+```{r}
+cms_data %>% dplyr::select(Patient.ID) %>% head() %>% knitr::kable()
+va_data %>% dplyr::select(Patient.ID) %>% head() %>% knitr::kable()
+```
+
+To replace these hyphes, the below code chunk presents two quick solutions, the first using the tidyverse's `tidyr` package and the convenient `str_replace_all` function and the second using a similar `gsub` function available in Base R:
+
+```{r}
+require(stringr)
+
+cms_data %>% dplyr::mutate(Patient_ID_Edit = stringr::str_replace_all(Patient.ID, "-", "") %>% as.integer()) %>% 
+              dplyr::select(Patient.ID, Patient_ID_Edit) %>% head() %>% knitr::kable()
+
+cms_data %>% dplyr::mutate(Patient_ID_Edit = gsub("-", "", Patient.ID) %>% as.integer()) %>%
+              dplyr::select(Patient.ID, Patient_ID_Edit) %>% head() %>% knitr::kable()
+
+all(cms_data %>% dplyr::mutate(Patient_ID_Edit = stringr::str_replace_all(Patient.ID, "-", "")) %>% dplyr::select(Patient.ID, Patient_ID_Edit) ==
+      cms_data %>% dplyr::mutate(Patient_ID_Edit = gsub("-", "", Patient.ID)) %>% dplyr::select(Patient.ID, Patient_ID_Edit))
+
+cms_data <- cms_data %>% dplyr::mutate(Patient_ID_Edit = stringr::str_replace_all(Patient.ID, "-", "") %>% as.integer())
+# va_data <- cms_data %>% mutate(Patient_ID_Edit = stringr::str_replace_all(Patient.ID, "-", "")) %>% select(Patient.ID, Patient_ID_Edit)
+
+cms_data %>% dplyr::select(Patient.ID, Patient_ID_Edit) %>% head() %>% knitr::kable()
+cms_data <- cms_data %>% dplyr::select(-Patient.ID)
+ 
+# The VA patient identifier is already an integer, so no editing necessary 
+```
+
+### (3c) Medication Duration
+
+Lastly in our data standardization, we notice that the information for duration of medication administration contains a pair of columns for Value and Unit, analgous to the dose variables we exmined in (3a). We can standardize these columns such that the values are measured in the same units and are comparable:
+
+```{r}
+cat("The VA data has unique medication duration values of: \n",
+    va_data %>% dplyr::pull(Medication.Duration.Unit) %>% unique(), "\n\n",
+    "The CMS data has unique medication duration values of: \n",
+    cms_data %>% dplyr::pull(Duration.Unit) %>% unique())
+```
+
+With only three units, we can pick one to apply to all of our values, standardizing them to the same units. We will use days, for a week being 7 days and a month 30.
+
+```{r}
+cms_data <- cms_data %>% dplyr::mutate(Duration_Recalc = 
+                      dplyr::case_when(Duration.Unit == "Week" ~ 7*Medication.Duration,
+                                Duration.Unit == "Month" ~ 30*Medication.Duration,
+                                TRUE ~ Medication.Duration %>% as.double()
+                                )
+                      ) 
+
+va_data <- va_data %>% dplyr::mutate(Duration_Recalc = 
+                      dplyr::case_when(Medication.Duration.Unit == "Week" ~ 7*Medication.Duration.Value,
+                                Medication.Duration.Unit == "Month" ~ 30*Medication.Duration.Value,
+                                TRUE ~ Medication.Duration.Value %>% as.double()
+                                )
+                      ) 
+
+cms_data %>% dplyr::select(Duration.Unit, Medication.Duration, Duration_Recalc) %>% head() %>% knitr::kable()
+va_data %>% dplyr::select(Medication.Duration.Unit, Medication.Duration.Value, Duration_Recalc) %>% head() %>% knitr::kable()
+
+cms_data <- cms_data %>% dplyr::select(-c(Medication.Duration, Duration.Unit))
+va_data <- va_data %>% dplyr::select(-c(Medication.Duration.Unit, Medication.Duration.Value))
+```
+
+
+
+## (4) Identify total, daily intake of mg-morphine equivalents  
+
+The last step in our separated data cleaning for our VA and CMS data is to further "standardize" our data by idenifying mg-morphine equivalents of our administered opioids. Note the below code utilizes the standardized medication names. If you did not standardize medication names between the two data frames, you can use the same process but simply using the medications as currently stored in your respective data frames!
+
+
+```{r}
+# va_data %>% pull(Medication_Correct) %>% unique()
+
+va_data <- va_data %>% mutate(MME =
+                               dplyr::case_when(
+                                  Medication_Correct == "buprenorphine" ~ Dose_Mg_Recalc*30,
+                                  Medication_Correct == "butorphanol" ~ Dose_Mg_Recalc*7,
+                                  Medication_Correct == "dihydrocodeine" ~ Dose_Mg_Recalc*0.25,
+                                  Medication_Correct== "tramadol" ~ Dose_Mg_Recalc*0.1,
+                                  TRUE ~ 0
+                                  )) 
+
+
+cms_data <- cms_data %>% dplyr::mutate(MME =
+                                         dplyr::case_when(
+                                           Medication_Correct == "buprenorphine" ~ Dose_Mg_Recalc*30,
+                                           Medication_Correct == "butorphanol" ~ Dose_Mg_Recalc*7,
+                                           Medication_Correct == "dihydrocodeine" ~ Dose_Mg_Recalc*0.25,
+                                           Medication_Correct== "tramadol" ~ Dose_Mg_Recalc*0.1,
+                                           TRUE ~ 0
+                                           )) 
+
+# Using the sample_n(), equivalent to the .sample() operatorin Python, as an (arbitrary) alternative to R's head() function
+va_data  %>% dplyr::sample_n(10) %>% dplyr::select(Medication_Correct, Dose_Mg_Recalc, Opioid, MME) %>% knitr::kable()
+cms_data  %>% dplyr::sample_n(10) %>% dplyr::select(Medication_Correct, Dose_Mg_Recalc, Opioid, MME) %>% knitr::kable()
+```
+
+
+
+## (5) Merge data frames together on common identifier (SSN)  
+ 
+Since we have standardized the patient identifier columns, we can merge our data frames! We could simply do this with the data frames as is:
+
+We have previously used R's `merge()` function. For information of the syntax of merging in R, look at the help documentation (type `?merge` into R's console or evaluate within a code chunk to open the help documentation)
+
+```{r} 
+merge(cms_data, va_data, by.x="Patient_ID_Edit", by.y="Patient.ID", all=T)  %>% head() %>% knitr::kable()
+```
+
+Notice again the number of unnecessary variables that are difficult to parse. A smaller data frame (less columns) will be somewhat easier to display and use. IN R, duplicate variables have the added `.x` or `.y` suffix corresponding to the data supplied to the `x=` or `y=` arguments in the `merge()` function. 
+
+So I will subset our data frames prior to merging. I will also rename these columns and add a suffix related to the data source ('CMS' or 'VA'):
+
+
+***Here we make use of the ability to both subset and rename variables within the `select()` function in `dplyr`, where we specify:***
+      `data_frame %>% select(new_var_name = existing_variable)`
+
+
+```{r}
+va_premerge <- va_data %>% dplyr::select(SSN = Patient.ID,
+                                  VisitDate_VA = Visit.Date,
+                                  Medication_VA = Medication_Correct,
+                                  Age, Height, Weight,
+                                  Duration_Days_VA = Duration_Recalc,
+                                  Dose_Mg_Recalc_VA = Dose_Mg_Recalc,
+                                  Opioid_VA = Opioid,
+                                  MME_VA = MME) 
+
+
+cms_premerge <- cms_data %>% dplyr::select(SSN=Patient_ID_Edit,
+                                    VisitDate_CMS = Visit.Date,
+                                    Medication_CMS = Medication_Correct,
+                                    Duration_Recalc_CMS = Duration_Recalc,
+                                    Dose_Mg_CMS = Dose_Mg_Recalc,
+                                    Opioid_CMS = Opioid,
+                                    MME_CMS = MME)
+
+# cms_premerge = cms_data[['Patient ID Edit', 'Visit Date', 'Medication', 'Duration Recalc', 'Dose Mg Recalc', 
+#           'Opioid', 'MME']]
+# 
+# cms_premerge.columns = ['SSN', 'VisitDate CMS', 'Medication CMS', 'Duration (Days) CMS', 'Dose (mg) CMS',
+#                     'Opioid CMS', 'MME CMS']
+
+va_premerge %>% head() %>% knitr::kable()
+cms_premerge %>% head() %>% knitr::kable()
+```
+
+
+
+
+```{r}
+va_cms_df <- merge(va_premerge, cms_premerge, by="SSN", all=T)
+
+va_cms_df %>% head() %>% knitr::kable()
+```
+
+
+
+
+## (6) Identify individuals dually enrolled in VA and CMS healthcare systems
+
+Now that we have a single data frame, we can identify each patient (and the total number of patients) dual enrolled in the VA and CMS data sets (and by default, those only included in our VA data).
+
+```{r}
+va_cms_df <- va_cms_df %>% dplyr::mutate(Dual_Enrollment = 
+                              dplyr::case_when(
+                                is.na(Opioid_CMS) ~ 0,
+                                TRUE ~ 1
+                              )
+                            ) 
+
+
+va_cms_df %>% dplyr::count(Dual_Enrollment)
+
+
+```
+
+
+## (7) Identify total, daily intake of mg morphine equivalents (summing both VA and CMS values for dual enrolled patients)
+
+```{r}
+va_cms_df <- va_cms_df %>% dplyr::rowwise() %>% # specifying to sum over the x-axis, or within rows
+  dplyr::mutate(MME_Total = sum(MME_VA, MME_CMS, na.rm=T)) # summing our two MME variables, specifying to ignore NA's
+
+  
+  
+va_cms_df %>% dplyr::select(starts_with("MME")) %>% head(10) %>% knitr::kable()
+
+```
+
+
+As an aside, to understand the use of `na.rm=T` and the `rowwise()` operators, try running the below code and examining the results. I have omitted the results from this document, so you can explore and compare on your own:
+
+```{r, eval=F}
+# Eliminating the rowwise operator
+va_cms_df %>% dplyr::mutate(MME_Total = sum(MME_VA, MME_CMS, na.rm=T)) %>%
+  select(starts_with("MME")) 
+
+# Simple summation not specifying na.rm=T
+  va_cms_df %>% dplyr::mutate(MME_Total = MME_VA + MME_CMS) %>%
+    select(starts_with("MME")) 
+    # equivalent to 
+  va_cms_df %>% rowwise() %>% dplyr::mutate(MME_Total = sum(MME_VA, MME_CMS)) %>%
+    select(starts_with("MME")) 
+  
+```
+
+
+
+
+
+
+
+# Data Visualization & Analysis
+
+The below visualizations make use of the tidyverse's `ggplot2` package. Similar to matplotlib in Python, `ggplot2` is not contained in base R but is the most common and well-known visualization syntax used. Some nice introductions to `ggplot2` are available for those unfamiliar ([a nice bookdown tutorial](http://r-statistics.co/Complete-Ggplot2-Tutorial-Part1-With-R-Code.html); [a brief walkthrough of the structure of ggplot2 syntax](http://r-statistics.co/Complete-Ggplot2-Tutorial-Part1-With-R-Code.html)). 
+
+Base R also has an existing plotting syntax. I will attempt to include both base R  and `ggplot2` visualizations for each section. Please note these sections will not compare/contrast the strenghts, limitations, customizability, etc. of plotting in R. The code simply attempts to provide you 
+
+Once again, if you are assessing your existing code and visualizations to this as an "answer key", there are no perfect solutions. However ensure that your graphs meaningfully and accurately represent the data, and **that all necessary elements of your plot are labeled**.
+
+
+
+## (1) How many patients are dual enrolled? How many were singularly acessing VA healthcare resources?
+
+```{r}
+require(ggplot2)
+
+# ggplot2
+va_cms_df %>% ggplot2::ggplot(aes(x=as.factor(Dual_Enrollment))) +
+  ggplot2::geom_bar() +
+  ggtitle("Frequency of Dual Enrollment") +
+  ylab("Frequency") + 
+  scale_x_discrete(label=c("VA-Only", "Dual-Enrolled")) +
+  xlab("") +
+  theme_minimal() # Not necessary to specify, but ggplot has a family of themes you can apply to your graph
+                  # The themes require almost no coding and can make figure much more appealing
+
+# Base R
+va_cms_df %>% dplyr::pull(Dual_Enrollment) %>% table()  %>%
+  barplot(main="Frequency of Dual Enrollment",
+          ylab="Frequency",  names.arg=c("Va Only Patients", "Dually Enrolled Patient"))
+
+
+```
+
+
+## (2) Visualize MME 
+
+First looking separately at the patient populations separately
+
+```{r}
+# VA
+
+# ggplot
+va_cms_df %>% dplyr::filter(is.na(Medication_CMS)) %>% ggplot(aes(x=MME_VA)) +
+  geom_histogram() +
+  ggtitle("Histogram of MME Among VA-Only Patients") +
+  xlab("Milligrams of Morphine Equivalents (MME)") +
+  ylab("Frequency")
+
+# Base R
+va_cms_df %>% dplyr::filter(is.na(Medication_CMS)) %>% 
+  pull(MME_VA) %>% hist(main="Histogram of MME Among VA-Only Patients",
+                        xlab="Milligrams of Morphine Equivalents (MME)", 
+                        ylab="Frequency")
+
+```
+
+
+```{r}
+# CMS
+
+# ggplot
+va_cms_df %>% dplyr::filter(!is.na(Medication_CMS)) %>% ggplot(aes(x=MME_CMS)) +
+  geom_histogram() +
+  ggtitle("Histogram of MME Among Only CMS Prescriptions") +
+  xlab("Milligrams of Morphine Equivalents (MME)") +
+  ylab("Frequency")
+
+# Base R
+va_cms_df %>% dplyr::filter(!is.na(Medication_CMS)) %>% 
+  pull(MME_CMS) %>% hist(main="Histogram of MME Among Only CMS Prescriptions",
+                        xlab="Milligrams of Morphine Equivalents (MME)", 
+                        ylab="Frequency")
+
+```
+
+and density curves of the same data
+
+```{r}
+# VA
+
+# ggplot
+va_cms_df %>% dplyr::filter(is.na(Medication_CMS)) %>% ggplot(aes(x=MME_VA)) +
+  geom_density() +
+  ggtitle("Histogram of MME Among VA-Only Patients") +
+  xlab("Milligrams of Morphine Equivalents (MME)") +
+  ylab("Frequency") +
+  theme_minimal()
+
+# Base R
+va_cms_df %>% dplyr::filter(is.na(Medication_CMS)) %>% 
+  pull(MME_VA) %>% density() %>%  
+  plot(main="Histogram of MME Among VA-Only Patients",
+                        xlab="Milligrams of Morphine Equivalents (MME)", 
+                        ylab="Frequency")
+
+```
+
+
+```{r}
+# CMS
+
+# ggplot
+va_cms_df %>% dplyr::filter(!is.na(Medication_CMS)) %>% ggplot(aes(x=MME_CMS)) +
+  geom_density() +
+  ggtitle("Histogram of MME Among Only CMS Prescriptions") +
+  xlab("Milligrams of Morphine Equivalents (MME)") +
+  ylab("Frequency")
+
+# Base R
+va_cms_df %>% dplyr::filter(!is.na(Medication_CMS)) %>% 
+  pull(MME_CMS) %>% density() %>% 
+  plot(main="Histogram of MME Among Only CMS Prescriptions",
+                        xlab="Milligrams of Morphine Equivalents (MME)", 
+                        ylab="Frequency")
+
+```
+
+
+And lastly examining total MME among the dual enrolled patients via histograms:
+
+```{r}
+
+# ggplot
+va_cms_df %>% dplyr::filter(!is.na(Medication_CMS)) %>% ggplot(aes(x=MME_Total)) +
+  geom_histogram() +
+  ggtitle("Histogram of MME Among Only CMS Prescriptions") +
+  xlab("Milligrams of Morphine Equivalents (MME)") +
+  ylab("Frequency")
+
+# Base R
+va_cms_df %>% dplyr::filter(!is.na(Medication_CMS)) %>% 
+  pull(MME_Total) %>% 
+  hist(main="Histogram of MME Among Only CMS Prescriptions",
+                        xlab="Milligrams of Morphine Equivalents (MME)", 
+                        ylab="Frequency")
+
+```
+and via density curve
+
+```{r}
+
+# ggplot
+va_cms_df %>% dplyr::filter(!is.na(Medication_CMS)) %>% ggplot(aes(x=MME_Total)) +
+  geom_density() +
+  ggtitle("Histogram of MME Among Only CMS Prescriptions") +
+  xlab("Milligrams of Morphine Equivalents (MME)") +
+  ylab("Frequency")
+
+# Base R
+va_cms_df %>% dplyr::filter(!is.na(Medication_CMS)) %>% 
+  pull(MME_Total) %>% density() %>% 
+  plot(main="Histogram of MME Among Only CMS Prescriptions",
+                        xlab="Milligrams of Morphine Equivalents (MME)", 
+                        ylab="Frequency")
+
+```
+
+
+
+## (3) What proportion of dual enrolled patients were prescribed an opioid? Similarly, what proportion of "VA-only" patients?
+
+```{r}
+va_cms_df 
+
+```
+
+
+```{r}
+
+```
+
+
+
+## (4) Create an illustrative visualization
+
+
+## Bonus Visualization - Shade Filling
+
