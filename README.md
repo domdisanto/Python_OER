@@ -6,9 +6,7 @@
 
 ## Introduction  
   
-This repository aims to serve as a reference of materials to learn and practice Python in the context of data science and/or machine learning. The goal of this repository  
-  
-The materials contained within this repository target a diverse audience of Python users, including first-time Python users and those with previous experience. If you are a first-time user, the curated resources will contain information that will help you install Python and Jupyter Notebook via Anaconda and begin familiarizing yourself with Python's synta and data structures. Students more familiar with Python may jump into topic-specific resources as refreshers and references or even jump directly into simulated use cases to practice their skills in an applied scenario! Below are summaries of the two main arms of this repository:  
+This repository aims to serve as a reference of materials to learn and practice Python in the context of data science and/or machine learning. The materials contained within this repository target a diverse audience of Python users, including first-time Python users and those with previous experience. If you are a first-time user, the curated resources will contain information that will help you install Python and Jupyter Notebook via Anaconda and begin familiarizing yourself with Python's syntax and data structures. Students more familiar with Python may jump into topic-specific resources as refreshers and references or even jump directly into simulated use cases to practice their skills in an applied scenario! Below are summaries of the two main arms of this repository:  
 
 ### Use Cases
 
@@ -23,7 +21,7 @@ The `Use Cases` folder contains a number of sub-folders. Each sub-folder contain
 
 ### Resource Curation
 
-The current document contains, below this Introduction section, a running list of Python resources. We hope that this list may serve as a quick reference for LinkedInLearning or YouTube lectures, written references, and/or other open-resource websites. These resources are additionally contained under the file `Resource Spreadsheet.MD`. This file organizes the resources as they pertain to different topics related to the Python for Data Management & Analytics course (although these topics certainly extend to building competencies in Python for data science outside of the course as well)!  See the Resource Spreadsheetthe list below for an aggregated (and growing) collection of resources:
+The current document contains, below this Introduction section, a running list of Python resources. We hope that this list may serve as a quick reference for LinkedInLearning or YouTube lectures, written references, and/or other open-resource websites. These resources are additionally contained under the file `Resource Spreadsheet.MD`. This file organizes the resources as they pertain to different topics related to the Python for Data Management & Analytics course (although these topics certainly extend to building competencies in Python for data science outside of the course as well)!  See the the list below for an aggregated (and growing) collection of resources:
 
 
 ## Open Education Resource Curation
