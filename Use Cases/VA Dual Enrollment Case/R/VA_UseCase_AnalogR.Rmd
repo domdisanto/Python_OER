@@ -601,6 +601,8 @@ va_cms_df %>% dplyr::filter(!is.na(Medication_CMS)) %>%
                         ylab="Frequency")
 
 ```
+
+   
 and via density curve
 
 ```{r}
@@ -626,29 +628,26 @@ va_cms_df %>% dplyr::filter(!is.na(Medication_CMS)) %>%
 ## (3) What proportion of dual enrolled patients were prescribed an opioid? Similarly, what proportion of "VA-only" patients?
 
 ```{r}
-(va_only_count <- va_cms_df %>% filter(Dual_Enrollment==0) %>% nrow())
-(dual_count <- va_cms_df %>% filter(Dual_Enrollment==1) %>% nrow())
+va_only_count <- va_cms_df %>% dplyr::filter(Dual_Enrollment==0) %>% nrow()
+dual_count <- va_cms_df %>% dplyr::filter(Dual_Enrollment==1) %>% nrow()
 
 
-
-
-cat("Of ", va_only_count, " total VA-only patiets ", va_cms_df %>% filter(is.na(Opioid_CMS) & Opioid_VA==1) %>% nrow(),
-    ", (", (va_cms_df %>% filter(is.na(Opioid_CMS) & Opioid_VA==1) %>% nrow() / va_only_count) %>% round(4)*100, "%) were prescribed an opioid by their respective VA hospital.\n",
-        sep="")
-
-cat("Of ", dual_count, " total CMS-enrolled (or dual-enrolled) patients ", va_cms_df %>% filter(!is.na(Opioid_CMS) & Opioid_CMS==1) %>% nrow(), 
-    " (", (100*va_cms_df %>% filter(!is.na(Opioid_CMS) & Opioid_CMS==1) %>% nrow() / dual_count) %>% round(2), "%) were prescribed an opioid during their CMS hospital visit.",
+cat("Of ", va_only_count, " total VA-only patiets ", va_cms_df %>% dplyr::filter(is.na(Opioid_CMS) & Opioid_VA==1) %>% nrow(),
+    ", (", (va_cms_df %>% dplyr::filter(is.na(Opioid_CMS) & Opioid_VA==1) %>% nrow() / va_only_count) %>% round(4)*100,
+    "%) were prescribed an opioid by their respective VA hospital.\n",
     sep="")
 
-cat("Of ", dual_count, " dually enrolled patients ", va_cms_df %>% filter(!is.na(Opioid_CMS) & (Opioid_CMS==1 | Opioid_VA==1)) %>% nrow(), " (", 
-    (va_cms_df %>% filter(!is.na(Opioid_CMS) & (Opioid_CMS==1 | Opioid_VA==1)) %>% nrow() / dual_count) %>% round(4)*100, 
-    "%) were prescribed an opioid by either the VA *or* CMS healthcare systems.",
-    sep="")
+cat("Of ", dual_count, " total CMS-enrolled (or dual-enrolled) patients ", va_cms_df %>% dplyr::filter(!is.na(Opioid_CMS) & Opioid_CMS==1) %>% nrow(), 
+    " (", (100*va_cms_df %>% dplyr::filter(!is.na(Opioid_CMS) & Opioid_CMS==1) %>% nrow() / dual_count) %>% round(2),
+    "%) were prescribed an opioid during their CMS hospital visit.\n", sep="")
 
-cat("Of ", dual_count, " dually enrolled patients ", va_cms_df %>% filter(!is.na(Opioid_CMS) & (Opioid_CMS==1 & Opioid_VA==1)) %>% nrow(), " (", 
-    (va_cms_df %>% filter(!is.na(Opioid_CMS) & (Opioid_CMS==1 & Opioid_VA==1)) %>% nrow() / dual_count) %>% round(4)*100, 
-    "%) were prescribed an opioid by either the VA *and* CMS healthcare systems.",
-    sep="")
+cat("Of ", dual_count, " dually enrolled patients ", va_cms_df %>% dplyr::filter(!is.na(Opioid_CMS) & (Opioid_CMS==1 | Opioid_VA==1)) %>% nrow(), " (", 
+    (va_cms_df %>% dplyr::filter(!is.na(Opioid_CMS) & (Opioid_CMS==1 | Opioid_VA==1)) %>% nrow() / dual_count) %>% round(4)*100, 
+    "%) were prescribed an opioid by either the VA *or* CMS healthcare systems.\n", sep="")
+
+cat("Of ", dual_count, " dually enrolled patients ", va_cms_df %>% dplyr::filter(!is.na(Opioid_CMS) & (Opioid_CMS==1 & Opioid_VA==1)) %>% nrow(), " (", 
+    (va_cms_df %>% dplyr::filter(!is.na(Opioid_CMS) & (Opioid_CMS==1 & Opioid_VA==1)) %>% nrow() / dual_count) %>% round(4)*100, 
+    "%) were prescribed an opioid by either the VA *and* CMS healthcare systems.\n", sep="")
 
 
 ```
@@ -663,14 +662,87 @@ va_cms_df %>% dplyr::mutate(Opioid_Any =
                                 TRUE ~ 0
                               )
                             ) %>% 
-  group_by(Dual_Enrollment) %>% count(Opioid_Any) %>% 
-  filter(Opioid_Any==1) %>% 
-  ggplot(aes(x=as.factor(Dual_Enrollment), y=n)) +
-  geom_bar(stat="identity") +
-  ylab("Frequency") + xlab("") +
-  scale_x_discrete(labels=c("VA Only", "Dual-Enrollment")) +
-  ggtitle(label="Frequency of Any Opioid Prescription by Dual Enrollment Status")
-
+  dplyr::group_by(Dual_Enrollment) %>% dplyr::count(Opioid_Any) %>% 
+  dplyr::mutate(Prop = n / 
+                  nrow(va_cms_df)
+                ) %>%  group_by(Dual_Enrollment) %>% 
+  mutate(Prop = n / sum(n),
+         Label_Var = paste0(n, " (", (Prop %>% round(4))*100, "%)")) %>% 
+  dplyr::filter(Opioid_Any==1)  %>% 
+  ggplot(aes(x=as.factor(Dual_Enrollment), y=Prop)) +
+  ggplot2::geom_bar(stat="identity") +
+  geom_text(aes(y = Prop+0.05, label=Label_Var)) +
+  ylab("Proportion") + xlab("") +
+  ggplot2::scale_x_discrete(labels=c("VA Only", "Dual-Enrollment")) +
+  ggplot2::ggtitle(label="Frequency of Any Opioid Prescription by Dual Enrollment Status") +
+  ggplot2::theme_minimal()
 ```
 
+
+
+
+
+
+###  Bonus Visualization - Shaded Density Curve 
+
+Total MME 
+
+```{r}
+density_plot <- va_cms_df %>% ggplot(aes(x=MME_Total)) +
+  geom_density()
+
+density_data <- ggplot_build(density_plot)$data[[1]]
+
+
+density_plot +
+  geom_area(data = density_data %>% filter(x>=120), aes(x=x, y=y), fill="red", alpha=0.6) +
+  xlab("Total Mg Morphine Equivalents") +
+  ylab("Density") +
+  ggplot2::ggtitle(label="Densty Plot of Total Mg Morphine Equivalents (MME)",
+                   subtitle="Including all (VA & CMS) prescriptions \nShaded for patients prescribed 120 mg + MME") +
+  theme_minimal()
+```
+
+
+CMS Only MME 
+
+```{r}
+density_plot_cms <- va_cms_df %>% filter(!is.na(Opioid_CMS)) %>% 
+  ggplot(aes(x=MME_CMS)) +
+  geom_density()
+
+density_data_cms <- ggplot_build(density_plot_cms)$data[[1]]
+
+
+density_plot_cms +
+  geom_area(data = density_data_cms %>% filter(x>=120), aes(x=x, y=y), fill="red", alpha=0.6) +
+  xlab("Total Mg Morphine Equivalents") +
+  ylab("Density") +
+  ggplot2::ggtitle(label="Densty Plot of Total Mg Morphine Equivalents (MME)",
+                   subtitle="Including only CMS prescriptions among dual enrolled patients \nShaded for patients prescribed 120 mg + MME") +
+  theme_minimal()
+```
+
+
+
+VA Only MME 
+
+```{r}
+density_plot_va <- va_cms_df %>% ggplot(aes(x=MME_VA)) +
+  geom_density()
+
+density_data_va <- ggplot_build(density_plot_va)$data[[1]]
+
+density_data_va %>% filter(x>=120) %>% nrow() 
+
+density_plot +
+  # geom_area(data = density_data %>% filter(x>=120), aes(x=x, y=y), fill="red", alpha=0.6) +
+  xlab("Total Mg Morphine Equivalents") +
+  ylab("Density") +
+  ggplot2::ggtitle(label="Densty Plot of Total Mg Morphine Equivalents (MME)",
+                   subtitle="Including only VA prescriptions \nShaded for patients prescribed 120 mg + MME") +
+  theme_minimal()
+
+
+```
 
