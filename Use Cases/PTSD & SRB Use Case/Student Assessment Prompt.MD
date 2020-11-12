@@ -23,7 +23,7 @@ After identifying your study sample of interest, you will use patient outcome an
 
 #### Data Cleaning & Exploratory Analysis
 
-Now we will work with the file `PTSD_Cohort.csv`, a dataset of the 401 patients who were recruited and successfully completed our hypothetical study. A data dictionary is included below for reference:
+Now we will work with the file `PTSD_ResearchCohort.csv`, a dataset of the 401 patients who were recruited and successfully completed our hypothetical study. A data dictionary is included below for reference:
 
 <details>
   <summary> Data Dictionary </summary>  
