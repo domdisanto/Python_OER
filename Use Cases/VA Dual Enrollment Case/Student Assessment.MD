@@ -36,7 +36,7 @@ This use case aims to give you experience relevant in the following areas: \
 ### Steps/Assignment
 
 #### Data Cleaning & Preparation
-1) Import CMS and VA data into your Jupyter Notebook
+1) Import CMS and VA data into your Jupyter Notebook  
     a) Examine the data. Are the variables consistently names between the two data frames? Is the same information collected? What differences exist? 
 2) Create opioid administration outcome variable of interest within both the VA and CMS data  
     a) *We want to simply capture whether a given patient was given an opioid, essentially whether that patients medication was an opioid or not. What could a variable that codes this information look like?*
