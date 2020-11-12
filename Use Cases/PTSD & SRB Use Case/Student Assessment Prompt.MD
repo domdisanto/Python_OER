@@ -38,7 +38,7 @@ Now we will work with the file `PTSD_ResearchCohort.csv`, a dataset of the 401 p
 |`BeckAnxiety_BL`|Continuous measure ranging from 0-63, where higher values indicate greater presence and severity of anxiety symptoms|
 |`IncomeCat`|Nominal categorical varible describing income category relative to the federal poverty line (described in the variable's categories)|
 |`SocialSupport`|Self-reported ["social support"](https://www.tnaap.org/documents/mspss-multidimensional-scale-of-perceived-social.pdf), with values ranging from 0 to 84, where higher values indicate higher self-reported social support |
-|`PTSD_Ppx`|Name of medication prescribed|
+|`PTSD_Rx`|Name of medication prescribed|
 </details>
 
 1) Import the research study data. We can assume that the patients in this data file are a sbuset of the eligible patients you identified above. How many patients that you identified in question 1 have available outcome data? How many were not recruited or have missing follow-up data (i.e. are not in this outcome data set)?
