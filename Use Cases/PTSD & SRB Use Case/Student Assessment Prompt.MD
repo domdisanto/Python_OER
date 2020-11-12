@@ -16,12 +16,30 @@ After identifying your study sample of interest, you will use patient outcome an
 **Modules**: 1 (Importing/Reading Data); 4 (Pandas Intro); 5 (Relational Data/Data Merging); 6 (Data Cleaning); Assorted Classification Modules   
 **Competencies**: Pandas (general); Data merging; Matplotlib/Visualization (basic, general); Cleaning string data; Cleaning inconsistently coded data; Sci-kit learn; Model fitting and cross-validation; Various possible classification model algorithms
 
+#### "Cohort Identification"
+
+1) The dataset `PossiblePatients_ICD.csv` contains a list of ~1,000 patients from a hypothetical electronic health record registry with various ICD-9 and ICD-10 diagnosis codes. We want to identify adult patients (18+) with a diagnosis of post-traumatic stress disorder. We will use the codes of to identify our diagnosis of interest. How many patients do you find in this data set that are eligible for your research study (i.e that meet this criteria)?
+
 
 #### Data Cleaning & Exploratory Analysis
-1) Import patient outcome data. How many patients that you identified in question 1 have available outcome data? How many were not recruited or have missing follow-up data (i.e. are not in this outcome data set)?
+
+Now we will work with the file `PTSD_Cohort.csv`, a dataset of the 401 patients who were recruited and successfully completed our hypothetical study. A data dictionary is included below for reference:
+
+<details>
+  <summary> Data Dictionary </summary>  
+  
+|*Variable*|*Description*|
+|---|---|
+|Var1|Description1|
+|Var2|Description2|
+  
+  Here is the data dictionary table
+</details>
+
+1) Import the research study data. We can assume that the patients in this data file are a sbuset of the eligible patients you identified above. How many patients that you identified in question 1 have available outcome data? How many were not recruited or have missing follow-up data (i.e. are not in this outcome data set)?
 
 
-2) Create a binary PTSD diagnosis/outcome variable. The following links include useful resources [the PTSD checklist and respective variable coding](https://www.ptsd.va.gov/professional/assessment/documents/PCL5_Standard_form.PDF) and [a guide to the scoring and diagnosis of PTSD using this checklist](https://www.ptsd.va.gov/professional/assessment/adult-sr/ptsd-checklist.asp#obtain), with relevant information included below in Figures 1A and 1B     
+2) Using the PTSD questionnaire vairiables, crate a binary PTSD diagnosis/outcome variable. The following links include useful resources [the PTSD checklist and respective variable coding](https://www.ptsd.va.gov/professional/assessment/documents/PCL5_Standard_form.PDF) and [a guide to the scoring and diagnosis of PTSD using this checklist](https://www.ptsd.va.gov/professional/assessment/adult-sr/ptsd-checklist.asp#obtain), with relevant information included below in Figures 1A and 1B     
   
 |Figure 1A|Figure 1B|
 |---------|---------|
@@ -29,8 +47,8 @@ After identifying your study sample of interest, you will use patient outcome an
   
 a) What is the baseline prevalence of PTSD in this sample? How does this compare to other estimates of PTSD in military populations? (*You do nto need to exhaustively research PTSD. Simply use [Google Scholar](http://scholar.google.com/) or [PubMed](https://www.ncbi.nlm.nih.gov/pubmed) to find an article or two, possibly a review article, that estimates PTSD prevalence in military populations*).   
 
-3) Create a variable that identifies suicidal ideation as present or absent      
-     a) See [the following article](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1495268/#app1) containing the PHQ9 questions. The 9th question in PHQ9 is often used to assess suicidality, with any values >1 (i.e. present symptom) indicating suicidal endorsement/ideation and is contained in your data set. 
+3) Create a variable that identifies suicidal ideation as present or absent:      
+     a) See [the following article](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1495268/#app1) as a reference describing the PHQ9 questions. The 9th question in PHQ9 is often used to assess suicidality, with any values >1 (i.e. present symptom) indicating suicidal endorsement/ideation and is contained in your data set. 
 
 4) Now import the patient medication data. What is the dimensionality? How any rows are included and how many unique patients?   
      a) Identify for each patient whether or not a PTSD treatment was prescribed using the indication variable "Treatment/Indication" column
