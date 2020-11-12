@@ -50,8 +50,7 @@ a) What is the baseline prevalence of PTSD in this sample? How does this compare
 3) Create a variable that identifies suicidal ideation as present or absent:      
      a) See [the following article](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1495268/#app1) as a reference describing the PHQ9 questions. The 9th question in PHQ9 is often used to assess suicidality, with any values >1 (i.e. present symptom) indicating suicidal endorsement/ideation and is contained in your data set. 
 
-4) Now import the patient medication data. What is the dimensionality? How any rows are included and how many unique patients?   
-     a) Identify for each patient whether or not a PTSD treatment was prescribed using the indication variable "Treatment/Indication" column
+4) Beyond the PTSD & PHQ variables, examine the other variables in the data set, and their descriptions in the Data Dictionary above. For any categorical variables, create indicator/dummy variables.
 
 #### Build your model
 1) Build a model on the training set predicting 6-month SRB and predicting 6-month PTSD diagnosis using input features of age, years of military service, combat exposure during deployment, alcohol abuse, AFQT score, income category, and self-reported perceived social support score.
