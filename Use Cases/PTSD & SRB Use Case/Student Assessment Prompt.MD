@@ -54,10 +54,10 @@ Now we will work with the file `PTSD_ResearchCohort.csv`, a dataset of the 401 p
 3) Create a variable that identifies suicidal ideation as present or absent:      
      a) See [the following article](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1495268/#app1) as a reference describing the PHQ9 questions. The 9th question in PHQ9 is often used to assess suicidality, with any values >1 (i.e. present symptom) indicating suicidal endorsement/ideation and is contained in your data set. 
 
-4) Beyond the PTSD & PHQ variables, examine the other variables in the data set, and their descriptions in the Data Dictionary above. For any categorical variables, create indicator/dummy variables.
+4) Beyond the PTSD & PHQ variables, examine the other variables in the data set, and their descriptions in the Data Dictionary above. For any categorical variables, create indicator/dummy variables. 
 
 #### Build your model
-1) Build a model on the training set predicting 6-month SRB and predicting 6-month PTSD diagnosis using input features of age, years of military service, combat exposure during deployment, alcohol abuse, AFQT score, income category, and self-reported perceived social support score.
+1) Build a model on the training set predicting 6-month SRB and predicting 6-month PTSD diagnosis using the input features dentified in the data dictionary and that you've prepared in the data cleaning section above of age, time since earliest PTSD diagnosis, alcohol abuse, Beck Anxiety Inventory, alcohol abuse, income category, social support, and medication indicator variables..
 2) Assess the fit of both your models  
 3) Identify "important" features within your predictive models of PTSD and SRB. 
      a) How do you define/assess "importance"?
