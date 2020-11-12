@@ -2,8 +2,7 @@
 ## VA Dual Enrollment 
 ### Student Assessment
 ### Drafted: 9/7/2020
-### Updated: 10/07/2020
- > Dominic DiSanto: Updated to flesh out and provide more detail in the student assessment. Provided references (and uploaded source documents) to this folder. I hope to include screenshots directly in this file, but have been unable to properly load the image even when stored locally in this repository folder. Upon completion of the accompanying "walkthrough" notebook, the exploratory analysis/visualization section will include a figure/visualization to emulate as well, providing additionanl student direction for matplotlib visualization skills (e.g. axis labelling, data preparation, coloring/fill in stacked bar graph, etc.) 
+### Updated: 11/20/2020
 
 ### Background  
 This use cases borrows from both a [publication](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6219924/) and [Presentation](https://www.hsrd.research.va.gov/for_researchers/cyber_seminars/archives/video_archive.cfm?SessionID=3543)  by Dr. Walid Gellad within Pittsburgh's Veterans Affairs Hospital system. The simulated data emulates a simplified set of prescription data for Veterans Affairs (VA) and Center for Medicaid/Medicare Services (CMS) patients, with overlap of healthcare utiliation in both systems. You will work with this data to merge the VA and CMS data sources and identify prescription (and overprescription) of opioids by patients who utilize VA and both VA & CMS healthcare systems. 
