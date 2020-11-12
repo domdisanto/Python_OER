@@ -33,7 +33,7 @@ Now we will work with the file `PTSD_ResearchCohort.csv`, a dataset of the 401 p
 |`PTSD_Q1`-`PTSD_Q20`|PTSD Questionnaire variables (see images below) describing presence of symptoms 6-months after study enrollment|
 |`PHQ_Q9`|Patient Health Questionnaire (or PHQ-9) question 9, which assessed presence of suicidality or ideation of suicide, also at 6-months after study enrollment|
 |`Age`|"Continuous" (integer) age variable|
-|`TimeFirstDiagnosis_Months`| Integer value, measured in months|
+|`TimeFirstDiagnosis_Months`| Integer value. The number of months since the patient's first diagnosis of PTSD|
 |`AlcAbuse`|Binary variable, where 1 represents present alcohol abuse and 0 no alcohol abuse over the previous 6 months|
 |`BeckAnxiety_BL`|Continuous measure ranging from 0-63, where higher values indicate greater presence and severity of anxiety symptoms|
 |`IncomeCat`|Nominal categorical varible describing income category relative to the federal poverty line (described in the variable's categories)|
