@@ -18,7 +18,7 @@ After identifying your study sample of interest, you will use patient outcome an
 
 #### "Cohort Identification"
 
-1) The dataset `PossiblePatients_ICD.csv` contains a list of ~1,000 patients from a hypothetical electronic health record registry with various ICD-9 and ICD-10 diagnosis codes. We want to identify adult patients (18+) with a diagnosis of post-traumatic stress disorder. We will use the codes of to identify our diagnosis of interest. How many patients do you find in this data set that are eligible for your research study (i.e that meet this criteria)?
+1) The dataset `PossiblePatients_ICD.csv` contains a list of ~1,000 patients from a hypothetical electronic health record registry with various ICD-9 and ICD-10 diagnosis codes. We want to identify adult patients (18+) with a diagnosis of post-traumatic stress disorder. We will use the codes of `309.81`, `F43.10`, `F43.11`, `F43.12` to identify our diagnosis of interest. How many patients do you find in this data set that are eligible for your research study (i.e that meet this criteria)?
 
 
 #### Data Cleaning & Exploratory Analysis
@@ -65,3 +65,9 @@ a) What is the baseline prevalence of PTSD in this sample? How does this compare
      b) What features are important in predicting both PTSD ***and*** SRB? 
      c) What is the relationship of the features you identified in **3b** to each of the outcomes? Do these characteristics present as possible "protective" or "risk" factors overall? 
 4) What type of model did you fit and what specific measure did you use in ***3a*** to assess importance? List two other types of classification models and how you would assess feature importance for these different models. 
+
+
+#### Bonus Questions
+
+1) Included in the `Instructor Materials` folder are two data sets, `icd9codes.csv` and `icd10codes.xlsx`, that contain all unique ICD-9 and ICD-10 codes respectively and brief text descriptions of the diseases represented by each code. Using the text descriptions in these two datasets, identify the ICD-9 and ICD-10 codes corresponding to diagnoses of post-traumatic stress disorder. Your results should yield the four codes used as "case-definitions" of PTSD in the first, **"Cohort Identification"** question.  
+     *Hint:* Try the [str.contains](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.contains.html) function.
