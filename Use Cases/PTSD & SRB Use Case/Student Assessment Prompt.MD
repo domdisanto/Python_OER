@@ -30,10 +30,15 @@ Now we will work with the file `PTSD_Cohort.csv`, a dataset of the 401 patients 
   
 |*Variable*|*Description*|
 |---|---|
-|Var1|Description1|
-|Var2|Description2|
-  
-  Here is the data dictionary table
+|`PTSD_Q1`-`PTSD_Q20`|PTSD Questionnaire variables (see images below) describing presence of symptoms 6-months after study enrollment|
+|`PHQ_Q9`|Patient Health Questionnaire (or PHQ-9) question 9, which assessed presence of suicidality or ideation of suicide, also at 6-months after study enrollment|
+|`Age`|"Continuous" (integer) age variable|
+|`TimeFirstDiagnosis_Months`| Integer value, measured in months|
+|`AlcAbuse`|Binary variable, where 1 represents present alcohol abuse and 0 no alcohol abuse over the previous 6 months|
+|`BeckAnxiety_BL`|Continuous measure ranging from 0-63, where higher values indicate greater presence and severity of anxiety symptoms|
+|`IncomeCat`|Nominal categorical varible describing income category relative to the federal poverty line (described in the variable's categories)|
+|`SocialSupport`|Self-reported ["social support"](https://www.tnaap.org/documents/mspss-multidimensional-scale-of-perceived-social.pdf), with values ranging from 0 to 84, where higher values indicate higher self-reported social support |
+|`PTSD_Ppx`|Name of medication prescribed|
 </details>
 
 1) Import the research study data. We can assume that the patients in this data file are a sbuset of the eligible patients you identified above. How many patients that you identified in question 1 have available outcome data? How many were not recruited or have missing follow-up data (i.e. are not in this outcome data set)?
