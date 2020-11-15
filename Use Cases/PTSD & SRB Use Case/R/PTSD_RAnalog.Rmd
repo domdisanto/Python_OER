@@ -1,0 +1,379 @@
+---
+title: "Python Open Education Resource: Analogous R \"Solution\""
+subtitle: "Use Case: PTSD, Treatment Medications, and Suicidality"
+date: "Updated: November 15th, 2020" 
+output: 
+  html_document:
+    number_sections: no
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+      toc_depth: 3
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = F, message = F)
+```
+
+
+# Preface  
+  
+For full information related to the University of Pittsburgh's Python Open Education Resource (OER) curation, simulated data, and didactic use cases (such as this one), please visit our [GitHub Repository](https://github.com/domdisanto/Python_OER/). This repository focuses on Python education but contains relevant background information to this use case. 
+  
+This document was generated in [R](https://cran.rstudio.com/), using the [RStudio IDE](https://rstudio.com/products/rstudio/download/) and [`knitr` package/engine](https://yihui.org/knitr/) and assumes the user is comfortable with working within RStudio and able to knit their R code (although knitting HTML and/or PDF documents is not required or assessed in any of these documents). These documents will also assume a user has a base familiarity in R that includes calling of packages using `library`, some basic syntactical elements in R (such as `<-` to create objects, the classes of objects within R, creating functions in R, etc.). For the sake of clarity, functions taken from specific packages will be called explicitly so that students can know the source package for each function (using R's generic `package::function` syntax). This is however unnecessary analytically. In presenting table output in the final markdown document (most commonly from `... %>% head()` function calls), I include the additional function `... %>% knitr::kable()`, which simply produces more visually appealing tables in HTML. This is not necessary when working within RStudio or for the generation of tables and is completely an aesthetic choice for presenting tables in the rendered document. 
+  
+A small but important note is that this code heavily utilizes the pipe operator (`%>%`) from the `magrittr` package. This operator is ubiquitous in modern R code and extremely useful to understand (and useful in this document for presenting much more legible code for your review). A wonderful summary is available in Hadley Wickham's and Garret Grolemund's [R for Data Science book (specifically this linked section on the Pipe operator).](https://r4ds.had.co.nz/pipes.html)
+  
+Lastly, R code will most often utilize the [`tidyverse` family of R packages](https://www.tidyverse.org/). These packages are useful wrapper functions that greatly streamline data cleaning and visualization, which will be conducted specifically using the `ggplot2` package's family of functions. 
+
+  
+These documents ***will*** walk you through a solution pathway to the present use case. These documents ***will*** provide example R code to accomplish tasks with relevant annotations to sufficiently describe the purpose of and the code to accomplish each task. This code ***will not*** explicitly teach you R step-by-step or necessarily present all solutions. This code is also ***not*** necessarily formatted organized as may be most suitable/efficient for analysis but rather for education. You are heavily encouraged to pick/take any code or tips from this document and integrate them into a workflow that works best for the purposes of your work!
+
+
+  
+# Introduction
+
+The below document includes code and descriptive text evaluating the use case assessment title here. Full materials for this use case can be found on the Python OER GitHub Repository. This walkthrough document is tentatively titled a "solution" as, while this document offers a specific way of cleaning and analyzing the available, this document certainly does not offer a unique (or even a uniquely-best) solution to the given assessment.
+
+The writing in this document will do its best to outline specific parameters that should be met to satisfactorically complete the assessment. These parameters, tasks, outputs, etc. exist solely to assess your developing skills as an analyst and Python programmer. That being said, if you take different steps or follow a different analytic method to reach the same results, that is perfectly acceptable! This walk through is intended only to be a demonstrated workflow, but it is possible (and even likely) that you may write more efficient, simpler, or more scalable code than what is included here that achieves the same results!
+
+\newpage 
+
+## (0) Importing modules to be used
+
+```{r}
+library(dplyr)
+library(magrittr)
+require(knitr)
+require(stringr)
+```
+
+
+# Pre-Cohort Analysis
+
+## (1) Identify research cohort
+
+We will first import the data, then we can very succinctly identify our research cohort of interest using `str.contains` for the ICDCodes of interest  
+
+```{r}
+icd_cohort <- read.csv("PossiblePatients_ICD.csv") %>% dplyr::select(-1) # Removing the first row of the index
+icd_cohort %>% head() %>% knitr::kable()
+```
+
+In Python we used the `str.contains` operator to examine ICD codes of interest. In R's `string` package (within the `tidyverse` family) there is a `str_detect` function, or base R contains the regular expression matching `grepl` function, all of which produce similar results. We are also only interested in adult patients, so we will subset to our age range of interest 
+
+```{r}
+str_cont_subset <- icd_cohort %>% dplyr::filter(Age>=18 & stringr::str_detect(ICDCode, "309.81|F43.10|F43.11|F43.12"))
+str_cont_subset %>% head() %>% knitr::kable()
+
+# Alternatively using `grepl`
+# icd_cohort %>% dplyr::filter(Age>=18 & grepl("309.81|F43.10|F43.11|F43.12", ICDCode)) %>%  head()
+```
+
+And in R we could analgously list all codes explicitly.
+
+```{r}
+icd_cohort %>% dplyr::filter(Age>=18 & 
+                        (
+                          ICDCode=="309.81" | ICDCode=="F43.10" | ICDCode=="F43.11" | ICDCode=="F43.12"
+                        )
+                      ) %>% head() %>% knitr::kable()
+```
+
+```{r}
+cat('Of the', icd_cohort %>% nrow() , 'patients in our research extract, we identify',
+     str_cont_subset %>% nrow(), 'adult patients with an eligible PTSD diagnosis.') 
+```
+
+# Research Cohort Analysis
+
+## (1) Identifying how many patients were recruited
+
+```{r}
+cohort <- read.csv("PTSD_ResearchCohort.csv") %>% dplyr::select(-1) 
+cohort %>% head() %>% knitr::kable()
+```
+
+```{r}
+cat('Compared to the', str_cont_subset %>% nrow(), 'patients we identified in our ICD extract,',
+    'only', cohort %>% nrow(), 'patients are contained with follow-up data in our research cohort data set.')
+```
+
+
+
+## (2) Create the PTSD Outcome Variable
+
+***Using the PTSD questionnaire variables, create a binary PTSD diagnosis/outcome variable. The following links include useful resources the PTSD checklist and respective variable coding and a guide to the scoring and diagnosis of PTSD using this checklist, with relevant information included below in Figures 1A and 1B***
+  
+The included reference for the PTSD data included in our research data set includes the following description to be used for diagnosis of PTSD:
+
+> *"A provisional PTSD diagnosis can be made by treating each item rated as 2 = "Moderately" or higher as a symptom endorsed, then following the DSM-5 diagnostic rule which requires at least: 1 B item (questions 1-5), 1 C item (questions 6-7), 2 D items (questions 8-14), 2 E items (questions 15-20)."*
+
+So for our 20 PTSD questions, for a patient to be meet our diagnostic criteria for PTSD, they must endorse a symptom (that is report a score of 2 or greater) 
+
+To use these criteria, we could set conditional arguments in a long if statement, but this would tediously require us to work through all 20 PTSD questions and carefully set up our conditionals:
+
+For example:  
+`IF  (ptsd_q1>=2 OR ptsd_q1>=2 OR ... OR ptsd_q5>=2) AND`   
+    `(ptsd_q6>=2 OR ptsd_q7>=2) AND`  
+    `(ptsd_q8>=2 OR ... OR ptsd_q14>=2) AND`   
+    `(ptsd_q15>=2 OR ... OR ptsd_q20>=2)`
+    
+Rather than look at each question individually, we could identify the maximum self-reported symptom within each of these groups of questions. Then, if the maximum symptom is 2 or greater, the patient meets the criteria for a PTSD diagnosis. This code can be succinctly written as:
+
+```{r}
+cohort <- cohort %>% rowwise() %>% # rowwise lets's R know the next operations (specifically `min` and `max`) within the mutate function are completed for each row (not the columns as a whole)
+  mutate(PTSD_6mo =
+           case_when(
+             min(
+               max(PTSD_Q1_6mo, PTSD_Q1_6mo, PTSD_Q2_6mo, PTSD_Q3_6mo, PTSD_Q4_6mo, PTSD_Q5_6mo),
+               max(PTSD_Q6_6mo, PTSD_Q7_6mo),
+               max(PTSD_Q8_6mo, PTSD_Q9_6mo, PTSD_Q10_6mo, PTSD_Q11_6mo, PTSD_Q12_6mo, PTSD_Q13_6mo, PTSD_Q14_6mo),
+               max(PTSD_Q15_6mo, PTSD_Q16_6mo, PTSD_Q17_6mo, PTSD_Q18_6mo, PTSD_Q19_6mo, PTSD_Q20_6mo)
+               )>=2 ~ 1,
+             TRUE ~ 0
+             )
+         ) %>% ungroup() # "undoing" the `rowwise()` option we specified above, otherwise that attribute is saved, changing the object's class (see below)
+
+cohort %>% count(PTSD_6mo) %>%  knitr::kable()
+
+# Uncomment the below lines and examine the different object types
+# cohort %>% class()
+# cohort %>% rowwise() %>% class()
+# cohort %>% rowwise() %>% ungroup() %>% class()
+```
+
+## (3) Create our suicidal related behavior (SRB) variable  
+  
+As mentioned in the student assessment prompt, we can use the available PHQ-9 variable (related to Question 9 of the questionnaire) to categorize presence of SRB. Individuals who report a symptom (>=1) will be categorized as "present" and otherwise "absent" for our SRB outcome variable
+
+```{r}
+cohort <- cohort %>% mutate(SRB_6mo =
+                              case_when(
+                                PHQ_Q9_6mo>=1 ~ 1,
+                                TRUE ~ 0
+                              )
+                            )
+
+cohort %>% count(SRB_6mo) %>% knitr::kable()
+
+cohort %>% group_by(PTSD_6mo, SRB_6mo) %>% count() %>% knitr::kable()
+```
+
+## (4) Exploratory Data Analysis and Covariate Cleaning  
+
+We can reference our data dictionary to find our available covariates include age, time since earliest PTSD diagnosis, presence of alcohol abuse, a measure of anxiety (using the Beck Anxiety Inventory), a nominal-categorical value for income, a continuous self-reported assessment of social support, and lastly an indicator of the PTSD treatment medication prescribed over the study duration.
+
+We could also examine the columns in our data frame to see what elements are present and the pecific names of the column containing this information:
+
+```{r}
+cohort %>% colnames() %>% as.data.frame() %>% knitr::kable()
+
+cohort %>% colnames %>% .[!stringr::str_detect(., "PTSD")] %>% as.data.frame() %>% knitr::kable()
+```
+
+### Continuous Variables
+
+#### Age 
+```{r}
+library(ggplot2)
+
+
+# Density Plot
+cohort %>% ggplot(aes(x=Age)) + 
+  geom_density() +
+  theme_minimal()
+
+# A lazy way of including all four categories
+cohort %>% ggplot(aes(x=as.factor(PTSD_6mo), y=Age, fill=as.factor(SRB_6mo))) +
+  geom_boxplot() +
+  theme_minimal()
+
+# Creatinga new "interaction" variable of PTSD & SRB that more closely mirrors our two-grouped boxplot in matplotlib
+cohort %>% mutate(Group = 
+                    case_when(
+                      SRB_6mo==1 & PTSD_6mo==1 ~ "PTSD, SRB",
+                      SRB_6mo==0 & PTSD_6mo==1 ~ "PTSD, No SRB",
+                      SRB_6mo==1 & PTSD_6mo==0 ~ "[No PTSD, SRB]",
+                      TRUE ~ "No PTSD, No SRB"
+                    )
+                  ) %>% 
+  ggplot(aes(x=as.factor(Group), y=Age)) +
+  geom_boxplot()
+```
+
+#### Social Support 
+
+```{r}
+# Density Plot
+cohort %>% ggplot(aes(x=SocialSupport)) + 
+  geom_density() +
+  theme_minimal()
+
+# A lazy way of including all four categories
+cohort %>% ggplot(aes(x=as.factor(PTSD_6mo), y=SocialSupport, fill=as.factor(SRB_6mo))) +
+  geom_boxplot() +
+  theme_minimal()
+
+# Creatinga new "interaction" variable of PTSD & SRB that more closely mirrors our two-grouped boxplot in matplotlib
+cohort %>% mutate(Group = 
+                    case_when(
+                      SRB_6mo==1 & PTSD_6mo==1 ~ "PTSD, SRB",
+                      SRB_6mo==0 & PTSD_6mo==1 ~ "PTSD, No SRB",
+                      SRB_6mo==1 & PTSD_6mo==0 ~ "[No PTSD, SRB]",
+                      TRUE ~ "No PTSD, No SRB"
+                    )
+                  ) %>% 
+  ggplot(aes(x=as.factor(Group), y=SocialSupport)) +
+  geom_boxplot()
+```
+
+
+#### Time to Diagnosis
+
+```{r}
+# Density Plot
+cohort %>% ggplot(aes(x=TimeFirstDiagnosis_Months)) + 
+  geom_density() +
+  theme_minimal()
+
+cohort %>% ggplot(aes(x=TimeFirstDiagnosis_Months)) + 
+  geom_histogram() +
+  theme_minimal()
+
+# A lazy way of including all four categories
+cohort %>% ggplot(aes(x=as.factor(PTSD_6mo), y=TimeFirstDiagnosis_Months, fill=as.factor(SRB_6mo))) +
+  geom_boxplot() +
+  theme_minimal()
+
+# Creatinga new "interaction" variable of PTSD & SRB that more closely mirrors our two-grouped boxplot in matplotlib
+cohort %>% mutate(Group = 
+                    case_when(
+                      SRB_6mo==1 & PTSD_6mo==1 ~ "PTSD, SRB",
+                      SRB_6mo==0 & PTSD_6mo==1 ~ "PTSD, No SRB",
+                      SRB_6mo==1 & PTSD_6mo==0 ~ "[No PTSD, SRB]",
+                      TRUE ~ "No PTSD, No SRB"
+                    )
+                  ) %>% 
+  ggplot(aes(x=as.factor(Group), y=TimeFirstDiagnosis_Months)) +
+  geom_boxplot()
+```
+
+#### Beck Anxiety Interview
+
+```{r}
+# Density Plot
+cohort %>% ggplot(aes(x=BeckAnxiety_BL)) + 
+  geom_density() +
+  theme_minimal()
+
+# A lazy way of including all four categories
+cohort %>% ggplot(aes(x=as.factor(PTSD_6mo), y=BeckAnxiety_BL, fill=as.factor(SRB_6mo))) +
+  geom_boxplot() +
+  theme_minimal()
+
+# Creatinga new "interaction" variable of PTSD & SRB that more closely mirrors our two-grouped boxplot in matplotlib
+cohort %>% mutate(Group = 
+                    case_when(
+                      SRB_6mo==1 & PTSD_6mo==1 ~ "PTSD, SRB",
+                      SRB_6mo==0 & PTSD_6mo==1 ~ "PTSD, No SRB",
+                      SRB_6mo==1 & PTSD_6mo==0 ~ "[No PTSD, SRB]",
+                      TRUE ~ "No PTSD, No SRB"
+                    )
+                  ) %>% 
+  ggplot(aes(x=as.factor(Group), y=BeckAnxiety_BL)) +
+  geom_boxplot()
+```
+
+### Categorical Variables
+
+For the categorical variables, we will examine the categories present, and in variables with more than 2 distinct categories, we will create dummy variables for all categories. For those with only 1 category (i.e. binary variables), we will simply leave the variable with its given "0/1" coding.
+
+In Python, we utilized the `get_dummies()` function from `pandas`. In R, we do not necessarily have to convert our categorical variables into dummy variables. We can specify these variables are categorical using R's `as.factor` function (as done above in some of the exploratory visualizations). As an example, we fit a quick regression model below without converting the `IncomeCat` variable (do not worry about the results or model, this is simply to demonstrate the utility of R's `as.factor` in the model. We will review the modelling syntax and interpretation later):
+
+```{r}
+glm(SRB_6mo ~ Age + as.factor(IncomeCat),
+    data=cohort,
+    family="binomial") %>% summary() 
+```
+But to mirror the structure of the Python notebook, we can create the dummy variables using R's `model.matrix` function, which computes a matrix of dummy variables for us
+
+(*I will not save the results below, but present them as an analog to the python dummy variable creation code. I will utilize the `as.factor()` function within our model formulae*)
+
+```{r}
+cohort %>% model.matrix(~PTSD_Rx + IncomeCat, .) %>% cbind(cohort, .) %>% head() %>% knitr::kable()
+
+# cbind() combines the supplied arguments
+
+# You can uncomment the code below to examine the model.matrix() function
+# cohort %>% model.matrix(~PTSD_Rx + IncomeCat, .) %>% as.data.frame()
+# Try looking at a single variable
+# cohort %>% model.matrix(~PTSD_Rx,  .) %>% as.data.frame()
+```
+
+```{r}
+cohort %>% count(AlcAbuse) %>% knitr::kable()
+cohort %>% count(IncomeCat) %>% knitr::kable()
+cohort %>% count(PTSD_Rx) %>% knitr::kable()
+```
+
+
+## Model Fitting
+
+The model fitting section in this use case's student assessment prompt is intentionally vague. The code below will include semi-structured walkthroughs and result presentations. Some of the important things to assess to ensure your solution satisfactorally meets the requirements of the assessment are included below:
+
+- Including only the meaningful predictor variables of interest:
+    - Removing the PTSD and PHQ questionnaire variables
+    - Removing the `IncomeCat` and `PTSD_Rx` variables in favor of the indicator variables you previously created
+    - Removing outcome variables from irrelevant model (e.g. do not include concurrent PTSD diagnosis as a predictor of SRB) 
+- Specifically applying algorithms with the ability to assess feature importance (see table below)       
+- Understanding the need to fit *classification* models to predict our binary outcomes of SRB and PTSD
+- Presenting performance metrics of each model such as AUC/concordance
+- Implementing a training and test split of the data 
+- Evaluating the relationship between predictors of interest and each outcome using model-appropriate metrics (e.g. odds ratios and p-values in logistic regression, feature importance in random forest, etc.)
+
+More advanced "solutions" may include:
+- Within a single train/test split, performing k-fold or leave-one-out cross-validation within the training data to identify relevant model parameters 
+- Comparing performance of multiple models and identifying the "best-fitting" modelling algorithm
+- Rather than simply extracted the predicted class of each algorithm, examine the predicted probabilities (for models that calcualte these values)
+
+This walkthrough will walk thorugh logistic regression (with and without penalty) and random forest for their ease of assessment of feature importance.
+
+**Models & Feature Importance Meaurses**  
+*This table is an **extremely** brief summary of modelling algorithms covered in the current course structure and the ability to easily assess feature importance within each sklearn implementation.*
+
+|Model|Feature Importance Measure|
+|--|--|
+|Logistic Regression|Beta coefficients & p-values|
+|Random Forest|Feature importance|
+|Lasso/Elastic Net Regression|Beta coefficients & p-values|  
+
+**Models with no covariate inference/feature importance assessments (or measurements not covered within current courses)**  
+
+|Model|Description|
+|--|--|
+|Gaussian Naive Bayes|[Permutation Importance](https://stackoverflow.com/questions/62933365/how-to-get-the-feature-importance-in-gaussian-naive-bayes)|
+|SVM|[Feature importance assessable only when using `linear` kernel](https://stackoverflow.com/questions/41592661/determining-the-most-contributing-features-for-svm-classifier-in-sklearn)|
+|k-Nearest Neighbors|No implementation to assess feature importance|
+
+
+```{r, eval=F}
+  
+ptsd %>% filter(row_number()<=10) %>%  select(starts_with("PTSD")) 
+
+# for i in range(0, cohort.shape[0]):
+#     if min(max(cohort.iloc[i, 1:6]), max(cohort.iloc[i, 6:8]), 
+#            max(cohort.iloc[i, 8:15]), max(cohort.iloc[i, 15:21]))>=2:
+#         cohort.loc[i, 'PTSD_6mo'] = 1
+#     else:
+#         cohort.loc[i, 'PTSD_6mo'] = 0
+
+logreg_obj <- glm(PTSD_6mo ~ Age + TimeFirstDiagnosis_Months + AlcAbuse + BeckAnxiety_BL + SocialSupport + as.factor(IncomeCat) + 
+                    as.factor(PTSD_Rx), 
+                  data=ptsd,
+                  family="binomial")
+
+```
+
