@@ -57,11 +57,9 @@ Now we will work with the file `PTSD_ResearchCohort.csv`, a dataset of the 401 p
 4) Beyond the PTSD & PHQ variables, examine the other variables in the data set, and their descriptions in the Data Dictionary above. For any categorical variables, create indicator/dummy variables. 
 
 #### Build your model
-1) Build a model on the training set predicting 6-month SRB and predicting 6-month PTSD diagnosis using the input features dentified in the data dictionary and that you've prepared in the data cleaning section above of age, time since earliest PTSD diagnosis, alcohol abuse, Beck Anxiety Inventory, alcohol abuse, income category, social support, and medication indicator variables..
+1) Build a model on the training set predicting 6-month SRB and predicting 6-month PTSD diagnosis using the input features dentified in the data dictionary and that you've prepared in the data cleaning section above of age, time since earliest PTSD diagnosis, alcohol abuse, Beck Anxiety Inventory, alcohol abuse, income category, social support, and medication indicator variables. **Select a modelling algorithm that allows you to examine feature importance. **
 2) Assess the fit of both your models  
-3) Identify "important" features within your predictive models of PTSD and SRB.    
-     a) What medications are "important" in a predictive model of PTSD?   
-     b) Describe medications (generally) based on the level of evidence (say "high" or "low") based on your interpretation of the results of your model. 
+3) What medications are "important" in a predictive model of PTSD? Describe the relationship of each medication (generally) based on the level of evidence (say "high" or "low") based on your interpretation of the results of your model. 
 
 4) What type of model did you fit and what specific measure did you use in ***3a*** to assess importance? List two other types of classification models and how you would assess feature "importance" for these different models. 
 
