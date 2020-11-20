@@ -7,12 +7,9 @@
 
 ## Notes
 
-Currently, the PTSD data most notably differs from Will & Noah's presentation by not using any ICD-9 or ICD10 diagnosis code data to identify PTSD but the checklist/lLikert scale variables thT I've generated. I've "separated" the medication data, such that there is merging required. 
+Need to add random forest and SVM, would at a minimum like to compare AUC values and 
 
-If in the future we want this use case to directly fllow Noah and Will's presentation, the initial steps (both for data sim and student assessment) can be edited to have a larger cohort of patents with no PTSD checklist but rather an ICD diagnosis code (9, 10, or a mix). 
-
-The only reason for the difference between the current use case from Noah and Will's is to distance the competencies covered in this use case to prioritize sklearn and model fitting over the pandas/numpy data cleaning covered previously in the VA dual use case, but these data cleaning steps could certainly be included in this use case. 
-
+Need to add SRB modelling also, right now it's just PTSD
 
 ## Medications
 
