@@ -1,0 +1,120 @@
+---
+title: "Python Open Education Resource: Analogous R \"Solution\""
+subtitle: "Use Case: BMI Risk Criteria (Excel - R - Python Joint Case Seriesi)"
+date: "Updated: December 13th, 2020" 
+output: 
+  html_document:
+    number_sections: no
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+      toc_depth: 3
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = F, message = F)
+```
+
+
+# Preface  
+  
+For full information related to the University of Pittsburgh's Python Open Education Resource (OER) curation, simulated data, and didactic use cases (such as this one), please visit our [GitHub Repository](https://github.com/domdisanto/Python_OER/). This repository focuses on Python education but contains relevant background information to this use case. 
+  
+This document was generated in [R](https://cran.rstudio.com/), using the [RStudio IDE](https://rstudio.com/products/rstudio/download/) and [`knitr` package/engine](https://yihui.org/knitr/) and assumes the user is comfortable with working within RStudio and able to knit their R code (although knitting HTML and/or PDF documents is not required or assessed in any of these documents). These documents will also assume a user has a base familiarity in R that includes calling of packages using `library`, some basic syntactical elements in R (such as `<-` to create objects, the classes of objects within R, creating functions in R, etc.). For the sake of clarity, functions taken from specific packages will be called explicitly so that students can know the source package for each function (using R's generic `package::function` syntax). This is however unnecessary analytically. In presenting table output in the final markdown document (most commonly from `... %>% head()` function calls), I include the additional function `... %>% knitr::kable()`, which simply produces more visually appealing tables in HTML. This is not necessary when working within RStudio or for the generation of tables and is completely an aesthetic choice for presenting tables in the rendered document. 
+  
+A small but important note is that this code heavily utilizes the pipe operator (`%>%`) from the `magrittr` package. This operator is ubiquitous in modern R code and extremely useful to understand (and useful in this document for presenting much more legible code for your review). A wonderful summary is available in Hadley Wickham's and Garret Grolemund's [R for Data Science book (specifically this linked section on the Pipe operator).](https://r4ds.had.co.nz/pipes.html)
+  
+Lastly, R code will most often utilize the [`tidyverse` family of R packages](https://www.tidyverse.org/). These packages are useful wrapper functions that greatly streamline data cleaning and visualization, which will be conducted specifically using the `ggplot2` package's family of functions. 
+
+  
+These documents ***will*** walk you through a solution pathway to the present use case. These documents ***will*** provide example R code to accomplish tasks with relevant annotations to sufficiently describe the purpose of and the code to accomplish each task. This code ***will not*** explicitly teach you R step-by-step or necessarily present all solutions. This code is also ***not*** necessarily formatted organized as may be most suitable/efficient for analysis but rather for education. You are heavily encouraged to pick/take any code or tips from this document and integrate them into a workflow that works best for the purposes of your work!
+
+
+  
+# Introduction
+
+The below document includes code and descriptive text evaluating the use case assessment title here. Full materials for this use case can be found on the Python OER GitHub Repository. This walkthrough document is tentatively titled a "solution" as, while this document offers a specific way of cleaning and analyzing the available, this document certainly does not offer a unique (or even a uniquely-best) solution to the given assessment.
+
+The writing in this document will do its best to outline specific parameters that should be met to satisfactorically complete the assessment. These parameters, tasks, outputs, etc. exist solely to assess your developing skills as an analyst and Python programmer. That being said, if you take different steps or follow a different analytic method to reach the same results, that is perfectly acceptable! This walk through is intended only to be a demonstrated workflow, but it is possible (and even likely) that you may write more efficient, simpler, or more scalable code than what is included here that achieves the same results!
+
+\newpage 
+
+Recalling the prompt for this use case, we need to identify the contact information for each patient that meets the following criteria:
+
+1) BMI $\geq$ 30  
+2) BMI $\geq$ 35  
+3) BMI $\geq$ 30 & Age$\geq$60  
+4) BMI $\geq$ 35 & Age$\geq$60  
+
+We will import the two tabs of our spreadsheet as two separate dataframes. THen, given that we only have height and weight data, in our original "master" data set we must first calculate BMI in our original data frame of height & weight data.
+
+## (1) Import data into your ~~Jupyter Notebook~~ R Session
+
+```{r}
+library(magrittr)
+library(readxl)
+library(magrittr)
+
+bmi_df <- readxl::read_excel("BMI_Data.xlsx", sheet = "HeightWeight")
+bmi_df %>% head() %>% knitr::kable()
+
+contact_df <- readxl::read_excel("BMI_Data.xlsx", sheet = "Contact Info")
+contact_df %>% head() %>% knitr::kable()
+```
+
+## (2) Creating BMI Variable
+
+```{r}
+bmi_df <- bmi_df %>% dplyr::mutate(BMI = (`Weight (kg)` / (`Height (cm)`/100)^2) %>% round(2))
+bmi_df %>% head() %>% knitr::kable()
+```
+
+
+
+## (3) Filtering based on our criteria
+
+Now that we've calculated BMI, we want to identify the four subsets of interest in our cohort and merge in the contact information for each set. We will save each data frame, and export all relevant data into an excel spreadsheet in a later code chunk.
+
+### Criteria 1: $BMI \geq 30$
+```{r}
+sln1 <- bmi_df %>% dplyr::filter(BMI>=30) %>% dplyr::select(ID) %>% merge(contact_df, by="ID")
+sln1 %>% head() %>% knitr::kable()
+```
+
+
+### Criteria 2: $BMI \geq 35$
+```{r}
+sln2 <- bmi_df %>% dplyr::filter(BMI>=35) %>% dplyr::select(ID) %>% merge(contact_df, by="ID")
+sln2 %>% head() %>% knitr::kable()
+```
+
+### Criteria 3: $BMI \geq 30$ & $Age\geq 60$
+```{r}
+sln3 <- bmi_df %>% dplyr::filter(BMI>=30 & Age>=60) %>% dplyr::select(ID) %>% merge(contact_df, by="ID")
+sln3 %>% head() %>% knitr::kable()
+```
+
+### Criteria 4: $BMI \geq 35$ & $Age\geq 60$
+```{r}
+sln4 <- bmi_df %>% dplyr::filter(BMI>=35 & Age>=60) %>% dplyr::select(ID) %>% merge(contact_df, by="ID")
+sln4 %>% head() %>% knitr::kable()
+```
+
+
+## (4) Exporting the Data 
+
+Now that we have identified our four cohorts of interest, we want to export them all within the same xlsx file but simply as different tabs. In Python, we used pandas's `ExcelWriter()`. In R, we will use the `openxlsx` package to accomplish the task. 
+
+```{r}
+library(openxlsx)
+df_list <- list("Criteria_1" = sln1,
+                "Criteria_2" = sln2,
+                "Criteria_3" = sln3,
+                "Criteria_4" = sln4)
+
+openxlsx::write.xlsx(df_list, file="BMI_Solution_R.xlsx")
+```
+
+
+
