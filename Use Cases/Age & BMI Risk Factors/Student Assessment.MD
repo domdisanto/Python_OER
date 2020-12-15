@@ -16,6 +16,8 @@
 
 In this use case, you are given a list of patients (designated by a random patient identifier variable) and their measured heights (in centimeters) and weight (in kilograms) seen by your clinic over the past week. You've been tasked with identifying a number of patients who are at risk for cardiovascular complications that will be specifically noted for additional follow-up. You must identify these patients based on the supplied criteria and compile their contact information.
 
+*Acknowledgement: Patient contact information simulated using the [`Faker` Python module](https://faker.readthedocs.io/en/master/)  *
+
 ### Competencies  
 **Modules**: 1 (Importing/Reading Data); 4 (Pandas Intro); 5 (Relational Data/Data Merging); 6 (Data Cleaning) 
 **Competencies**: Pandas (general); Data merging; Data reading/importing and writing/exporting 
