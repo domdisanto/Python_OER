@@ -40,7 +40,7 @@ The script can be run most easily by simply downloading and saving the `.py` scr
 The script will export a spreadsheet (`.xlsx`) file titled `SolutionCheckResults.xlsx`, with tabs for the Excel, Python, R, and "Update" solution spreadsheets you've created.  The script works even in the absence of these scripts, so you can run the scripts to check your answer to any one of your solutions without having created all four files.
 
 
-### Tasks
+## Tasks
 
 1) Working solely in Excel, calculate BMI for all patients, rounding the value to the hundredths. Create four tabs of patient ID's and contact information for patients that meet the following criteria. Save the spreadsheet of your four solution tabs as `BMI_Solution_Excel.xlsx.` The use of `vlookup()` or `xlookup` may be helpful!
      a) BMI$\geq$30
