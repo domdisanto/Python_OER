@@ -21,4 +21,9 @@ Access the FDA's Adverse Events Reporting System Data (FAERS) data, and pull all
 
 This data is publicily accessible, such that you can download and import the files from a local folder. As the data are publicily hosted, the [following StackOverflow post](https://stackoverflow.com/questions/23419322/download-a-zip-file-and-extract-it-in-memory-using-python3) may be useful to review to attempt extracting data directly from the FDA's website using the `zipfile`, `requests`, and `io` Python modules. 
 
+The included Python script `FAERS_SolutionCheck.py` will check your supplied solutions for accuracy, by simply running the code:
+> `exec(open(AERS_SolutionCheck.py).read())`
+
+in your Jupyter notebook.
+
 *The presented task for this assignment is intentionally very vague. The walkthrough Jupyter notebook and RMarkdown documents will discuss both the programmatic solution with coding examples and the data access for the FAERS data. You're encourage to do your best to download, explore, access, etc. the data on your own as much as possible to create the final aggregate data set.*
