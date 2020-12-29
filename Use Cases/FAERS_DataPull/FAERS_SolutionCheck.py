@@ -38,9 +38,9 @@ def solution_check(data):
     student_sub = pd.read_excel(data)
     
     # Checking if index is present and deleting if so:
-    if 'Unnamed: 0' in student_sub .columns:
+    if 'Unnamed: 0' in student_sub.columns:
         index_bool = True
-        del student_sub ['Unnamed: 0']
+        del student_sub['Unnamed: 0']
     else:
         index_bool = False
         
