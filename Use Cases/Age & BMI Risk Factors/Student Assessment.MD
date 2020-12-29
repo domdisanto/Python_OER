@@ -8,9 +8,9 @@
 
 #### Drafted: 12/13/20
 
-#### Updated: 12/13/20
+#### Updated: 12/29/20
 
-> Initial draft of document 
+> Added detail to background 
 
 ### Introduction
 
@@ -22,7 +22,7 @@ In this use case, you are given a list of patients (designated by a random patie
 **Modules**: 1 (Importing/Reading Data); 4 (Pandas Intro); 5 (Relational Data/Data Merging); 6 (Data Cleaning) 
 **Competencies**: Pandas (general); Data merging; Data reading/importing and writing/exporting 
 
-### Solutions
+### Solution Formatting
 
 The following information may be useful to know *prior* to beginning work on this assessment. 
 
