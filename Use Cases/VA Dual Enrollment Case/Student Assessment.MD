@@ -43,15 +43,15 @@ This use case aims to give you experience relevant in the following areas: \
     a) Dose Value (by daily intake)  
     b) Social Security Number (SSN)  
     c) Medication Duration    
-4) Identify total, daily intake of mg morphine equivalents (summing **both** VA and CMS values for dual enrolled patients)  
+4) Identify total, daily intake of mg morphine equivalents 
     a) A PDF of the [Center for Medicare and Medicaid Service's "Conversion Factors" Document](https://www.cms.gov/Medicare/Prescription-Drug-coverage/PrescriptionDrugCovContra/Downloads/Opioid-Morphine-EQ-Conversion-Factors-Aug-2017.pdf) and a screenshot (accessed 9/22/2020) included below for your reference.  
        
 ![MG Morphine Equiv Chart](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Fig/Opioid_MorphineMgEquiv.JPG)
   
 
-6) Merge data frames together on common identifier (SSN)  
-7) Create and indicator variable to identify individuals dually enrolled in VA and CMS healthcare systems.    
-8) Create a **sum** variable for total mg-morphine-equivalents within dual-use patients    
+5) Merge data frames together on common identifier (SSN)  
+6) Create and indicator variable to identify individuals dually enrolled in VA and CMS healthcare systems.    
+7) Create a **sum** variable for total mg-morphine-equivalents within dual-use patients    
     
     
 #### Exploratory Analysis & Visualization
