@@ -1,0 +1,56 @@
+## St. Jude Stock-Out Use Case
+### Alex Rodriguez, Ben Moore
+### Student Assessment Prompt
+##### <ins>Drafted</ins>: 3.25.2021
+##### <ins>Updated</ins>: 4.28.2021
+
+### Introduction
+
+A *"stock-out"* can generally refer to inventory exhaustion from some dispensary. In large and/or busy hospital systems, stock-outs commonly occur in automated prescription dispensing machines. Stock-outs may bottleneck clinical services (with providers forced to wait for re-stocks of necessary medications) and often require technician time (and implicitly, money for the technician's time).
+
+Many medications may be understocked if they are a frequent, root cause of stock-outs. Space can be re-allotted within the machines, replacing rarely dispensed medications with those frequently responsible for stock-outs. One must also consider the possible necessity of stocking rarely used medications if necessary in emergency situations, dependent upon the needs of the department.
+
+
+In this use case, you will examine data from three automated dispensing machines, exploring what inventory changes can reduce the number of stock-outs, using one calendar year of transaction data. You've been presented with five data sets: (1-3) with transactions from respective dispensing machines, (4) that outlines the department(s) primarily using each machine, and (5) that includes information about the use and emergency stocking status of a medication. Use any one of the transactional tables and the fourth, machine-to-department(s) crosswalk table to explore the data by following the below tasks:  
+
+<details>
+  <summary> Data Dictionary </summary>  
+
+**Transactional Data**
+
+|*Variable*|*Description*|
+|---|---|
+|`TransactionID`|Unique identifier for each transaction|
+|`Machine`|Identifier of dispensing machine|
+|`Day`|Date of transaction|
+|`Medication`|Name of medication dispensed|
+|`Type`| Type of transaction taking place, `Withdrawal` or `Refill`|
+|`AmtRemaining`| Amount of medication in machine *after* transaction taking place|
+
+**Machines Data**  
+
+|*Variable*|*Description*|
+|---|---|
+|`Machine ID`| Identifier of machine, also present in transaction data sets|
+|`Department/Location`| Relevant department(s) using each machine|
+
+**Medication Data**  
+
+|*Variable*|*Description*|
+|---|---|
+|Medication|Name, dose, and type of medication|
+|Note|Primary use or relevant applications of medication|
+|Emergency Status|Binary. `Yes` indicates that a medication *must* be stocked at all times|
+
+</details>
+
+### Exploratory Data Analysis
+1. What variables exist in the transaction data? What are their distinct values and/or distributions (where respectively meaningful)?
+2. How would you define a stock-out in the presented data? How many stock-outs occurred in calendar year 2020 (CY2020) in your data set?
+3. List the distinct medications present in the data  
+4. Do stock-outs ever occur when a medication has not been completely dispensed?
+
+### Inventory Analysis
+1. Define a "stock-out" as anytime a medication must be refilled, using the data's `Type` field. If this definition is different than that used above, how often do stock-outs occur in your data set?
+2. Plot the distribution of the number of stock-outs for medications in your data set
+3. What suggestions would you offer to reduce stock-out frequency

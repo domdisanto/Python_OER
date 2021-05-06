@@ -1,0 +1,72 @@
+Med_Name,Note,EmergencyStatus
+AZITHromycin 200mg/5ml 15ml PWD,Antibiotic ,No
+AZITHromycin 250mg TAB,Antibiotic ,No
+AZITHromycin 600mg TAB,Antibiotic ,No
+DAPTomycin PFI 50mg/1mL 10mL INJ,Injection to treat blood or serious skin infections,Yes
+DOPamine in D5W 800mcg/1mL 250mL INJ,"Vasopressor for shock, trauma, septicemia, etc. ",Yes
+Dexamethasone 1mg TAB,Corticosteroid (fairly diverse),No
+EPINEPHrine 0.3mg/0.3mL 0.3mL PEN,"Vasopressor for shock, trauma, septicemia, etc. ",Yes
+ONDANsetron ODT 4mg TAB,Nausea/vomiting after general anesthesia,No
+acetaZOLAMIDE 125mg TAB,Controls seizures in some epileptics,No
+acetaZOLAMIDE 250mg TAB,Controls seizures in some epileptics,No
+acetaminophen 10mg/1mL 100mL INJ,Pain mgmt,No
+acetaminophen 120mg SUPP,Pain mgmt,No
+acetaminophen 500mg TAB,Pain mgmt,No
+acyclovir 800mg TAB,"Antiviral (shingles, herpes) ",No
+albumin 25% 12.5g/50mL 50mL INJ,Maybe? Used if severely losing blood for hypovolemia,No
+albumin 25% 5g/20mL INJ,Maybe? Used if severely losing blood for hypovolemia,No
+albuterol 0.083% 2.5mg/3mL 3mL SOLN,Asthma attacks/bronchospasm treatment,Yes
+albuterol HFA 90 mcg/inh 8.5g INH,Asthma attacks/bronchospasm treatment,Yes
+allopurinol 300mg TAB,Mitigates high levels of uric acid ; Used with chemotherapy ,No
+amLODIPine 2.5mg TAB,Calcium channel antagonist; Hypternsion or angina treatment,No
+amitriptyline 10mg TAB,Tricyclic antidepressant,No
+amitriptyline 50mg TAB,Tricyclic antidepressant,No
+amoxicillin 80mg/1mL 100mL SUSP,"Penicillin antibiotic (meningitis, misc infections)",No
+amoxicillin chewtab 250mg TAB,"Penicillin antibiotic (meningitis, misc infections)",No
+amoxicillin/clavulanate 600mg/5mL 75mL SUSP,"Penicillin antibiotic (meningitis, misc infections)",No
+ampicillin 200mg/1mL 10mL INJ,"Penicillin antibiotic (meningitis, misc infections)",No
+atomoxetine 25mg CAP,ADHD treatment,No
+bacitracin/neomycin/polymyxinB 15g 1app OINT,Neosporin tbh,No
+buPROPion XL 150mg TAB,Smoking cessation and seasonal depression,No
+bupivacaine 0.25% 50 mL 2.5mg/1mL 50mL INJ,"Local aenesthetic during child birth or pre-surgery, so probably? ",Yes
+calcitriol 0.25mcg CAP,,No
+calcitriol 1mcg/1mL 25mL INJ,,No
+carvedilol 3.125mg TAB,Heart failure & high blood pressure ; Used immediately post heart attack,Yes
+cefdinir 300mg CAP,"Antibiotic (pneumonia, bronchitis) ",No
+ciprofloxacin 0.3% ophth soln 10mL SOLN,"Antibiotic (pneumonia, bronchitis) ",No
+ciprofloxacin 500mg TAB,"Antibiotic (pneumonia, bronchitis) ",No
+ciprofloxacin/dexamethasone 0.3%- 7.5mL SUSP,"Antibiotic (pneumonia, bronchitis) ",No
+citalopram 10mg TAB,SSRI,No
+clindamycin 75mg CAP,"Antibiotic (pneumonia, bronchitis) ",No
+cloNIDine 0.1mg TAB,Long-acting/slow-release blood pressure treatment,No
+clotrimazole 10mg LOZ,Antifungal treatment,No
+dexamethasone 6mg TAB,Corticosteroid (fairly diverse),No
+docusate sodium 100mg CAP,Stool softener,No
+docusate sodium 50mg CAP,Stool softener,No
+enoxaparin 120mg/0.8mL 0.8mL SYRINGE,"Anti-coag, used sometimes after heart attacks, post-surgery to prevent DVT/PE",Yes
+enoxaparin 60mg/0.6mL 0.6mL SYRINGE,"Anti-coag, used sometimes after heart attacks, post-surgery to prevent DVT/PE",Yes
+enoxaparin 80mg/0.8mL 0.8mL SYRINGE,"Anti-coag, used sometimes after heart attacks, post-surgery to prevent DVT/PE",Yes
+furosemide 40mg TAB,"Treats edema in organ failure, heart attack/stroke",Yes
+hydrocortisone 0.5% 1app CREAM,Rash/skin treatment,No
+hydrocortisone 1% 1app CREAM,Rash/skin treatment,No
+hydrocortisone 20mg TAB,,No
+ibuprofen 200mg TAB,Pain mgmt,No
+ibuprofen 400mg TAB,Pain mgmt,No
+lamoTRIgine 100mg TAB,Anticonvulsant and treatment of bipolar disorder,Yes?
+lamoTRIgine 25mg TAB,Anticonvulsant and treatment of bipolar disorder,Yes?
+levothyroxine 100mcg TAB,"Treatment of thyroid disorders, cancers",No
+lisinopril 10mg TAB,"ACE Inhibitor; Treats heart attacks, high bp ",Yes
+magnesium oxide 140mg CAP,Antacid,No
+metoprolol succinate ER 25mg TAB,"Beta-blocker; Preventative for heart issues, treat high bp or angina",No
+metoprolol tartrate 25mg TAB,"Beta-blocker; Preventative for heart issues, treat high bp or angina",No
+montelukast chewable 4mg TAB,Treatment of asthma symptoms (not acute asthma attacks),No
+pravastatin 10mg TAB,"High cholesterol/tryiglycerides, reduce risk of stroke/heart attack",No
+pravastatin 20mg TAB,"High cholesterol/tryiglycerides, reduce risk of stroke/heart attack",No
+pravastatin 40mg TAB,"High cholesterol/tryiglycerides, reduce risk of stroke/heart attack",No
+risperiDONE 1mg TAB,"Treats schizo, diruptive episodes in autistic pts, bipolar disorder",No
+risperiDONE 2mg TAB,"Treats schizo, diruptive episodes in autistic pts, bipolar disorder",No
+topiramate 100mg TAB,"Treats acute seizures, also migraines and prevents seizures",Yes
+topiramate 200mg TAB,"Treats acute seizures, also migraines and prevents seizures",Yes
+topiramate 50mg TAB,"Treats acute seizures, also migraines and prevents seizures",Yes
+warfarin 2.5mg TAB,Anti-coag,No
+zonisamide 100mg CAP,Treats acute seizures and prevents seizure episodes,Yes
