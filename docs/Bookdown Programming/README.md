@@ -1,7 +1,3 @@
-This is a minimal bookdown example. Although you see a few files here, only `index.Rmd` is required. All other files are optional, but `bookdown-minimal.Rproj` can make it much easier to build the book.
+This folder  contains  the relevant programs, formatting files, etc. to create the Bookdown site hosted by files in the parent `docs` folder for this projet's Github repository.
 
-The key is the `site` setting in `index.Rmd`. If you want to build the book in RStudio, just click the `Build Book` button in the `Build` pane, otherwise call the function in R:
-
-```r
-bookdown::render_book('index.Rmd', 'all')
-```
+This Bookdown was adopted from Yihiu Xie's very helpful (and meta) [Bookdown](https://bookdown.org/yihui/bookdown/get-started.html) covering the creating and hosting of Bookdowns.
