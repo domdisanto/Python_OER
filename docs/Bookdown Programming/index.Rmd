@@ -1,0 +1,21 @@
+---
+title: "Python Open Education"
+author: "Ravi Patel, Dominic DiSanto, Britney Stottlemeyer"
+site: bookdown::bookdown_site
+documentclass: book
+output:
+  bookdown::gitbook: default
+---
+
+# Python Open Education 
+
+<h4> Python Education Resources, Use Cases, and Miscellaneous Didactic Materials </h4>  
+
+<h4> **Authors**: Ravi Patel, Dominic DiSanto, Britney Stottlemeyer </h4>  
+
+<h5> **Contributors**: *use case co-authors* </h5>  
+
+<h5> Version 0.03 </h5>  
+
+<h5> *probably some licensing information* </h5>
+

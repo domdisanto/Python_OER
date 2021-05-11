@@ -1,0 +1,11 @@
+# Python Use Cases
+
+
+*Aside to Ravi: Can also have each use case act as it's own Bookdown chatper, see* ***Chapter 5***
+
+
+|Use Case|Competencies|Relevant References|
+|--------|------------|-------------------|
+|PTSD & Suicidality (See Chapter \@ref(ptsd))|Data wrangling/management, model fitting, classification| |
+|FAERS (See Chapter \@ref(faers))| Web/data scraping, data wrangling/management, joins/merging of data |  |
+|St. Jude Stock Outs (See Chapter \@ref(jude))| Data wrangling/management||
