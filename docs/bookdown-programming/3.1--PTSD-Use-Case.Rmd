@@ -58,7 +58,7 @@ Now we will work with the file `PTSD_ResearchCohort.csv`, a dataset of the 401 p
   
 |Figure 1A|Figure 1B|
 |---------|---------|
-| ![Checklist](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/PTSD%20%26%20SRB%20Use%20Case/Instructor%20Materials/Fig/PTSD_Checklist_vars.JPG)| ![Diagnostic Criteria](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/PTSD%20%26%20SRB%20Use%20Case/Instructor%20Materials/Fig/PTSD_Diagnosis_Criteria.PNG) |  
+| ![Checklist](https://raw.githubusercontent.com/domdisanto/Python_OER/master/Use%20Cases/PTSD%20%26%20SRB%20Use%20Case/Instructor%20Materials/Fig/PTSD_Checklist_vars.JPG)| ![Diagnostic Criteria](https://raw.githubusercontent.com/domdisanto/Python_OER/master/Use%20Cases/PTSD%20%26%20SRB%20Use%20Case/Instructor%20Materials/Fig/PTSD_Diagnosis_Criteria.png) |  
 
 
 
