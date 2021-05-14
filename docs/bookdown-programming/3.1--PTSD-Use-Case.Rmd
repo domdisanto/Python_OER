@@ -1,18 +1,19 @@
 
+## Pharmaceutical Treatment of PTSD & Adverse Effects on Suicidal Behavior {#ptsd}
 
-# Use Case: Pharmaceutical Treatment of PTSD & Adverse Effects on Suicidal Behavior {#ptsd}
+### Competencies  
 
-*Aside to Ravi: Example of hosting a single use case in its own chapter*
+**Modules**: 1 (Importing/Reading Data); 4 (Pandas Intro); 5 (Relational Data/Data Merging); 6 (Data Cleaning); Assorted Classification Modules   
+**Competencies**: Pandas (general); Data merging; Matplotlib/Visualization (basic, general); Cleaning string data; Cleaning inconsistently coded data; Sci-kit learn; Model fitting and cross-validation; Various possible classification model algorithms
 
-## Materials
+
+### Materials/Data
 
 The below links lead to comma-delimited datasets to be used for the below assignment. Simply save the linked web pages (as `csv` files) once loaded. 
 
 - [PTSD Research Cohort](https://raw.githubusercontent.com/domdisanto/Python_OER/master/Use%20Cases/PTSD%20%26%20SRB%20Use%20Case/PTSD_ResearchCohort.csv)  
 - [Possible Patients](https://raw.githubusercontent.com/domdisanto/Python_OER/master/Use%20Cases/PTSD%20%26%20SRB%20Use%20Case/PossiblePatients_ICD.csv)  
 - [PTSD Data](https://raw.githubusercontent.com/domdisanto/Python_OER/master/Use%20Cases/PTSD%20%26%20SRB%20Use%20Case/ptsd_data.csv)
-
-## Assignment 
 
 
 ### Introduction
@@ -22,14 +23,13 @@ The present use case uses a simulated data set of patients with PTSD and suicida
 After identifying your study sample of interest, you will use patient outcome and medication data to assess the effects of common PTSD-treatments on later diagnosis of PTSD and/or SRB. Steps will include data cleaning, exploratory data analysis, and model-building and evaluation as you work with this use case.
 
 
-#### Competencies  
-**Modules**: 1 (Importing/Reading Data); 4 (Pandas Intro); 5 (Relational Data/Data Merging); 6 (Data Cleaning); Assorted Classification Modules   
-**Competencies**: Pandas (general); Data merging; Matplotlib/Visualization (basic, general); Cleaning string data; Cleaning inconsistently coded data; Sci-kit learn; Model fitting and cross-validation; Various possible classification model algorithms
 
-#### "Cohort Identification"
+### "Cohort Identification"
 
 1) The dataset `PossiblePatients_ICD.csv` contains a list of ~1,000 patients from a hypothetical electronic health record registry with various ICD-9 and ICD-10 diagnosis codes. We want to identify adult patients (18+) with a diagnosis of post-traumatic stress disorder. We will use the codes of `309.81`, `F43.10`, `F43.11`, `F43.12` to identify our diagnosis of interest. How many patients do you find in this data set that are eligible for your research study (i.e that meet this criteria)?
 
+
+### Tasks
 
 #### Data Cleaning & Exploratory Analysis
 
@@ -58,7 +58,7 @@ Now we will work with the file `PTSD_ResearchCohort.csv`, a dataset of the 401 p
   
 |Figure 1A|Figure 1B|
 |---------|---------|
-| ![Checklist](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/PTSD%20%26%20SRB%20Use%20Case/Instructor%20Materials/Fig/PTSD_Checklist_vars.JPG)| ![Diagnostic Criteria](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/PTSD%20%26%20SRB%20Use%20Case/Instructor%20Materials/Fig/PTSD_Diagnosis_Criteria.png) |  
+| ![Checklist](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/PTSD%20%26%20SRB%20Use%20Case/Instructor%20Materials/Fig/PTSD_Checklist_vars.JPG)| ![Diagnostic Criteria](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/PTSD%20%26%20SRB%20Use%20Case/Instructor%20Materials/Fig/PTSD_Diagnosis_Criteria.PNG) |  
 
 
 
@@ -68,6 +68,7 @@ Now we will work with the file `PTSD_ResearchCohort.csv`, a dataset of the 401 p
 4) Beyond the PTSD & PHQ variables, examine the other variables in the data set, and their descriptions in the Data Dictionary above. For any categorical variables, create indicator/dummy variables. 
 
 #### Build your model
+
 1) Build a model on the training set predicting 6-month SRB and predicting 6-month PTSD diagnosis using the input features dentified in the data dictionary and that you've prepared in the data cleaning section above of age, time since earliest PTSD diagnosis, alcohol abuse, Beck Anxiety Inventory, alcohol abuse, income category, social support, and medication indicator variables. **Select a modelling algorithm that allows you to examine feature importance. **
 2) Assess the fit of both your models  
 3) What medications are "important" in a predictive model of PTSD? Describe the relationship of each medication (generally) based on the level of evidence (say "high" or "low") based on your interpretation of the results of your model. 
@@ -76,7 +77,7 @@ Now we will work with the file `PTSD_ResearchCohort.csv`, a dataset of the 401 p
 
 
 
-## Solutions
+### Solutions
 
 - [Jupyter Notebook Walkthrough](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/PTSD%20%26%20SRB%20Use%20Case/PTSD_Walkthrough.ipynb)  
 - [R/RMarkdown Walkthrough](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/PTSD%20%26%20SRB%20Use%20Case/R/PTSD_RAnalog.Rmd)

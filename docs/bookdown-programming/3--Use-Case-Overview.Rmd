@@ -1,0 +1,12 @@
+# Use Case Overview 
+
+Each use case (including required data, tasks/assignment(s), and/or solutions) is included as a subsection of **Chapter 3**. 
+The below table links to use cases and briefly summarizes the competencies/skills used/addressed in each use case's series of tasks.
+
+|Use Case|Competencies|
+|---------------------------------|-------------------------------|
+|Pharmaceutical Treatment of PTSD & Adverse Effects on Suicidal Behavior (See Chapter \@ref(ptsd))  |  Data wrangling/management, model fitting, classification  | 
+|Accessing the FDA's FAERS Data  (See Chapter \@ref(faers))  |  Web/data scraping, data wrangling/management, joins/merging of data |  
+| Stock-Outs in Dispensing Machines (via St. Jude) (See Chapter \@ref(jude))  | Data wrangling/management  |
+| Age & BMI Comorbidity Risk Factors (See Chapter \@ref(agebmi))  | Data wrangling/management; Cross-ploatform (Excel-Python-R) |
+| Identifying Overprescription in Dual Enrolled VA Patients \@ref(VA) | Pandas (general); Data merging; Matplotlib/Visualization (basic, general); Cleaning string data; Cleaning inconsistently coded data | 

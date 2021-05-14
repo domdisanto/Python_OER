@@ -1,0 +1,95 @@
+
+
+## Identifying Overprescription in Dual Enrolled VA Patients {#VA}
+
+
+### Materials/Data  
+
+- [VA Data](https://raw.githubusercontent.com/domdisanto/Python_OER/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/VA_data.csv)  
+- [CMS Data](https://raw.githubusercontent.com/domdisanto/Python_OER/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/CMS_data.csv)
+
+
+### Competencies  
+
+**Modules:** 1 (Importing/Reading Data); 4 (Pandas Intro); 5 (Relational Data/Data Merging); 6 (Data Cleaning); 7 (Data Visualization) \
+**Competencies:** Pandas (general); Data merging; Matplotlib/Visualization (basic, general); Cleaning string data; Cleaning inconsistently coded data   
+
+
+
+### Background  
+
+This use cases borrows from both a [publication](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6219924/) and [Presentation](https://www.hsrd.research.va.gov/for_researchers/cyber_seminars/archives/video_archive.cfm?SessionID=3543)  by Dr. Walid Gellad within Pittsburgh's Veterans Affairs Hospital system. The simulated data emulates a simplified set of prescription data for Veterans Affairs (VA) and Center for Medicaid/Medicare Services (CMS) patients, with overlap of healthcare utiliation in both systems. You will work with this data to merge the VA and CMS data sources and identify prescription (and overprescription) of opioids by patients who utilize VA and both VA & CMS healthcare systems. 
+  
+
+
+*Preface Notes & Assumptions:**  
+- Assume all `buprenorphine` medications are equivalent to buprenorphine tablets in the given reference table for morphine mg equivalents 
+
+<details>
+<summary> Data Dictionary </summary>  
+   
+|Data Element| VA Data Variable| CMS Data Variable| 
+|------------|-----------------|------------------|
+|Patient ID| `Patient ID`|`Patient ID`|
+|Date of Hospital Visit/Encounter| `Visit date`| N/A |
+|Age at Visit/Encounter| `Age`| N/A |
+|Height at Visit/Encounter| `Height`| N/A |
+|Weight at Visit/Encounter| `Weight`| N/A |
+|Medication Name| `Medication`| `Medication`|
+|Dose (Daily)| `Medication Dose`| `Medication Dose`|
+|Unit of Medication Dose| `Medication Dose Unit`| `Medication Dose Unit`|
+|Length of Prescription Duration| `Medication Duration Value`|`Medication Duration`|
+|Unit of Time for Length of Prescription Duration| `Medication Duration Unit`|`Duration Unit`|
+ 
+ 
+ 
+ 
+### Tasks  
+  
+#### Data Cleaning & Preparation
+1) Import CMS and VA data into your Jupyter Notebook  
+    a) Examine the data. Are the variables consistently names between the two data frames? Is the same information collected? What differences exist? 
+2) Create opioid administration outcome variable of interest within both the VA and CMS data  
+    a) *We want to simply capture whether a given patient was given an opioid, essentially whether that patients medication was an opioid or not. What could a variable that codes this information look like?*
+3) Standardize coding of relevant variables within data frames *and* between VA and CMS data sources (*Examine units and/or variables that may be included as a singular variable in one data set and as a pair or set of values in a different data set*).  
+    a) Dose Value (by daily intake)  
+    b) Social Security Number (SSN)  
+    c) Medication Duration    
+4) Identify total, daily intake of mg morphine equivalents 
+    a) A PDF of the [Center for Medicare and Medicaid Service's "Conversion Factors" Document](https://www.cms.gov/Medicare/Prescription-Drug-coverage/PrescriptionDrugCovContra/Downloads/Opioid-Morphine-EQ-Conversion-Factors-Aug-2017.pdf) and a screenshot (accessed 9/22/2020) included below for your reference.  
+       
+![MG Morphine Equiv Chart](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Fig/Opioid_MorphineMgEquiv.JPG)
+  
+
+5) Merge data frames together on common identifier (SSN)  
+6) Create and indicator variable to identify individuals dually enrolled in VA and CMS healthcare systems.    
+7) Create a **sum** variable for total mg-morphine-equivalents within dual-use patients    
+    
+    
+#### Exploratory Analysis & Visualization
+1) How many patients are dual enrolled and how many were solely accessing VA healthcare resources?  
+2) Visualize MME among patients using histograms and/or density curves:  
+    a) Separately for VA patient visits and CMS patient visits (using only VA and CMS prescriptions respectively)  
+    b) For dual-enrollment patients (using our MME total/sum variable created in ***Data Cleaning Step 8***)   
+    c) Analyze the comparative visualizations (i.e. differences you do (or do not) see).
+3) What proportion of dual enrolled patients were prescribed an opioid? Similarly, what proportion of "VA-only" patients?  
+     a) What proportion of dual enrolled patients were prescribed an opioid during both their VA and CMS visits? 
+4) Create a visual that illustrates this difference    
+
+
+#### Bonus Questions
+
+The below questions demonstrate additional skills that, while beyond the scope of building foundational Python competencies/skills, may be of interest to explore if you found the earlier assessment simple!
+
+1) Create a density plot of total mg morphine equivalents among dual-enrolled patients, among VA-only patients, and among CMS only patients. Shade in the plot for patients with greater-than-or-equal-to 120 mg morphine equivalents   
+     a) *Hint: [This StackOverflow post](https://stackoverflow.com/questions/39666591/how-to-extract-x-y-data-from-kdensity-plot-from-matplotlib-for-python) may be useful in extracting densities using `scipy`)*
+
+
+
+### Solutions
+
+- [Jupyter Notebook Walkthrough](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/VA_CMS_DualEnrollment_Walkthrough.ipynb)   
+- [RMarkdown Walkthrough ](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/R/VA_UseCase_AnalogR.Rmd)   
+- [Example SQL Script](https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/VA_CMS_SQL.sql)  
+
+

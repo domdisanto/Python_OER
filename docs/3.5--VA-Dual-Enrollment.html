@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.5 Identifying Overprescription in Dual Enrolled VA Patients | Open Education Resources for Data Science in Python</title>
+  <meta name="description" content="3.5 Identifying Overprescription in Dual Enrolled VA Patients | Open Education Resources for Data Science in Python" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.5 Identifying Overprescription in Dual Enrolled VA Patients | Open Education Resources for Data Science in Python" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.5 Identifying Overprescription in Dual Enrolled VA Patients | Open Education Resources for Data Science in Python" />
+  
+  
+  
+
+<meta name="author" content="Ravi Patel, Dominic DiSanto, Britney Stottlemeyer" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="3.4--Age-and-BMI.html"/>
+
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="1--Introduction.html"><a href="1--Introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="1--Introduction.html"><a href="1--Introduction.html#use-cases"><i class="fa fa-check"></i><b>1.1</b> Use Cases</a></li>
+<li class="chapter" data-level="1.2" data-path="1--Introduction.html"><a href="1--Introduction.html#resource-curation"><i class="fa fa-check"></i><b>1.2</b> Resource Curation</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2--Resource-List.html"><a href="2--Resource-List.html"><i class="fa fa-check"></i><b>2</b> List of Curated Python &amp; Statistical Education Resources</a></li>
+<li class="chapter" data-level="3" data-path="3--Use-Case-Overview.html"><a href="3--Use-Case-Overview.html"><i class="fa fa-check"></i><b>3</b> Use Case Overview</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3.1--PTSD-Use-Case.html"><a href="3.1--PTSD-Use-Case.html"><i class="fa fa-check"></i><b>3.1</b> Pharmaceutical Treatment of PTSD &amp; Adverse Effects on Suicidal Behavior</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="3.1--PTSD-Use-Case.html"><a href="3.1--PTSD-Use-Case.html#competencies"><i class="fa fa-check"></i><b>3.1.1</b> Competencies</a></li>
+<li class="chapter" data-level="3.1.2" data-path="3.1--PTSD-Use-Case.html"><a href="3.1--PTSD-Use-Case.html#materialsdata"><i class="fa fa-check"></i><b>3.1.2</b> Materials/Data</a></li>
+<li class="chapter" data-level="3.1.3" data-path="3.1--PTSD-Use-Case.html"><a href="3.1--PTSD-Use-Case.html#introduction-1"><i class="fa fa-check"></i><b>3.1.3</b> Introduction</a></li>
+<li class="chapter" data-level="3.1.4" data-path="3.1--PTSD-Use-Case.html"><a href="3.1--PTSD-Use-Case.html#cohort-identification"><i class="fa fa-check"></i><b>3.1.4</b> “Cohort Identification”</a></li>
+<li class="chapter" data-level="3.1.5" data-path="3.1--PTSD-Use-Case.html"><a href="3.1--PTSD-Use-Case.html#tasks"><i class="fa fa-check"></i><b>3.1.5</b> Tasks</a></li>
+<li class="chapter" data-level="3.1.6" data-path="3.1--PTSD-Use-Case.html"><a href="3.1--PTSD-Use-Case.html#solutions"><i class="fa fa-check"></i><b>3.1.6</b> Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="3.2--FAERS-Use-Case.html"><a href="3.2--FAERS-Use-Case.html"><i class="fa fa-check"></i><b>3.2</b> Accessing the FDA’s FAERS Data</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="3.2--FAERS-Use-Case.html"><a href="3.2--FAERS-Use-Case.html#materials"><i class="fa fa-check"></i><b>3.2.1</b> Materials</a></li>
+<li class="chapter" data-level="3.2.2" data-path="3.2--FAERS-Use-Case.html"><a href="3.2--FAERS-Use-Case.html#competencies-1"><i class="fa fa-check"></i><b>3.2.2</b> Competencies</a></li>
+<li class="chapter" data-level="3.2.3" data-path="3.2--FAERS-Use-Case.html"><a href="3.2--FAERS-Use-Case.html#background"><i class="fa fa-check"></i><b>3.2.3</b> Background</a></li>
+<li class="chapter" data-level="3.2.4" data-path="3.2--FAERS-Use-Case.html"><a href="3.2--FAERS-Use-Case.html#tasks-1"><i class="fa fa-check"></i><b>3.2.4</b> Tasks</a></li>
+<li class="chapter" data-level="3.2.5" data-path="3.2--FAERS-Use-Case.html"><a href="3.2--FAERS-Use-Case.html#solutions-1"><i class="fa fa-check"></i><b>3.2.5</b> Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="3.3--StJude-Use-Case.html"><a href="3.3--StJude-Use-Case.html"><i class="fa fa-check"></i><b>3.3</b> Stock-Outs in Dispensing Machines (via St. Jude)</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="3.3--StJude-Use-Case.html"><a href="3.3--StJude-Use-Case.html#contributors"><i class="fa fa-check"></i><b>3.3.1</b> Contributors:</a></li>
+<li class="chapter" data-level="3.3.2" data-path="3.3--StJude-Use-Case.html"><a href="3.3--StJude-Use-Case.html#materialsdata-1"><i class="fa fa-check"></i><b>3.3.2</b> Materials/Data</a></li>
+<li class="chapter" data-level="3.3.3" data-path="3.3--StJude-Use-Case.html"><a href="3.3--StJude-Use-Case.html#introduction-2"><i class="fa fa-check"></i><b>3.3.3</b> Introduction</a></li>
+<li class="chapter" data-level="3.3.4" data-path="3.3--StJude-Use-Case.html"><a href="3.3--StJude-Use-Case.html#tasks-2"><i class="fa fa-check"></i><b>3.3.4</b> Tasks</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="3.4--Age-and-BMI.html"><a href="3.4--Age-and-BMI.html"><i class="fa fa-check"></i><b>3.4</b> Age &amp; BMI Risk Factor Identification</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="3.4--Age-and-BMI.html"><a href="3.4--Age-and-BMI.html#materialsdata-2"><i class="fa fa-check"></i><b>3.4.1</b> Materials/Data</a></li>
+<li class="chapter" data-level="3.4.2" data-path="3.4--Age-and-BMI.html"><a href="3.4--Age-and-BMI.html#competencies-2"><i class="fa fa-check"></i><b>3.4.2</b> Competencies</a></li>
+<li class="chapter" data-level="3.4.3" data-path="3.4--Age-and-BMI.html"><a href="3.4--Age-and-BMI.html#solution-notes"><i class="fa fa-check"></i><b>3.4.3</b> Solution Notes</a></li>
+<li class="chapter" data-level="3.4.4" data-path="3.4--Age-and-BMI.html"><a href="3.4--Age-and-BMI.html#solutions-2"><i class="fa fa-check"></i><b>3.4.4</b> Solutions</a></li>
+<li class="chapter" data-level="3.4.5" data-path="3.4--Age-and-BMI.html"><a href="3.4--Age-and-BMI.html#tasks-3"><i class="fa fa-check"></i><b>3.4.5</b> Tasks</a></li>
+<li class="chapter" data-level="3.4.6" data-path="3.4--Age-and-BMI.html"><a href="3.4--Age-and-BMI.html#solutions-3"><i class="fa fa-check"></i><b>3.4.6</b> Solution(s)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="3.5--VA-Dual-Enrollment.html"><a href="3.5--VA-Dual-Enrollment.html"><i class="fa fa-check"></i><b>3.5</b> Identifying Overprescription in Dual Enrolled VA Patients</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="3.5--VA-Dual-Enrollment.html"><a href="3.5--VA-Dual-Enrollment.html#materialsdata-3"><i class="fa fa-check"></i><b>3.5.1</b> Materials/Data</a></li>
+<li class="chapter" data-level="3.5.2" data-path="3.5--VA-Dual-Enrollment.html"><a href="3.5--VA-Dual-Enrollment.html#competencies-3"><i class="fa fa-check"></i><b>3.5.2</b> Competencies</a></li>
+<li class="chapter" data-level="3.5.3" data-path="3.5--VA-Dual-Enrollment.html"><a href="3.5--VA-Dual-Enrollment.html#background-1"><i class="fa fa-check"></i><b>3.5.3</b> Background</a></li>
+<li class="chapter" data-level="3.5.4" data-path="3.5--VA-Dual-Enrollment.html"><a href="3.5--VA-Dual-Enrollment.html#tasks-4"><i class="fa fa-check"></i><b>3.5.4</b> Tasks</a></li>
+<li class="chapter" data-level="3.5.5" data-path="3.5--VA-Dual-Enrollment.html"><a href="3.5--VA-Dual-Enrollment.html#solutions-4"><i class="fa fa-check"></i><b>3.5.5</b> Solutions</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Open Education Resources for Data Science in Python</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="VA" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Identifying Overprescription in Dual Enrolled VA Patients</h2>
+<div id="materialsdata-3" class="section level3" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> Materials/Data</h3>
+<ul>
+<li><a href="https://raw.githubusercontent.com/domdisanto/Python_OER/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/VA_data.csv">VA Data</a><br />
+</li>
+<li><a href="https://raw.githubusercontent.com/domdisanto/Python_OER/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/CMS_data.csv">CMS Data</a></li>
+</ul>
+</div>
+<div id="competencies-3" class="section level3" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> Competencies</h3>
+<p><strong>Modules:</strong> 1 (Importing/Reading Data); 4 (Pandas Intro); 5 (Relational Data/Data Merging); 6 (Data Cleaning); 7 (Data Visualization)<br />
+<strong>Competencies:</strong> Pandas (general); Data merging; Matplotlib/Visualization (basic, general); Cleaning string data; Cleaning inconsistently coded data</p>
+</div>
+<div id="background-1" class="section level3" number="3.5.3">
+<h3><span class="header-section-number">3.5.3</span> Background</h3>
+<p>This use cases borrows from both a <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6219924/">publication</a> and <a href="https://www.hsrd.research.va.gov/for_researchers/cyber_seminars/archives/video_archive.cfm?SessionID=3543">Presentation</a> by Dr. Walid Gellad within Pittsburgh’s Veterans Affairs Hospital system. The simulated data emulates a simplified set of prescription data for Veterans Affairs (VA) and Center for Medicaid/Medicare Services (CMS) patients, with overlap of healthcare utiliation in both systems. You will work with this data to merge the VA and CMS data sources and identify prescription (and overprescription) of opioids by patients who utilize VA and both VA &amp; CMS healthcare systems.</p>
+<p>*Preface Notes &amp; Assumptions:**<br />
+- Assume all <code>buprenorphine</code> medications are equivalent to buprenorphine tablets in the given reference table for morphine mg equivalents</p>
+<details>
+<summary>
+Data Dictionary
+</summary>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="36%" />
+<col width="38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Data Element</th>
+<th>VA Data Variable</th>
+<th>CMS Data Variable</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Patient ID</td>
+<td><code>Patient ID</code></td>
+<td><code>Patient ID</code></td>
+</tr>
+<tr class="even">
+<td>Date of Hospital Visit/Encounter</td>
+<td><code>Visit date</code></td>
+<td>N/A</td>
+</tr>
+<tr class="odd">
+<td>Age at Visit/Encounter</td>
+<td><code>Age</code></td>
+<td>N/A</td>
+</tr>
+<tr class="even">
+<td>Height at Visit/Encounter</td>
+<td><code>Height</code></td>
+<td>N/A</td>
+</tr>
+<tr class="odd">
+<td>Weight at Visit/Encounter</td>
+<td><code>Weight</code></td>
+<td>N/A</td>
+</tr>
+<tr class="even">
+<td>Medication Name</td>
+<td><code>Medication</code></td>
+<td><code>Medication</code></td>
+</tr>
+<tr class="odd">
+<td>Dose (Daily)</td>
+<td><code>Medication Dose</code></td>
+<td><code>Medication Dose</code></td>
+</tr>
+<tr class="even">
+<td>Unit of Medication Dose</td>
+<td><code>Medication Dose Unit</code></td>
+<td><code>Medication Dose Unit</code></td>
+</tr>
+<tr class="odd">
+<td>Length of Prescription Duration</td>
+<td><code>Medication Duration Value</code></td>
+<td><code>Medication Duration</code></td>
+</tr>
+<tr class="even">
+<td>Unit of Time for Length of Prescription Duration</td>
+<td><code>Medication Duration Unit</code></td>
+<td><code>Duration Unit</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tasks-4" class="section level3" number="3.5.4">
+<h3><span class="header-section-number">3.5.4</span> Tasks</h3>
+<div id="data-cleaning-preparation" class="section level4" number="3.5.4.1">
+<h4><span class="header-section-number">3.5.4.1</span> Data Cleaning &amp; Preparation</h4>
+<ol style="list-style-type: decimal">
+<li>Import CMS and VA data into your Jupyter Notebook
+<ol style="list-style-type: lower-alpha">
+<li>Examine the data. Are the variables consistently names between the two data frames? Is the same information collected? What differences exist?</li>
+</ol></li>
+<li>Create opioid administration outcome variable of interest within both the VA and CMS data
+<ol style="list-style-type: lower-alpha">
+<li><em>We want to simply capture whether a given patient was given an opioid, essentially whether that patients medication was an opioid or not. What could a variable that codes this information look like?</em></li>
+</ol></li>
+<li>Standardize coding of relevant variables within data frames <em>and</em> between VA and CMS data sources (<em>Examine units and/or variables that may be included as a singular variable in one data set and as a pair or set of values in a different data set</em>).
+<ol style="list-style-type: lower-alpha">
+<li>Dose Value (by daily intake)<br />
+</li>
+<li>Social Security Number (SSN)<br />
+</li>
+<li>Medication Duration<br />
+</li>
+</ol></li>
+<li>Identify total, daily intake of mg morphine equivalents
+<ol style="list-style-type: lower-alpha">
+<li>A PDF of the <a href="https://www.cms.gov/Medicare/Prescription-Drug-coverage/PrescriptionDrugCovContra/Downloads/Opioid-Morphine-EQ-Conversion-Factors-Aug-2017.pdf">Center for Medicare and Medicaid Service’s “Conversion Factors” Document</a> and a screenshot (accessed 9/22/2020) included below for your reference.</li>
+</ol></li>
+</ol>
+<div class="figure">
+<img src="https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/Instructor%20Materials/Fig/Opioid_MorphineMgEquiv.JPG" alt="" />
+<p class="caption">MG Morphine Equiv Chart</p>
+</div>
+<ol start="5" style="list-style-type: decimal">
+<li>Merge data frames together on common identifier (SSN)<br />
+</li>
+<li>Create and indicator variable to identify individuals dually enrolled in VA and CMS healthcare systems.<br />
+</li>
+<li>Create a <strong>sum</strong> variable for total mg-morphine-equivalents within dual-use patients</li>
+</ol>
+</div>
+<div id="exploratory-analysis-visualization" class="section level4" number="3.5.4.2">
+<h4><span class="header-section-number">3.5.4.2</span> Exploratory Analysis &amp; Visualization</h4>
+<ol style="list-style-type: decimal">
+<li>How many patients are dual enrolled and how many were solely accessing VA healthcare resources?<br />
+</li>
+<li>Visualize MME among patients using histograms and/or density curves:
+<ol style="list-style-type: lower-alpha">
+<li>Separately for VA patient visits and CMS patient visits (using only VA and CMS prescriptions respectively)<br />
+</li>
+<li>For dual-enrollment patients (using our MME total/sum variable created in <strong><em>Data Cleaning Step 8</em></strong>)<br />
+</li>
+<li>Analyze the comparative visualizations (i.e. differences you do (or do not) see).</li>
+</ol></li>
+<li>What proportion of dual enrolled patients were prescribed an opioid? Similarly, what proportion of “VA-only” patients?
+<ol style="list-style-type: lower-alpha">
+<li>What proportion of dual enrolled patients were prescribed an opioid during both their VA and CMS visits?</li>
+</ol></li>
+<li>Create a visual that illustrates this difference</li>
+</ol>
+</div>
+<div id="bonus-questions" class="section level4" number="3.5.4.3">
+<h4><span class="header-section-number">3.5.4.3</span> Bonus Questions</h4>
+<p>The below questions demonstrate additional skills that, while beyond the scope of building foundational Python competencies/skills, may be of interest to explore if you found the earlier assessment simple!</p>
+<ol style="list-style-type: decimal">
+<li>Create a density plot of total mg morphine equivalents among dual-enrolled patients, among VA-only patients, and among CMS only patients. Shade in the plot for patients with greater-than-or-equal-to 120 mg morphine equivalents
+<ol style="list-style-type: lower-alpha">
+<li><em>Hint: <a href="https://stackoverflow.com/questions/39666591/how-to-extract-x-y-data-from-kdensity-plot-from-matplotlib-for-python">This StackOverflow post</a> may be useful in extracting densities using <code>scipy</code>)</em></li>
+</ol></li>
+</ol>
+</div>
+</div>
+<div id="solutions-4" class="section level3" number="3.5.5">
+<h3><span class="header-section-number">3.5.5</span> Solutions</h3>
+<ul>
+<li><a href="https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/VA_CMS_DualEnrollment_Walkthrough.ipynb">Jupyter Notebook Walkthrough</a><br />
+</li>
+<li><a href="https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/R/VA_UseCase_AnalogR.Rmd">RMarkdown Walkthrough</a><br />
+</li>
+<li><a href="https://github.com/domdisanto/Python_OER/blob/master/Use%20Cases/VA%20Dual%20Enrollment%20Case/VA_CMS_SQL.sql">Example SQL Script</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="3.4--Age-and-BMI.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

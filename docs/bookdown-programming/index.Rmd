@@ -1,0 +1,24 @@
+---
+title: "Open Education Resources for Data Science in Python"
+author: "Ravi Patel, Dominic DiSanto, Britney Stottlemeyer"
+site: bookdown::bookdown_site
+documentclass: book
+output:
+  bookdown::gitbook: 
+    split_by: rmd
+---
+
+# Preface {-}
+
+<h3> University of Pittsburgh, School of Pharmacy </h3>
+
+<h4> Python Education Resource and Applied Use Cases</h4>  
+
+<h4> *Authors*: Ravi Patel, Pharm D; Dominic DiSanto, MS; Britney Stottlemeyer, PharmD </h4>  
+
+<h5> *Contributors & Collaborators*: Rahim Merchant, PharmD; Priyan Lad, PharmD; Alex Rodriguez, MHIM; Ben Moore, PharmD; </h5>  
+
+<h5> Version 0.03 </h5>  
+
+<h5> *Licensing information to be contributed* </h5>
+

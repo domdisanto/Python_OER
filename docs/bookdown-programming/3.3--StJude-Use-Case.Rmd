@@ -1,19 +1,17 @@
-# Use Case: Stock-Outs in Dispensing Machines (via St. Jude) {#jude}
+<!-- # Use Case: Stock-Outs in Dispensing Machines (via St. Jude) {#jude} -->
 
-## Contributors:
+## Stock-Outs in Dispensing Machines (via St. Jude) {#jude}
+
+### Contributors:
 
 Special thanks to Ben Moore, PharmD and Alex Rodriguez, MS of St. Jude Children's Research Hospital for their continued insight and feedback in the construction of this material 
 
-## Materials
+### Materials/Data
 
--[`Medications.csv`](https://raw.githubusercontent.com/domdisanto/Python_OER/master/Use%20Cases/St.%20Jude%20Stock-Outs/MEDICATIONS.csv)  
--[`Neuro_Surgery_Transactions.csv`](https://raw.githubusercontent.com/domdisanto/Python_OER/master/Use%20Cases/St.%20Jude%20Stock-Outs/Neuro_Surgery_Transactions.csv)  
--[`Onc_Derm_Transactions.csv`](https://raw.githubusercontent.com/domdisanto/Python_OER/master/Use%20Cases/St.%20Jude%20Stock-Outs/Onc_Derm_Transactions.csv)    
--[`EmergencyDepartmentTransactions.csv`](https://raw.githubusercontent.com/domdisanto/Python_OER/master/Use%20Cases/St.%20Jude%20Stock-Outs/EmergencyDepartmentTransactions.csv)  
-
-
-## Assignment
-
+- [Medications.csv](https://raw.githubusercontent.com/domdisanto/Python_OER/master/Use%20Cases/St.%20Jude%20Stock-Outs/MEDICATIONS.csv)  
+- [Neuro_Surgery_Transactions.csv](https://raw.githubusercontent.com/domdisanto/Python_OER/master/Use%20Cases/St.%20Jude%20Stock-Outs/Neuro_Surgery_Transactions.csv)  
+- [Onc_Derm_Transactions.csv](https://raw.githubusercontent.com/domdisanto/Python_OER/master/Use%20Cases/St.%20Jude%20Stock-Outs/Onc_Derm_Transactions.csv)     
+- [EmergencyDepartmentTransactions.csv](https://raw.githubusercontent.com/domdisanto/Python_OER/master/Use%20Cases/St.%20Jude%20Stock-Outs/EmergencyDepartmentTransactions.csv)  
 
 ### Introduction
 
@@ -55,13 +53,17 @@ In this use case, you will examine data from three automated dispensing machines
 
 </details>
 
-### Exploratory Data Analysis
+### Tasks
+
+#### Exploratory Data Analysis 
+
 1. What variables exist in the transaction data? What are their distinct values and/or distributions (where respectively meaningful)?
 2. How would you define a stock-out in the presented data? How many stock-outs occurred in calendar year 2020 (CY2020) in your data set?
 3. List the distinct medications present in the data  
 4. Do stock-outs ever occur when a medication has not been completely dispensed?
 
-### Inventory Analysis
+#### Inventory Analysis 
+
 1. Define a "stock-out" as anytime a medication must be refilled, using the data's `Type` field. If this definition is different than that used above, how often do stock-outs occur in your data set?
 2. Plot the distribution of the number of stock-outs for medications in your data set
 3. What suggestions would you offer to reduce stock-out frequency
