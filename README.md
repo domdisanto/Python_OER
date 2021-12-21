@@ -1,3 +1,8 @@
+
+*N.B. The below materials can be accessed in a more user-friendly format at the site: https://domdisanto.github.io/Python_OER/*
+-------- 
+
+
 ## Python OER
 ### Python Education Resources, Use Cases, and Miscellaneous Didactic Materials
 ### Authors: Ravi Patel, Britney Stottlemeyer, Dominic DiSanto
